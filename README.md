@@ -30,3 +30,9 @@ npm run build
 `wrangler.jsonc` 已設定 `assets.directory` 為 `./dist`，並啟用 `workers_dev` 讓專案可用 `*.workers.dev` 網址預覽。
 
 Because Wrangler browser login did not complete on this Windows machine, the current live Worker was deployed through the Cloudflare API using `cloudflare/worker-proxy.js`. It serves the committed `dist/` files from GitHub raw URLs as a temporary bridge until Wrangler or native Workers Static Assets deployment is available.
+
+## R2 圖片資產
+
+- Bucket: `kc-ai-education-blog-assets`
+- Public domain: `https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev`
+- Current article graphics: `posts/letting-go-responsible-attitude/graphic-01.webp` through `graphic-10.webp`

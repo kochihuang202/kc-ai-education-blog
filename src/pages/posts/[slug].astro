@@ -59,10 +59,65 @@ const relatedPosts =
       </header>
 
       {
-        post.coverImage && (
-          <figure class="article-cover">
-            <img src={post.coverImage} alt={post.coverAlt ?? ""} width="1200" height="675" />
-          </figure>
+        post.gallery ? (
+          <section class="article-gallery" data-gallery-root aria-label={`${post.title}圖文解析輪播`}>
+            <div class="gallery-toolbar">
+              <span class="gallery-label">{post.gallery.label}</span>
+              <span class="gallery-counter" data-gallery-counter aria-live="polite">
+                1 / {post.gallery.images.length}
+              </span>
+            </div>
+            <div class="gallery-frame">
+              <button class="gallery-nav gallery-nav-prev" type="button" data-gallery-prev aria-label="上一張">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button class="gallery-image-button" type="button" data-gallery-open aria-label="放大圖文解析">
+                {post.gallery.images.map((image, index) => (
+                  <img
+                    class={index === 0 ? "gallery-slide is-active" : "gallery-slide"}
+                    src={image.src}
+                    alt={image.alt}
+                    width="1080"
+                    height="1440"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    data-gallery-slide={String(index)}
+                    hidden={index !== 0}
+                  />
+                ))}
+              </button>
+              <button class="gallery-nav gallery-nav-next" type="button" data-gallery-next aria-label="下一張">
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+            <div class="gallery-dots" aria-label="圖文解析頁數">
+              {post.gallery.images.map((_, index) => (
+                <button
+                  class={index === 0 ? "is-active" : ""}
+                  type="button"
+                  data-gallery-dot={String(index)}
+                  aria-label={`第 ${index + 1} 張`}
+                  aria-current={index === 0 ? "true" : "false"}
+                />
+              ))}
+            </div>
+            <div class="gallery-lightbox" data-gallery-lightbox role="dialog" aria-modal="true" aria-label="圖文解析全螢幕輪播" hidden>
+              <button class="lightbox-close" type="button" data-lightbox-close aria-label="關閉">×</button>
+              <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="上一張">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <img data-lightbox-image alt="" />
+              <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="下一張">
+                <span aria-hidden="true">›</span>
+              </button>
+              <span class="lightbox-counter" data-lightbox-counter>1 / {post.gallery.images.length}</span>
+            </div>
+          </section>
+        ) : (
+          post.coverImage && (
+            <figure class="article-cover">
+              <img src={post.coverImage} alt={post.coverAlt ?? ""} width="1200" height="675" />
+            </figure>
+          )
         )
       }
 
@@ -99,4 +154,91 @@ const relatedPosts =
       }
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll("[data-gallery-root]").forEach((root) => {
+      const slides = Array.from(root.querySelectorAll("[data-gallery-slide]"));
+      const dots = Array.from(root.querySelectorAll("[data-gallery-dot]"));
+      const counter = root.querySelector("[data-gallery-counter]");
+      const lightbox = root.querySelector("[data-gallery-lightbox]");
+      const lightboxImage = root.querySelector("[data-lightbox-image]");
+      const lightboxCounter = root.querySelector("[data-lightbox-counter]");
+      const closeButton = root.querySelector("[data-lightbox-close]");
+      let current = 0;
+      let touchStartX = 0;
+
+      function update(index) {
+        current = (index + slides.length) % slides.length;
+        const text = `${current + 1} / ${slides.length}`;
+
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === current;
+          slide.toggleAttribute("hidden", !isActive);
+          slide.classList.toggle("is-active", isActive);
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === current;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-current", String(isActive));
+        });
+
+        if (counter) counter.textContent = text;
+        if (lightboxCounter) lightboxCounter.textContent = text;
+        if (lightboxImage && slides[current]) {
+          const activeImage = slides[current];
+          lightboxImage.setAttribute("src", activeImage.currentSrc || activeImage.getAttribute("src") || "");
+          lightboxImage.setAttribute("alt", activeImage.getAttribute("alt") || "");
+        }
+      }
+
+      function openLightbox() {
+        update(current);
+        if (!lightbox) return;
+        lightbox.hidden = false;
+        document.body.classList.add("gallery-open");
+        closeButton?.focus();
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.hidden = true;
+        document.body.classList.remove("gallery-open");
+      }
+
+      root.querySelector("[data-gallery-prev]")?.addEventListener("click", () => update(current - 1));
+      root.querySelector("[data-gallery-next]")?.addEventListener("click", () => update(current + 1));
+      root.querySelector("[data-gallery-open]")?.addEventListener("click", openLightbox);
+      root.querySelector("[data-lightbox-prev]")?.addEventListener("click", () => update(current - 1));
+      root.querySelector("[data-lightbox-next]")?.addEventListener("click", () => update(current + 1));
+      closeButton?.addEventListener("click", closeLightbox);
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => update(Number(dot.getAttribute("data-gallery-dot"))));
+      });
+
+      lightbox?.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      lightbox?.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? 0;
+      });
+
+      lightbox?.addEventListener("touchend", (event) => {
+        const touchEndX = event.changedTouches[0]?.clientX ?? 0;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) < 42) return;
+        update(delta < 0 ? current + 1 : current - 1);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox || lightbox.hidden) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") update(current - 1);
+        if (event.key === "ArrowRight") update(current + 1);
+      });
+
+      update(0);
+    });
+  </script>
 </BaseLayout>

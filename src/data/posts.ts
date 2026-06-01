@@ -11,9 +11,28 @@ export interface Post {
   categories: CategoryId[];
   coverImage?: string;
   coverAlt?: string;
+  gallery?: {
+    label: string;
+    images: Array<{
+      src: string;
+      alt: string;
+    }>;
+  };
   relatedPosts: string[];
   body: string;
 }
+
+const lettingGoGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/letting-go-responsible-attitude";
+
+const lettingGoGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+
+  return {
+    src: `${lettingGoGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `原來放手，才是更負責的態度圖文解析 ${page}/10`
+  };
+});
 
 export const posts = [
   {
@@ -24,8 +43,12 @@ export const posts = [
     excerpt:
       "孩子需要大量低風險的小衝突練習，父母真正的負責不是立刻介入，而是留出孩子能練習的空間。",
     categories: ["parents", "core"],
-    coverImage: "/images/ai-education-hero.png",
-    coverAlt: "溫暖書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
+    coverImage: lettingGoGraphics[0].src,
+    coverAlt: lettingGoGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: lettingGoGraphics
+    },
     relatedPosts: ["parenting-rebel-switch"],
     body: lettingGoResponsibleHtml
   },

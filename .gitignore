@@ -2,11 +2,13 @@ node_modules/
 dist/
 tmp/
 .astro/
+.vite-cache/
 .vercel/
 .netlify/
 .wrangler/
 .dev.vars
 .astro-dev.*.log
+.astro-preview.*.log
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
