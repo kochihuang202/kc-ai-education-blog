@@ -1,5 +1,6 @@
 import parentingRebelHtml from "../article-html/posts/parenting-rebel-switch.html?raw";
 import lettingGoResponsibleHtml from "../article-html/posts/letting-go-responsible-attitude.html?raw";
+import moneyCantBuyTrustHtml from "../article-html/posts/money-cant-buy-trust.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -34,7 +35,36 @@ const lettingGoGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const moneyCantBuyTrustGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/money-cant-buy-trust";
+
+const moneyCantBuyTrustGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+
+  return {
+    src: `${moneyCantBuyTrustGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `發錢救不了信不過圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "發錢救不了信不過",
+    slug: "money-cant-buy-trust",
+    date: "2026-06-01",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "2000億津貼買不到安心，如果教育現場的信任崩塌、老師留不住，再多現金也只是往漏水的水桶裡倒水。",
+    categories: ["society", "core"],
+    coverImage: moneyCantBuyTrustGraphics[0].src,
+    coverAlt: moneyCantBuyTrustGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: moneyCantBuyTrustGraphics
+    },
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch"],
+    body: moneyCantBuyTrustHtml
+  },
   {
     title: "原來放手，才是更負責的態度",
     slug: "letting-go-responsible-attitude",
@@ -49,7 +79,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["parenting-rebel-switch"],
+    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust"],
     body: lettingGoResponsibleHtml
   },
   {
@@ -61,8 +91,8 @@ export const posts = [
       "輕鬆育兒不是少做，而是先看見問題的上游，敢在別人覺得奇怪的地方提前做決定。",
     categories: ["parents", "core"],
     coverImage: "/images/ai-education-hero.png",
-    coverAlt: "溫暖書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
-    relatedPosts: ["letting-go-responsible-attitude"],
+    coverAlt: "溫慢書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
+    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust"],
     body: parentingRebelHtml
   }
 ] satisfies Post[];
