@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categories, getCategory } from "../../data/categories";
+import { formatPostDate, posts, type Post } from "../../data/posts";
+import { site } from "../../data/site";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const title = `${post.title}｜${site.name}`;
+const relatedPosts =
+  post.relatedPosts.length > 0
+    ? posts.filter((item) => post.relatedPosts.includes(item.slug))
+    : posts
+        .filter(
+          (item) =>
+            item.slug !== post.slug && item.categories.some((category) => post.categories.includes(category))
+        )
+        .slice(0, 3);
+---
+
+<BaseLayout title={title} description={post.excerpt} image={post.coverImage} type="article">
+  <main class="article-page">
+    <nav class="breadcrumb" aria-label="文章路徑">
+      <a href="/">首頁</a>
+      <span>/</span>
+      <span>{post.title}</span>
+    </nav>
+
+    <article class="article-shell">
+      <header class="article-header">
+        <p class="eyebrow">{post.kicker}</p>
+        <h1>{post.title}</h1>
+        <p>{post.excerpt}</p>
+        <div class="article-meta">
+          <time datetime={post.date}>{formatPostDate(post.date)}</time>
+          <div class="post-tags" aria-label="文章分類">
+            {
+              post.categories.map((categoryId) => {
+                const category = getCategory(categoryId);
+                return category ? (
+                  <a href={`/?category=${category.id}#articles`} style={`--accent:${category.accent}`}>
+                    {category.label}
+                  </a>
+                ) : null;
+              })
+            }
+          </div>
+        </div>
+      </header>
+
+      {
+        post.coverImage && (
+          <figure class="article-cover">
+            <img src={post.coverImage} alt={post.coverAlt ?? ""} width="1200" height="675" />
+          </figure>
+        )
+      }
+
+      <div class="article-body" set:html={post.body} />
+    </article>
+
+    <section class="related-band" aria-labelledby="related-title">
+      <div class="section-heading">
+        <p class="eyebrow">Keep Reading</p>
+        <h2 id="related-title">延伸閱讀</h2>
+      </div>
+      {
+        relatedPosts.length > 0 ? (
+          <div class="related-list">
+            {relatedPosts.map((related) => (
+              <a href={`/posts/${related.slug}/`} class="related-link">
+                <span>{related.kicker}</span>
+                <strong>{related.title}</strong>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="related-list">
+            {categories
+              .filter((category) => post.categories.includes(category.id))
+              .map((category) => (
+                <a href={`/?category=${category.id}#articles`} class="related-link">
+                  <span>{category.label}</span>
+                  <strong>{category.summary}</strong>
+                </a>
+              ))}
+          </div>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { categories } from "../data/categories";
+import { formatPostDate, posts } from "../data/posts";
+import { site } from "../data/site";
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <main>
+    <section class="intro-band">
+      <div class="intro-copy">
+        <p class="eyebrow">AI & Education Notes</p>
+        <h1>
+          <span>把 AI 時代的教育問題，</span>
+          <span>寫成父母與教育者</span>
+          <span>都讀得懂的思考。</span>
+        </h1>
+        <p class="intro-text">
+          <span>從家庭、教室到社會，</span>
+          <span>整理那些真正影響孩子成長的底層判斷。</span>
+        </p>
+      </div>
+      <figure class="intro-media">
+        <img
+          src="/images/ai-education-hero.png"
+          alt="溫暖書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像"
+          width="1200"
+          height="675"
+        />
+      </figure>
+    </section>
+
+    <section class="category-band" aria-labelledby="category-title">
+      <div class="section-heading">
+        <p class="eyebrow">Categories</p>
+        <h2 id="category-title">文章分類</h2>
+      </div>
+      <div class="category-controls" role="group" aria-label="文章分類篩選">
+        <a class="category-pill is-active" href="/#articles" data-filter="all" aria-pressed="true">
+          全部
+        </a>
+        {
+          categories.map((category) => (
+            <a
+              class="category-pill"
+              href={`/?category=${category.id}#articles`}
+              data-filter={category.id}
+              aria-pressed="false"
+              style={`--accent:${category.accent}`}
+            >
+              {category.label}
+            </a>
+          ))
+        }
+      </div>
+      <div class="category-notes">
+        {
+          categories.map((category) => (
+            <p data-category-note={category.id}>
+              <span style={`--accent:${category.accent}`}></span>
+              <strong>{category.label}</strong>
+              {category.summary}
+            </p>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="article-band" id="articles" aria-labelledby="articles-title">
+      <div class="section-heading">
+        <p class="eyebrow">Latest Writing</p>
+        <h2 id="articles-title">最新文章</h2>
+      </div>
+
+      <div class="article-grid" data-article-grid>
+        {
+          posts.map((post) => (
+            <article class="post-card" data-categories={post.categories.join(" ")}>
+              <a href={`/posts/${post.slug}/`} class="post-card-media">
+                {post.coverImage && (
+                  <img src={post.coverImage} alt={post.coverAlt ?? ""} width="1200" height="675" />
+                )}
+              </a>
+              <div class="post-card-body">
+                <div class="post-meta">
+                  <span>{post.kicker}</span>
+                  <time datetime={post.date}>{formatPostDate(post.date)}</time>
+                </div>
+                <h3>
+                  <a href={`/posts/${post.slug}/`}>{post.title}</a>
+                </h3>
+                <p>{post.excerpt}</p>
+                <div class="post-tags" aria-label="文章分類">
+                  {
+                    post.categories.map((categoryId) => {
+                      const category = categories.find((item) => item.id === categoryId);
+                      return category ? (
+                        <a href={`/?category=${category.id}#articles`} data-tag-filter={category.id}>
+                          {category.label}
+                        </a>
+                      ) : null;
+                    })
+                  }
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <p class="empty-state" data-empty-state hidden>這個分類的文章正在整理中。</p>
+    </section>
+  </main>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll("[data-filter]"));
+    const cards = Array.from(document.querySelectorAll("[data-categories]"));
+    const notes = Array.from(document.querySelectorAll("[data-category-note]"));
+    const emptyState = document.querySelector("[data-empty-state]");
+    const title = document.querySelector("#articles-title");
+
+    function setFilter(filter) {
+      const activeFilter = filter || "all";
+      let visibleCount = 0;
+
+      buttons.forEach((button) => {
+        const isActive = button.getAttribute("data-filter") === activeFilter;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      notes.forEach((note) => {
+        const isVisible =
+          activeFilter === "all" || note.getAttribute("data-category-note") === activeFilter;
+        note.toggleAttribute("hidden", !isVisible);
+      });
+
+      cards.forEach((card) => {
+        const categories = (card.getAttribute("data-categories") || "").split(" ");
+        const isVisible = activeFilter === "all" || categories.includes(activeFilter);
+        card.toggleAttribute("hidden", !isVisible);
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (emptyState) emptyState.toggleAttribute("hidden", visibleCount > 0);
+      if (title) title.textContent = activeFilter === "all" ? "最新文章" : "分類文章";
+    }
+
+    const initialCategory = new URLSearchParams(window.location.search).get("category");
+    setFilter(initialCategory);
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setFilter(button.getAttribute("data-filter"));
+      });
+    });
+  </script>
+</BaseLayout>

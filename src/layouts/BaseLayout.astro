@@ -1,0 +1,56 @@
+---
+import { site } from "../data/site";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  image = "/images/ai-education-hero.png",
+  type = "website"
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.url).toString();
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, site.url).toString()} />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label={`${site.name} 首頁`}>
+        <span class="brand-mark">KC</span>
+        <span>{site.name}</span>
+      </a>
+      <nav class="site-nav" aria-label="主導覽">
+        <a href="/#articles">文章</a>
+        <a href="/?category=parents#articles">給父母</a>
+        <a href="/?category=core#articles">核心思想</a>
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <span>{site.name}</span>
+      <span>AI、教育與更清醒的陪伴。</span>
+    </footer>
+  </body>
+</html>
