@@ -19,12 +19,12 @@ npm run build
 3. `categories` 可同時放多個分類：`parents`、`educators`、`society`、`core`。
 4. 若有封面圖，放在 `public/images/`，並填入 `coverImage`。
 
-## Cloudflare Pages
+## Cloudflare Workers / Pages
 
-Cloudflare Pages 連 GitHub repository 後使用以下設定：
+目前 Cloudflare dashboard 顯示此專案是 Workers application。使用 Workers Static Assets 部署：
 
-- Production branch: `main`
 - Build command: `npm run build`
-- Build directory: `dist`
+- Deploy command: `npm run deploy:cloudflare`
+- Assets directory: `dist`
 
-`wrangler.jsonc` 也已設定 `pages_build_output_dir` 為 `./dist`。
+`wrangler.jsonc` 已設定 `assets.directory` 為 `./dist`，並啟用 `workers_dev` 讓專案可用 `*.workers.dev` 網址預覽。

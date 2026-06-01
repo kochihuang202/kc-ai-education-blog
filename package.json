@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "node ./scripts/astro.mjs dev",
     "build": "node ./scripts/astro.mjs build",
-    "preview": "node ./scripts/astro.mjs preview"
+    "preview": "node ./scripts/astro.mjs preview",
+    "deploy:cloudflare": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "astro": "^5.9.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "wrangler": "^4.95.0"
+  }
 }

@@ -1,6 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "kc-ai-education-blog",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-06-01"
+  "compatibility_date": "2026-06-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist"
+  }
 }
