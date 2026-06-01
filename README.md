@@ -21,10 +21,12 @@ npm run build
 
 ## Cloudflare Workers / Pages
 
-目前 Cloudflare dashboard 顯示此專案是 Workers application。使用 Workers Static Assets 部署：
+目前 Cloudflare dashboard 顯示此專案是 Workers application。正常目標是使用 Workers Static Assets 部署：
 
 - Build command: `npm run build`
 - Deploy command: `npm run deploy:cloudflare`
 - Assets directory: `dist`
 
 `wrangler.jsonc` 已設定 `assets.directory` 為 `./dist`，並啟用 `workers_dev` 讓專案可用 `*.workers.dev` 網址預覽。
+
+Because Wrangler browser login did not complete on this Windows machine, the current live Worker was deployed through the Cloudflare API using `cloudflare/worker-proxy.js`. It serves the committed `dist/` files from GitHub raw URLs as a temporary bridge until Wrangler or native Workers Static Assets deployment is available.
