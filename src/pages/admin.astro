@@ -95,9 +95,12 @@ const sortedPosts = [...posts].sort(
   <style>
     /* Admin Dashboard Specific Styles */
     .admin-page {
-      padding: 40px clamp(20px, 5vw, 64px) 80px;
+      padding: 40px clamp(20px, 5vw, 64px) 100px;
       max-width: 1200px;
       margin: 0 auto;
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .admin-header {
@@ -115,6 +118,7 @@ const sortedPosts = [...posts].sort(
 
     .admin-table-section {
       margin-top: 20px;
+      flex: 1;
     }
 
     .table-card {
@@ -123,6 +127,7 @@ const sortedPosts = [...posts].sort(
       border-radius: 12px;
       box-shadow: var(--shadow);
       overflow: hidden;
+      margin-bottom: 40px;
     }
 
     .table-responsive {
