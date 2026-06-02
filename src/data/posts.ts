@@ -2,6 +2,7 @@ import parentingRebelHtml from "../article-html/posts/parenting-rebel-switch.htm
 import lettingGoResponsibleHtml from "../article-html/posts/letting-go-responsible-attitude.html?raw";
 import moneyCantBuyTrustHtml from "../article-html/posts/money-cant-buy-trust.html?raw";
 import teachKidEmotionalRecognitionHtml from "../article-html/posts/teach-kid-emotional-recognition.html?raw";
+import gratitudePracticeLettingGoHtml from "../article-html/posts/gratitude-practice-letting-go.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -60,7 +61,36 @@ const teachKidEmotionalRecognitionGraphics = Array.from({ length: 10 }, (_, inde
   };
 });
 
+const gratitudePracticeLettingGoGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/gratitude-practice-letting-go";
+
+const gratitudePracticeLettingGoGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+
+  return {
+    src: `${gratitudePracticeLettingGoGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `感謝是放下執念的日常練習圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "感謝是放下執念的日常練習",
+    slug: "gratitude-practice-letting-go",
+    date: "2026-06-02",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "孩子犯錯處理完後，我額外做了一個延伸：感謝她願意坦白。感謝不是縱容，而是看見信任的瞬間，更是幫孩子和父母自己一步步往上走、放下執念的日常修煉。",
+    categories: ["parents", "core"],
+    coverImage: gratitudePracticeLettingGoGraphics[0].src,
+    coverAlt: gratitudePracticeLettingGoGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: gratitudePracticeLettingGoGraphics
+    },
+    relatedPosts: ["teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch"],
+    body: gratitudePracticeLettingGoHtml
+  },
   {
     title: "你以為在教孩子控制情緒，但她其實早已失控",
     slug: "teach-kid-emotional-recognition",
@@ -75,7 +105,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidEmotionalRecognitionGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch"],
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go"],
     body: teachKidEmotionalRecognitionHtml
   },
   {
@@ -92,7 +122,7 @@ export const posts = [
       label: "<圖文解析>",
       images: moneyCantBuyTrustGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition"],
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
     body: moneyCantBuyTrustHtml
   },
   {
@@ -109,7 +139,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition"],
+    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
     body: lettingGoResponsibleHtml
   },
   {
@@ -122,7 +152,7 @@ export const posts = [
     categories: ["parents", "core"],
     coverImage: "/images/ai-education-hero.png",
     coverAlt: "溫慢書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
-    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition"],
+    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
     body: parentingRebelHtml
   }
 ] satisfies Post[];
