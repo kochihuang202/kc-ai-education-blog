@@ -3,6 +3,7 @@ import lettingGoResponsibleHtml from "../article-html/posts/letting-go-responsib
 import moneyCantBuyTrustHtml from "../article-html/posts/money-cant-buy-trust.html?raw";
 import teachKidEmotionalRecognitionHtml from "../article-html/posts/teach-kid-emotional-recognition.html?raw";
 import gratitudePracticeLettingGoHtml from "../article-html/posts/gratitude-practice-letting-go.html?raw";
+import shouldKidsLearnCodingHtml from "../article-html/posts/should-kids-learn-coding.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -73,7 +74,36 @@ const gratitudePracticeLettingGoGraphics = Array.from({ length: 10 }, (_, index)
   };
 });
 
+const shouldKidsLearnCodingGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/should-kids-learn-coding";
+
+const shouldKidsLearnCodingGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+
+  return {
+    src: `${shouldKidsLearnCodingGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `AI能寫程式了，你的孩子該學什麼？圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "AI能寫程式了，你的孩子該學什麼？",
+    slug: "should-kids-learn-coding",
+    date: "2026-06-02",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "當AI能三秒鐘寫出程式，孩子學程式的意義早已不是背語法，而是訓練兩層能力：說清楚需求的表達力，與看透系統的判斷力。判斷力，才是真正不被替代的護城河。",
+    categories: ["parents", "core"],
+    coverImage: shouldKidsLearnCodingGraphics[0].src,
+    coverAlt: shouldKidsLearnCodingGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: shouldKidsLearnCodingGraphics
+    },
+    relatedPosts: ["teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust"],
+    body: shouldKidsLearnCodingHtml
+  },
   {
     title: "感謝是放下執念的日常練習",
     slug: "gratitude-practice-letting-go",
@@ -88,7 +118,7 @@ export const posts = [
       label: "<圖文解析>",
       images: gratitudePracticeLettingGoGraphics
     },
-    relatedPosts: ["teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch"],
+    relatedPosts: ["teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch", "should-kids-learn-coding"],
     body: gratitudePracticeLettingGoHtml
   },
   {
@@ -105,7 +135,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidEmotionalRecognitionGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go"],
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding"],
     body: teachKidEmotionalRecognitionHtml
   },
   {
@@ -122,7 +152,7 @@ export const posts = [
       label: "<圖文解析>",
       images: moneyCantBuyTrustGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
     body: moneyCantBuyTrustHtml
   },
   {
@@ -139,7 +169,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
+    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
     body: lettingGoResponsibleHtml
   },
   {
@@ -152,7 +182,7 @@ export const posts = [
     categories: ["parents", "core"],
     coverImage: "/images/ai-education-hero.png",
     coverAlt: "溫慢書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
-    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
+    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
     body: parentingRebelHtml
   }
 ] satisfies Post[];
