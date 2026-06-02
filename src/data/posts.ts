@@ -56,13 +56,13 @@ const teachKidEmotionalRecognitionGraphics = Array.from({ length: 10 }, (_, inde
 
   return {
     src: `${teachKidEmotionalRecognitionGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
-    alt: `你以為在教孩子控制情緒，但你連她認不認得出情緒都沒想過圖文解析 ${page}/10`
+    alt: `你以為在教孩子控制情緒，但她其實早已失控圖文解析 ${page}/10`
   };
 });
 
 export const posts = [
   {
-    title: "你以為在教孩子控制情緒，但你連她認不認得出情緒都沒想過",
+    title: "你以為在教孩子控制情緒，但她其實早已失控",
     slug: "teach-kid-emotional-recognition",
     date: "2026-06-02",
     kicker: "KC 育兒手記",
