@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { categories } from "../data/categories";
 import { posts } from "../data/posts";
 import { site } from "../data/site";
+import fbStatus from "../data/fb-status.json";
 
 // Sort posts by date descending (newest on top)
 const sortedPosts = [...posts].sort(
@@ -68,10 +69,11 @@ const sortedPosts = [...posts].sort(
                           type="checkbox"
                           class="fb-checkbox"
                           data-slug={post.slug}
+                          checked={fbStatus[post.slug] === true}
                           aria-label={`標記 ${post.title} 已分享至 FB`}
                         />
                         <span class="fb-checkbox-custom"></span>
-                        <span class="fb-status-label">未分享</span>
+                        <span class="fb-status-label">{fbStatus[post.slug] === true ? "已發布" : "未分享"}</span>
                       </label>
                     </td>
                   </tr>
@@ -326,30 +328,39 @@ const sortedPosts = [...posts].sort(
       const pagInfo = document.getElementById("pag-info") as HTMLElement;
       const pagControls = document.getElementById("pagination-controls") as HTMLElement;
 
-      // --- Part 1: Checkbox Memory ---
+      // --- Part 1: Checkbox Syncing & Local File Saving ---
       const checkboxes = document.querySelectorAll(".fb-checkbox") as NodeListOf<HTMLInputElement>;
       
       checkboxes.forEach((cb) => {
         const slug = cb.getAttribute("data-slug");
         const label = cb.closest(".fb-checkbox-wrapper")?.querySelector(".fb-status-label");
         
-        if (slug) {
-          // Load state from localStorage
-          const savedState = localStorage.getItem(`fb_shared_${slug}`);
-          if (savedState === "true") {
-            cb.checked = true;
-            if (label) label.textContent = "已發布";
-          }
-        }
-
         // Add change listener
-        cb.addEventListener("change", (e) => {
+        cb.addEventListener("change", async (e) => {
           const isChecked = cb.checked;
-          if (slug) {
-            localStorage.setItem(`fb_shared_${slug}`, String(isChecked));
-          }
           if (label) {
             label.textContent = isChecked ? "已發布" : "未分享";
+          }
+          
+          if (slug) {
+            try {
+              // Send POST request to the local API endpoint to save to JSON file on disk
+              const response = await fetch("/api/toggle-fb", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ slug, checked: isChecked }),
+              });
+              
+              if (!response.ok) {
+                console.error("Failed to save FB status to disk.");
+              } else {
+                console.log(`Saved FB status for ${slug}: ${isChecked}`);
+              }
+            } catch (err) {
+              console.error("API call failed, probably running in production static mode:", err);
+            }
           }
         });
       });
