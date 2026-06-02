@@ -1,0 +1,398 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { categories } from "../data/categories";
+import { posts } from "../data/posts";
+import { site } from "../data/site";
+
+// Sort posts by date descending (newest on top)
+const sortedPosts = [...posts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+---
+
+<BaseLayout title={`文章發布管理後台｜${site.name}`} description="整理發文順序、發布時間、分類與 FB 排程狀態的後台工具。">
+  <main class="admin-page">
+    <header class="admin-header">
+      <div class="admin-header-copy">
+        <p class="eyebrow">Dashboard</p>
+        <h1>文章發布管理後台</h1>
+        <p class="intro-text">
+          這裡彙整了所有已發布的文章。您可以清晰地追蹤每篇文章的順序、發布時間與分類，並標記是否已分享至 Facebook。
+        </p>
+      </div>
+    </header>
+
+    <section class="admin-table-section">
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 80px;">順序</th>
+                <th scope="col">文章標題</th>
+                <th scope="col" style="width: 160px;">發布時間</th>
+                <th scope="col" style="width: 260px;">文章分類</th>
+                <th scope="col" style="width: 140px; text-align: center;">FB</th>
+              </tr>
+            </thead>
+            <tbody id="posts-table-body">
+              {
+                sortedPosts.map((post, index) => (
+                  <tr class="post-row" data-index={index}>
+                    <td class="row-seq">
+                      <strong>{index + 1}</strong>
+                    </td>
+                    <td class="row-title">
+                      <a href={`/posts/${post.slug}/`} target="_blank" rel="noopener noreferrer">
+                        {post.title}
+                      </a>
+                    </td>
+                    <td class="row-date">
+                      <time datetime={post.date}>{post.date}</time>
+                    </td>
+                    <td class="row-categories">
+                      <div class="tags-wrapper">
+                        {post.categories.map((catId) => {
+                          const category = categories.find((c) => c.id === catId);
+                          return category ? (
+                            <span class="admin-tag" style={`--accent:${category.accent}`}>
+                              {category.label}
+                            </span>
+                          ) : null;
+                        })}
+                      </div>
+                    </td>
+                    <td class="row-fb">
+                      <label class="fb-checkbox-wrapper">
+                        <input
+                          type="checkbox"
+                          class="fb-checkbox"
+                          data-slug={post.slug}
+                          aria-label={`標記 ${post.title} 已分享至 FB`}
+                        />
+                        <span class="fb-checkbox-custom"></span>
+                        <span class="fb-status-label">未分享</span>
+                      </label>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer" id="pagination-controls" hidden>
+          <button class="pag-btn" id="btn-prev" disabled>上一頁</button>
+          <span class="pag-info" id="pag-info">第 1 / 1 頁</span>
+          <button class="pag-btn" id="btn-next" disabled>下一頁</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    /* Admin Dashboard Specific Styles */
+    .admin-page {
+      padding: 40px clamp(20px, 5vw, 64px) 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .admin-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
+
+    .admin-header h1 {
+      margin: 8px 0 0;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .admin-table-section {
+      margin-top: 20px;
+    }
+
+    .table-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .admin-table th {
+      background: rgba(36, 35, 31, 0.03);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .admin-table tbody tr:hover {
+      background: rgba(47, 111, 115, 0.02);
+    }
+
+    .row-seq {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .row-title a {
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .row-title a:hover {
+      color: var(--teal);
+      text-decoration: underline;
+    }
+
+    .row-date {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 15px;
+    }
+
+    .tags-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .admin-tag {
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    }
+
+    /* Beautiful Custom Checkbox for FB */
+    .row-fb {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fb-checkbox-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .fb-checkbox-wrapper input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .fb-checkbox-custom {
+      position: relative;
+      height: 22px;
+      width: 22px;
+      background-color: var(--paper);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fb-checkbox-wrapper:hover input ~ .fb-checkbox-custom {
+      border-color: var(--teal);
+    }
+
+    .fb-checkbox-wrapper input:checked ~ .fb-checkbox-custom {
+      background-color: #1877f2; /* FB Blue */
+      border-color: #1877f2;
+    }
+
+    .fb-checkbox-custom::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 6px;
+      top: 2px;
+      width: 6px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 2.5px 2.5px 0;
+      transform: rotate(45deg);
+    }
+
+    .fb-checkbox-wrapper input:checked ~ .fb-checkbox-custom::after {
+      display: block;
+    }
+
+    .fb-status-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 46px;
+      transition: color 0.2s ease;
+    }
+
+    .fb-checkbox-wrapper input:checked ~ .fb-status-label {
+      color: #1877f2;
+      content: "已分享";
+    }
+
+    /* Pagination Styles */
+    .table-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: rgba(36, 35, 31, 0.01);
+      border-top: 1px solid var(--line);
+    }
+
+    .pag-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 8px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pag-btn:hover:not(:disabled) {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .pag-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pag-info {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .admin-page {
+        padding-top: 20px;
+      }
+      .admin-table th,
+      .admin-table td {
+        padding: 14px 16px;
+      }
+    }
+  </style>
+
+  <script>
+    // Client-side functionality: Pagination & Checkbox Memory
+    document.addEventListener("DOMContentLoaded", () => {
+      const ITEMS_PER_PAGE = 20;
+      let currentPage = 1;
+
+      const rows = Array.from(document.querySelectorAll(".post-row")) as HTMLElement[];
+      const totalPages = Math.ceil(rows.length / ITEMS_PER_PAGE);
+
+      const btnPrev = document.getElementById("btn-prev") as HTMLButtonElement;
+      const btnNext = document.getElementById("btn-next") as HTMLButtonElement;
+      const pagInfo = document.getElementById("pag-info") as HTMLElement;
+      const pagControls = document.getElementById("pagination-controls") as HTMLElement;
+
+      // --- Part 1: Checkbox Memory ---
+      const checkboxes = document.querySelectorAll(".fb-checkbox") as NodeListOf<HTMLInputElement>;
+      
+      checkboxes.forEach((cb) => {
+        const slug = cb.getAttribute("data-slug");
+        const label = cb.closest(".fb-checkbox-wrapper")?.querySelector(".fb-status-label");
+        
+        if (slug) {
+          // Load state from localStorage
+          const savedState = localStorage.getItem(`fb_shared_${slug}`);
+          if (savedState === "true") {
+            cb.checked = true;
+            if (label) label.textContent = "已發布";
+          }
+        }
+
+        // Add change listener
+        cb.addEventListener("change", (e) => {
+          const isChecked = cb.checked;
+          if (slug) {
+            localStorage.setItem(`fb_shared_${slug}`, String(isChecked));
+          }
+          if (label) {
+            label.textContent = isChecked ? "已發布" : "未分享";
+          }
+        });
+      });
+
+      // --- Part 2: Pagination ---
+      function showPage(page: number) {
+        currentPage = page;
+        const startIndex = (page - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+
+        rows.forEach((row, index) => {
+          if (index >= startIndex && index < endIndex) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+
+        // Update pagination UI
+        if (pagInfo) {
+          pagInfo.textContent = `第 ${currentPage} / ${totalPages} 頁`;
+        }
+        if (btnPrev) btnPrev.disabled = currentPage === 1;
+        if (btnNext) btnNext.disabled = currentPage === totalPages;
+      }
+
+      // Initialize pagination only if we have more items than a single page
+      if (totalPages > 1) {
+        pagControls.removeAttribute("hidden");
+        
+        btnPrev?.addEventListener("click", () => {
+          if (currentPage > 1) showPage(currentPage - 1);
+        });
+
+        btnNext?.addEventListener("click", () => {
+          if (currentPage < totalPages) showPage(currentPage + 1);
+        });
+
+        showPage(1);
+      } else {
+        // Just show all rows if <= 20
+        rows.forEach(row => row.style.display = "");
+      }
+    });
+  </script>
+</BaseLayout>
