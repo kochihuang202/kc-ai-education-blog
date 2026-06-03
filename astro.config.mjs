@@ -10,7 +10,20 @@ export default defineConfig({
         name: "save-fb-status",
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
-            if (req.method === "POST" && req.url === "/api/toggle-fb") {
+            if (req.url === "/api/fb-status" && req.method === "GET") {
+              try {
+                const jsonPath = path.resolve("src/data/fb-status.json");
+                let status = {};
+                if (fs.existsSync(jsonPath)) {
+                  status = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+                }
+                res.writeHead(200, { "Content-Type": "application/json" });
+                res.end(JSON.stringify(status));
+              } catch (err) {
+                res.writeHead(500, { "Content-Type": "application/json" });
+                res.end(JSON.stringify({ error: err.message }));
+              }
+            } else if (req.method === "POST" && req.url === "/api/toggle-fb") {
               let body = "";
               req.on("data", (chunk) => {
                 body += chunk;

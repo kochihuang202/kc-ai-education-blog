@@ -333,6 +333,32 @@ const sortedPosts = [...posts].sort(
 
       // --- Part 1: Checkbox Syncing & Local File Saving ---
       const checkboxes = document.querySelectorAll(".fb-checkbox") as NodeListOf<HTMLInputElement>;
+      const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+      // 1. Hydrate checkbox states from live API on load
+      async function hydrateLiveStatus() {
+        try {
+          const res = await fetch("/api/fb-status");
+          if (res.ok) {
+            const liveStatus = await res.json();
+            checkboxes.forEach((cb) => {
+              const slug = cb.getAttribute("data-slug");
+              if (slug && liveStatus[slug] !== undefined) {
+                const isChecked = liveStatus[slug] === true;
+                cb.checked = isChecked;
+                const label = cb.closest(".fb-checkbox-wrapper")?.querySelector(".fb-status-label");
+                if (label) {
+                  label.textContent = isChecked ? "已發布" : "未分享";
+                }
+              }
+            });
+          }
+        } catch (err) {
+          console.error("Failed to hydrate live status:", err);
+        }
+      }
+
+      hydrateLiveStatus();
       
       checkboxes.forEach((cb) => {
         const slug = cb.getAttribute("data-slug");
@@ -341,28 +367,64 @@ const sortedPosts = [...posts].sort(
         // Add change listener
         cb.addEventListener("change", async (e) => {
           const isChecked = cb.checked;
+          
+          let authPassword = "";
+          if (!isLocal) {
+            authPassword = localStorage.getItem("admin_password") || "";
+            if (!authPassword) {
+              const pwd = prompt("請輸入管理後台密碼以儲存變更：");
+              if (pwd === null) {
+                // User cancelled, revert checkbox
+                cb.checked = !isChecked;
+                return;
+              }
+              authPassword = pwd;
+              localStorage.setItem("admin_password", pwd);
+            }
+          }
+
           if (label) {
             label.textContent = isChecked ? "已發布" : "未分享";
           }
           
           if (slug) {
             try {
-              // Send POST request to the local API endpoint to save to JSON file on disk
+              const headers: Record<string, string> = {
+                "Content-Type": "application/json",
+              };
+              if (authPassword) {
+                headers["Authorization"] = authPassword;
+              }
+
+              // Send POST request to API endpoint to save state
               const response = await fetch("/api/toggle-fb", {
                 method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
+                headers,
                 body: JSON.stringify({ slug, checked: isChecked }),
               });
               
-              if (!response.ok) {
-                console.error("Failed to save FB status to disk.");
+              if (response.status === 401) {
+                alert("密碼錯誤，請重新輸入！");
+                localStorage.removeItem("admin_password");
+                cb.checked = !isChecked;
+                if (label) {
+                  label.textContent = !isChecked ? "已發布" : "未分享";
+                }
+              } else if (!response.ok) {
+                console.error("Failed to save FB status.");
+                cb.checked = !isChecked;
+                if (label) {
+                  label.textContent = !isChecked ? "已發布" : "未分享";
+                }
               } else {
                 console.log(`Saved FB status for ${slug}: ${isChecked}`);
               }
             } catch (err) {
-              console.error("API call failed, probably running in production static mode:", err);
+              console.error("API call failed:", err);
+              cb.checked = !isChecked;
+              if (label) {
+                label.textContent = !isChecked ? "已發布" : "未分享";
+              }
             }
           }
         });
