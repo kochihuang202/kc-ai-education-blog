@@ -1,3 +1,4 @@
+import noPunishmentIsHardHtml from "../article-html/posts/no-punishment-is-hard.html?raw";
 import parentingRebelHtml from "../article-html/posts/parenting-rebel-switch.html?raw";
 import lettingGoResponsibleHtml from "../article-html/posts/letting-go-responsible-attitude.html?raw";
 import moneyCantBuyTrustHtml from "../article-html/posts/money-cant-buy-trust.html?raw";
@@ -25,6 +26,18 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const noPunishmentIsHardGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/no-punishment-is-hard";
+
+const noPunishmentIsHardGraphics = Array.from({ length: 18 }, (_, index) => {
+  const page = index + 1;
+
+  return {
+    src: `${noPunishmentIsHardGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不想處罰孩子，但真的很難圖文解析 ${page}/18`
+  };
+});
 
 const lettingGoGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/letting-go-responsible-attitude";
@@ -88,6 +101,23 @@ const shouldKidsLearnCodingGraphics = Array.from({ length: 10 }, (_, index) => {
 
 export const posts = [
   {
+    title: "不想處罰孩子，但真的很難",
+    slug: "no-punishment-is-hard",
+    date: "2026-06-03",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "連續兩天被告狀，大人的壓力很真實。蒙特梭利指出服從是意志發展的最後階段，而許多行為問題其實是心理畸變的身體表現。找出孩子卡在哪一步，方案才會準。",
+    categories: ["parents", "core"],
+    coverImage: noPunishmentIsHardGraphics[0].src,
+    coverAlt: noPunishmentIsHardGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: noPunishmentIsHardGraphics
+    },
+    relatedPosts: ["should-kids-learn-coding", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
+    body: noPunishmentIsHardHtml
+  },
+  {
     title: "AI能寫程式了，你的孩子該學什麼？",
     slug: "should-kids-learn-coding",
     date: "2026-06-02",
@@ -101,7 +131,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsLearnCodingGraphics
     },
-    relatedPosts: ["teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust"],
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust"],
     body: shouldKidsLearnCodingHtml
   },
   {
@@ -118,7 +148,7 @@ export const posts = [
       label: "<圖文解析>",
       images: gratitudePracticeLettingGoGraphics
     },
-    relatedPosts: ["teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch", "should-kids-learn-coding"],
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch", "should-kids-learn-coding"],
     body: gratitudePracticeLettingGoHtml
   },
   {
@@ -135,7 +165,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidEmotionalRecognitionGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding"],
+    relatedPosts: ["no-punishment-is-hard", "letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding"],
     body: teachKidEmotionalRecognitionHtml
   },
   {
