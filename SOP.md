@@ -143,3 +143,95 @@ git push origin main
    * 使用 Git 將更新（包含 `public/images/posts/[slug]/` 的圖片與 `dist/` 建置產物）推送到 GitHub。
    * 若 Cloudflare 自動建置未即時反映，請在本機設定 `set NODE_TLS_REJECT_UNAUTHORIZED=0` 後，手動執行 `npm run deploy:cloudflare` 以強制上傳最新靜態資源與更新 Worker 腳本。
 
+---
+
+## 📚 系列文章 / 專案專題發布與整合規範
+
+當需要發布一組「系列文章」（例如三部曲）時，為了讓讀者能在主頁點選專屬分類直接進入，且在各文章頁面間無縫跳轉，必須依循以下規範進行整合：
+
+### 1. 註冊新專題分類
+1. **編輯 `src/data/categories.ts`**：
+   - 在分類陣列中註冊該系列專題，例如：
+     ```typescript
+     {
+       id: "facing-bullying",
+       label: "面對霸凌",
+       summary: "從手段、分辨到放下，陪伴家長與孩子系統化面對同儕霸凌。",
+       accent: "#B84A39"
+     }
+     ```
+   - 分配一個獨立的 `id`，並設定具備辨識度的專題主色調 `accent`（使用 HSL 搭配或高質感調色）。
+
+2. **響應式網格優优化**：
+   - 當分類數量增加時，專案的 `src/styles/global.css` 中 `.category-notes` 必須採用自適應的響應式網格布局，以確保多分類卡片在各寬度下皆能美觀對齊：
+     ```css
+     .category-notes {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+       gap: 14px;
+       margin-top: 20px;
+     }
+     ```
+
+### 2. 註冊文章數據與排列順序
+1. **編輯 `src/data/posts.ts`**：
+   - **排列順序**：在 `posts` 陣列中，系列文章必須**依序（第一部 ➔ 第二部 ➔ 第三部）從上到下**排列。這能確保在首頁網格中，文章卡片是依照「左邊第一部、中間第二部、右邊第三部」的自然閱讀順序呈現。
+   - **設定分類與 Kicker**：
+     - 將註冊的專題 ID 加入各文章的 `categories` 陣列中。
+     - 設定 Kicker 標示其在系列中的位置，例如：`kicker: "面對霸凌三部曲 · 第一部"`。
+   - **設定延伸閱讀雙向互連**：
+     - 在每篇文章的 `relatedPosts` 陣列中，將該系列的其他文章 Slug 寫入，以建立密不可分的雙向推薦網絡。
+
+### 3. 文章內文系列導覽面板
+1. **編輯 `src/pages/posts/[slug].astro`**：
+   - 在前置宣告區（Frontmatter）定義系列專題的結構數組與判斷：
+     ```typescript
+     const bullyingTrilogy = [
+       {
+         slug: "school-and-workplace-bullying",
+         title: "第一部：有手段 ｜ 學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？"
+       },
+       {
+         slug: "not-all-harm-is-bullying",
+         title: "第二部：會分辨 ｜ 不是所有傷害都叫霸凌：孩子要先學會分辨這三件事"
+       },
+       {
+         slug: "how-high-can-an-unswayed-person-go",
+         title: "第三部：放得下 ｜ 不被左右的人，能走到什麼高度？"
+       }
+     ];
+     const inBullyingTrilogy = post.categories.includes("facing-bullying");
+     ```
+   - 在 HTML 架構的圖片輪播區（`gallery`）或封面圖下方、內文（`article-body`）上方插入導覽面板：
+     ```astro
+     {
+       inBullyingTrilogy && (
+         <div class="trilogy-nav">
+           <div class="trilogy-title">
+             📚 專題系列：面對霸凌三部曲
+           </div>
+           <div class="trilogy-steps">
+             {bullyingTrilogy.map((item, index) => {
+               const isActive = item.slug === post.slug;
+               const num = index + 1;
+               return isActive ? (
+                 <div class="trilogy-step is-active">
+                   <span class="step-num">{num}</span>
+                   <span class="step-text">{item.title}</span>
+                 </div>
+               ) : (
+                 <a href={`/posts/${item.slug}/`} class="trilogy-step">
+                   <span class="step-num">{num}</span>
+                   <span class="step-text">{item.title}</span>
+                 </a>
+               );
+             })}
+           </div>
+         </div>
+       )
+     }
+     ```
+
+2. **導覽面板樣式 (CSS)**：
+   - 面板與步驟樣式已整合在 `global.css` 中，必須包含 `is-active` 狀態的高亮背景與邊框，以及非作用中項目的懸停微動畫效果，以維持高品質的視覺互動。
+
