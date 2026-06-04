@@ -221,21 +221,21 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
-    title: "不被左右的人，能走到什麼高度？",
-    slug: "how-high-can-an-unswayed-person-go",
+    title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
+    slug: "school-and-workplace-bullying",
     date: "2026-06-04",
-    kicker: "面對霸凌三部曲 · 第三部",
+    kicker: "面對霸凌三部曲 · 第一部",
     excerpt:
-      "真正自由的人，不是沒人能冒犯他，而是不把每個笨人的行為都放進心裡。放下不是忍受，是不讓不值得的事佔用你的心。",
-    categories: ["parents", "core", "facing-bullying"],
-    coverImage: howHighCanAnUnswayedPersonGoGraphics[0].src,
-    coverAlt: howHighCanAnUnswayedPersonGoGraphics[0].alt,
+      "霸凌層出不窮的背後，往往是集體沉默與旁觀的共犯機制。我們需要教給孩子的，不是簡單的對與錯，而是看見體制與人性的盲點，並長出採取行動的智慧與勇氣。",
+    categories: ["society", "core", "facing-bullying"],
+    coverImage: schoolAndWorkplaceBullyingGraphics[0].src,
+    coverAlt: schoolAndWorkplaceBullyingGraphics[0].alt,
     gallery: {
       label: "<圖文解析>",
-      images: howHighCanAnUnswayedPersonGoGraphics
+      images: schoolAndWorkplaceBullyingGraphics
     },
-    relatedPosts: ["not-all-harm-is-bullying", "school-and-workplace-bullying"],
-    body: howHighCanAnUnswayedPersonGoHtml
+    relatedPosts: ["not-all-harm-is-bullying", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch", "how-high-can-an-unswayed-person-go"],
+    body: schoolAndWorkplaceBullyingHtml
   },
   {
     title: "不是所有傷害都叫霸凌：孩子要先學會分辨這三件事",
@@ -255,21 +255,21 @@ export const posts = [
     body: notAllHarmIsBullyingHtml
   },
   {
-    title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
-    slug: "school-and-workplace-bullying",
+    title: "不被左右的人，能走到什麼高度？",
+    slug: "how-high-can-an-unswayed-person-go",
     date: "2026-06-04",
-    kicker: "面對霸凌三部曲 · 第一部",
+    kicker: "面對霸凌三部曲 · 第三部",
     excerpt:
-      "霸凌層出不窮的背後，往往是集體沉默與旁觀的共犯機制。我們需要教給孩子的，不是簡單的對與錯，而是看見體制與人性的盲點，並長出採取行動的智慧與勇氣。",
-    categories: ["society", "core", "facing-bullying"],
-    coverImage: schoolAndWorkplaceBullyingGraphics[0].src,
-    coverAlt: schoolAndWorkplaceBullyingGraphics[0].alt,
+      "真正自由的人，不是沒人能冒犯他，而是不把每個笨人的行為都放進心裡。放下不是忍受，是不讓不值得的事佔用你的心。",
+    categories: ["parents", "core", "facing-bullying"],
+    coverImage: howHighCanAnUnswayedPersonGoGraphics[0].src,
+    coverAlt: howHighCanAnUnswayedPersonGoGraphics[0].alt,
     gallery: {
       label: "<圖文解析>",
-      images: schoolAndWorkplaceBullyingGraphics
+      images: howHighCanAnUnswayedPersonGoGraphics
     },
-    relatedPosts: ["not-all-harm-is-bullying", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch", "how-high-can-an-unswayed-person-go"],
-    body: schoolAndWorkplaceBullyingHtml
+    relatedPosts: ["not-all-harm-is-bullying", "school-and-workplace-bullying"],
+    body: howHighCanAnUnswayedPersonGoHtml
   },
   {
     title: "不是每句正確的話，都適合說出口",
