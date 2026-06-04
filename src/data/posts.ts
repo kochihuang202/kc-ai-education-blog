@@ -14,6 +14,7 @@ import moneyCantBuyTrustHtml from "../article-html/posts/money-cant-buy-trust.ht
 import teachKidEmotionalRecognitionHtml from "../article-html/posts/teach-kid-emotional-recognition.html?raw";
 import gratitudePracticeLettingGoHtml from "../article-html/posts/gratitude-practice-letting-go.html?raw";
 import shouldKidsLearnCodingHtml from "../article-html/posts/should-kids-learn-coding.html?raw";
+import howHighCanAnUnswayedPersonGoHtml from "../article-html/posts/how-high-can-an-unswayed-person-go.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -207,7 +208,35 @@ const watchingEnglishCartoonsIsntLearningGraphics = Array.from({ length: 10 }, (
   };
 });
 
+const howHighCanAnUnswayedPersonGoGraphicBase =
+  "/images/posts/how-high-can-an-unswayed-person-go";
+
+const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${howHighCanAnUnswayedPersonGoGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不被左右的人，能走到什麼高度？圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "不被左右的人，能走到什麼高度？",
+    slug: "how-high-can-an-unswayed-person-go",
+    date: "2026-06-04",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "真正自由的人，不是沒人能冒犯他，而是不把每個笨人的行為都放進心裡。放下不是忍受，是不讓不值得的事佔用你的心。",
+    categories: ["parents", "core"],
+    coverImage: howHighCanAnUnswayedPersonGoGraphics[0].src,
+    coverAlt: howHighCanAnUnswayedPersonGoGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: howHighCanAnUnswayedPersonGoGraphics
+    },
+    relatedPosts: ["not-all-harm-is-bullying", "school-and-workplace-bullying"],
+    body: howHighCanAnUnswayedPersonGoHtml
+  },
   {
     title: "不是所有傷害都叫霸凌：孩子要先學會分辨這三件事",
     slug: "not-all-harm-is-bullying",
