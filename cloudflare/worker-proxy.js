@@ -157,6 +157,6 @@ export default {
       return new Response("Method Not Allowed", { status: 405 });
     }
 
-    return env.ASSETS.fetch(request);
+    return fetchAsset(url.pathname);
   }
 };
