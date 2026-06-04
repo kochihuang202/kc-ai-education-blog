@@ -251,7 +251,7 @@ export const posts = [
       label: "<圖文解析>",
       images: notAllHarmIsBullyingGraphics
     },
-    relatedPosts: ["school-and-workplace-bullying", "kids-dont-disobey-on-purpose", "teach-kid-emotional-recognition"],
+    relatedPosts: ["school-and-workplace-bullying", "kids-dont-disobey-on-purpose", "teach-kid-emotional-recognition", "how-high-can-an-unswayed-person-go"],
     body: notAllHarmIsBullyingHtml
   },
   {
@@ -268,7 +268,7 @@ export const posts = [
       label: "<圖文解析>",
       images: schoolAndWorkplaceBullyingGraphics
     },
-    relatedPosts: ["not-all-harm-is-bullying", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch"],
+    relatedPosts: ["not-all-harm-is-bullying", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch", "how-high-can-an-unswayed-person-go"],
     body: schoolAndWorkplaceBullyingHtml
   },
   {
