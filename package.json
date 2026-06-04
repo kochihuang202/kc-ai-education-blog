@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node ./scripts/astro.mjs dev",
+    "prebuild": "node ./scripts/generate-sitemap.js",
     "build": "node ./scripts/astro.mjs build",
     "preview": "node ./scripts/astro.mjs preview",
     "deploy:cloudflare": "npm run build && wrangler deploy"

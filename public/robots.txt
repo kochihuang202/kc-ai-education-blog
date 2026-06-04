@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kc-ai-education-blog.ji3cp31p4.workers.dev/sitemap.xml
