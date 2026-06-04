@@ -24,15 +24,17 @@ function resolveAssetPath(pathname) {
   return pathname;
 }
 
+const DEPLOY_VERSION = "v_2026_06_04_21_30";
+
 async function fetchAsset(pathname) {
   const assetPath = resolveAssetPath(pathname);
-  const upstream = await fetch(`${RAW_BASE}${assetPath}`, {
+  const upstream = await fetch(`${RAW_BASE}${assetPath}?v=${DEPLOY_VERSION}`, {
     headers: { "User-Agent": "kc-ai-education-blog-worker" },
     cf: { cacheTtl: 300, cacheEverything: true }
   });
 
   if (!upstream.ok && assetPath !== "/404.html") {
-    const notFound = await fetch(`${RAW_BASE}/404.html`, {
+    const notFound = await fetch(`${RAW_BASE}/404.html?v=${DEPLOY_VERSION}`, {
       headers: { "User-Agent": "kc-ai-education-blog-worker" },
       cf: { cacheTtl: 300, cacheEverything: true }
     });
@@ -41,7 +43,8 @@ async function fetchAsset(pathname) {
       status: 404,
       headers: {
         "content-type": "text/html; charset=utf-8",
-        "cache-control": "public, max-age=60"
+        "cache-control": "public, max-age=60",
+        "x-worker-version": DEPLOY_VERSION
       }
     });
   }
@@ -54,6 +57,7 @@ async function fetchAsset(pathname) {
       ? "public, max-age=31536000, immutable"
       : "public, max-age=60"
   );
+  headers.set("x-worker-version", DEPLOY_VERSION);
 
   return new Response(upstream.body, { status: upstream.status, headers });
 }
