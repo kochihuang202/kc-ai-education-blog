@@ -1,3 +1,10 @@
+import notEveryCorrectWordShouldBeSaidHtml from "../article-html/posts/not-every-correct-word-should-be-said.html?raw";
+import pityingChildhoodVsAdulthoodHtml from "../article-html/posts/pitying-childhood-vs-adulthood.html?raw";
+import talkingMoralsToKidsHtml from "../article-html/posts/talking-morals-to-kids.html?raw";
+import kidsDontDisobeyOnPurposeHtml from "../article-html/posts/kids-dont-disobey-on-purpose.html?raw";
+import iDontReplyHtml from "../article-html/posts/i-dont-reply.html?raw";
+import goldenBowlOrHandcuffsHtml from "../article-html/posts/golden-bowl-or-handcuffs.html?raw";
+import watchingEnglishCartoonsIsntLearningHtml from "../article-html/posts/watching-english-cartoons-isnt-learning.html?raw";
 import noPunishmentIsHardHtml from "../article-html/posts/no-punishment-is-hard.html?raw";
 import parentingRebelHtml from "../article-html/posts/parenting-rebel-switch.html?raw";
 import lettingGoResponsibleHtml from "../article-html/posts/letting-go-responsible-attitude.html?raw";
@@ -99,7 +106,204 @@ const shouldKidsLearnCodingGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const notEveryCorrectWordShouldBeSaidGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-every-correct-word-should-be-said";
+
+const notEveryCorrectWordShouldBeSaidGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${notEveryCorrectWordShouldBeSaidGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不是每句正確的話，都適合說出口圖文解析 ${page}/8`
+  };
+});
+
+const pityingChildhoodVsAdulthoodGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/pitying-childhood-vs-adulthood";
+
+const pityingChildhoodVsAdulthoodGraphics = Array.from({ length: 9 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${pityingChildhoodVsAdulthoodGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `你心疼現在的她，但你心疼長大後的她嗎？圖文解析 ${page}/9`
+  };
+});
+
+const talkingMoralsToKidsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/talking-morals-to-kids";
+
+const talkingMoralsToKidsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${talkingMoralsToKidsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `你跟孩子講道德，她聽了嗎？圖文解析 ${page}/10`
+  };
+});
+
+const kidsDontDisobeyOnPurposeGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/kids-dont-disobey-on-purpose";
+
+const kidsDontDisobeyOnPurposeGraphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${kidsDontDisobeyOnPurposeGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `孩子不是故意不聽話圖文解析 ${page}/12`
+  };
+});
+
+const iDontReplyGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/i-dont-reply";
+
+const iDontReplyGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${iDontReplyGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `「我不回」圖文解析 ${page}/10`
+  };
+});
+
+const goldenBowlOrHandcuffsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/golden-bowl-or-handcuffs";
+
+const goldenBowlOrHandcuffsGraphics = Array.from({ length: 14 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${goldenBowlOrHandcuffsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `是金飯碗，還是金手銬——為什麼最有保障的人，反而最不敢說話？圖文解析 ${page}/14`
+  };
+});
+
+const watchingEnglishCartoonsIsntLearningGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/watching-english-cartoons-isnt-learning";
+
+const watchingEnglishCartoonsIsntLearningGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${watchingEnglishCartoonsIsntLearningGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `看英文卡通不等於學英語圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "不是每句正確的話，都適合說出口",
+    slug: "not-every-correct-word-should-be-said",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "有時候，我們說的都是對的，但聽的人卻關上了耳朵。在關係裡，比起「正確」，看見對方的處境與情緒，才是溝通真正開始的起點。",
+    categories: ["parents", "core"],
+    coverImage: notEveryCorrectWordShouldBeSaidGraphics[0].src,
+    coverAlt: notEveryCorrectWordShouldBeSaidGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: notEveryCorrectWordShouldBeSaidGraphics
+    },
+    relatedPosts: ["teach-kid-emotional-recognition", "gratitude-practice-letting-go", "no-punishment-is-hard", "talking-morals-to-kids"],
+    body: notEveryCorrectWordShouldBeSaidHtml
+  },
+  {
+    title: "你心疼現在的她，但你心疼長大後的她嗎？",
+    slug: "pitying-childhood-vs-adulthood",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "當孩子遇到挫折、流淚時，我們本能地想要伸出援手。但現在的心疼，是否會剝奪她未來長出韌性與能力的機會？放手，需要更大的勇氣。",
+    categories: ["parents", "core"],
+    coverImage: pityingChildhoodVsAdulthoodGraphics[0].src,
+    coverAlt: pityingChildhoodVsAdulthoodGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: pityingChildhoodVsAdulthoodGraphics
+    },
+    relatedPosts: ["letting-go-responsible-attitude", "gratitude-practice-letting-go", "no-punishment-is-hard", "watching-english-cartoons-isnt-learning"],
+    body: pityingChildhoodVsAdulthoodHtml
+  },
+  {
+    title: "你跟孩子講道德，她聽了嗎？",
+    slug: "talking-morals-to-kids",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "用抽象的道德教條管教孩子，往往只會換來反彈或敷衍。唯有連結孩子的真實體驗與需求，道德才會從規範轉化為內在的生命力。",
+    categories: ["parents", "core"],
+    coverImage: talkingMoralsToKidsGraphics[0].src,
+    coverAlt: talkingMoralsToKidsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: talkingMoralsToKidsGraphics
+    },
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "not-every-correct-word-should-be-said", "kids-dont-disobey-on-purpose"],
+    body: talkingMoralsToKidsHtml
+  },
+  {
+    title: "孩子不是故意不聽話",
+    slug: "kids-dont-disobey-on-purpose",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "當孩子頻頻出現脫序行為，她可能不是在反抗，而是大腦與身體的發展尚未跟上要求。理解她的局限，建立外在秩序，才是引導的良方。",
+    categories: ["parents", "core"],
+    coverImage: kidsDontDisobeyOnPurposeGraphics[0].src,
+    coverAlt: kidsDontDisobeyOnPurposeGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: kidsDontDisobeyOnPurposeGraphics
+    },
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "talking-morals-to-kids"],
+    body: kidsDontDisobeyOnPurposeHtml
+  },
+  {
+    title: "「我不回」",
+    slug: "i-dont-reply",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "面對負面質疑或情緒化的反饋，選擇「不回覆」並非怯懦，而是保留自身心力、守護內部秩序的智慧境界。",
+    categories: ["parents", "core"],
+    coverImage: iDontReplyGraphics[0].src,
+    coverAlt: iDontReplyGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: iDontReplyGraphics
+    },
+    relatedPosts: ["not-every-correct-word-should-be-said", "gratitude-practice-letting-go", "parenting-rebel-switch"],
+    body: iDontReplyHtml
+  },
+  {
+    title: "是金飯碗，還是金手銬——為什麼最有保障的人，反而最不敢說話？",
+    slug: "golden-bowl-or-handcuffs",
+    date: "2026-06-04",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "體制帶來的終身保障，有時反而化為沉重的束縛，讓最有能力推動改變的人選擇沉默。我們該如何打破沉默，為教育現場帶入活水？",
+    categories: ["society", "core"],
+    coverImage: goldenBowlOrHandcuffsGraphics[0].src,
+    coverAlt: goldenBowlOrHandcuffsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: goldenBowlOrHandcuffsGraphics
+    },
+    relatedPosts: ["money-cant-buy-trust", "should-kids-learn-coding", "parenting-rebel-switch"],
+    body: goldenBowlOrHandcuffsHtml
+  },
+  {
+    title: "看英文卡通不等於學英語",
+    slug: "watching-english-cartoons-isnt-learning",
+    date: "2026-06-04",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "僅靠被動的螢幕吸收，無法讓孩子長出真正的語言表達能力。英語學習需要雙向互動與有意義的對話情境連結。",
+    categories: ["parents", "core"],
+    coverImage: watchingEnglishCartoonsIsntLearningGraphics[0].src,
+    coverAlt: watchingEnglishCartoonsIsntLearningGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: watchingEnglishCartoonsIsntLearningGraphics
+    },
+    relatedPosts: ["should-kids-learn-coding", "pitying-childhood-vs-adulthood", "talking-morals-to-kids"],
+    body: watchingEnglishCartoonsIsntLearningHtml
+  },
+
   {
     title: "不想處罰孩子，但真的很難",
     slug: "no-punishment-is-hard",
@@ -114,7 +318,7 @@ export const posts = [
       label: "<圖文解析>",
       images: noPunishmentIsHardGraphics
     },
-    relatedPosts: ["should-kids-learn-coding", "teach-kid-emotional-recognition", "gratitude-practice-letting-go"],
+    relatedPosts: ["should-kids-learn-coding", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "not-every-correct-word-should-be-said", "pitying-childhood-vs-adulthood", "talking-morals-to-kids", "kids-dont-disobey-on-purpose"],
     body: noPunishmentIsHardHtml
   },
   {
@@ -131,7 +335,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsLearnCodingGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust"],
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
     body: shouldKidsLearnCodingHtml
   },
   {
@@ -148,7 +352,7 @@ export const posts = [
       label: "<圖文解析>",
       images: gratitudePracticeLettingGoGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch", "should-kids-learn-coding"],
+    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "letting-go-responsible-attitude", "parenting-rebel-switch", "should-kids-learn-coding", "not-every-correct-word-should-be-said", "pitying-childhood-vs-adulthood", "i-dont-reply"],
     body: gratitudePracticeLettingGoHtml
   },
   {
@@ -165,7 +369,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidEmotionalRecognitionGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding"],
+    relatedPosts: ["no-punishment-is-hard", "letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding", "not-every-correct-word-should-be-said", "talking-morals-to-kids", "kids-dont-disobey-on-purpose"],
     body: teachKidEmotionalRecognitionHtml
   },
   {
@@ -182,7 +386,7 @@ export const posts = [
       label: "<圖文解析>",
       images: moneyCantBuyTrustGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
+    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "golden-bowl-or-handcuffs"],
     body: moneyCantBuyTrustHtml
   },
   {
@@ -199,7 +403,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
+    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
     body: lettingGoResponsibleHtml
   },
   {
@@ -212,7 +416,7 @@ export const posts = [
     categories: ["parents", "core"],
     coverImage: "/images/ai-education-hero.png",
     coverAlt: "溫慢書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
-    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding"],
+    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "i-dont-reply", "golden-bowl-or-handcuffs"],
     body: parentingRebelHtml
   }
 ] satisfies Post[];
