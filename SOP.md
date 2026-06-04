@@ -16,7 +16,13 @@
    ```bash
    npx wrangler login
    ```
+   *注意：若本機網路有安全憑證檢查限制，導致登入或部署失敗（例如顯示 `Wrangler authorization failed`），請在執行指令前先於終端機設定忽略憑證變數：*
+   * *CMD: `set NODE_TLS_REJECT_UNAUTHORIZED=0`*
+   * *PowerShell: `$env:NODE_TLS_REJECT_UNAUTHORIZED=0`*
 4. **Git**：具備推送到專案 GitHub 倉庫的存取權限。
+5. **Cloudflare 專案設定 (`wrangler.jsonc`)**：
+   * 必須確保 `wrangler.jsonc` 包含 `"main": "cloudflare/worker-proxy.js"` 設定，否則 Cloudflare Git 自動建置只會更新靜態資源，而不會更新並部署 Worker 代理程式。
+
 
 ---
 
@@ -113,3 +119,27 @@ git push origin main
 2. **驗證首頁**：開啟 `https://kc-ai-education-blog.ji3cp31p4.workers.dev/`。
    - *注意：若首頁未即時看到新文章，通常是因為 Cloudflare CDN 快取（快取時間為 5 分鐘 / 300 秒）。請使用 `Ctrl + F5` 強制重新整理或稍候幾分鐘即可。*
 3. **交付報告**：在對話中直接附上線上首頁、新文章頁面以及管理後台的點擊網址連結，方便使用者直接查閱。
+
+---
+
+## ⚠️ 疑難排解與備用方案（當 R2 / Wrangler 直連受限時）
+
+若因帳號權限或 TLS 憑證攔截問題，導致無法使用 `publish_helper.py` 上傳圖片至 R2，請改用以下**本機圖片封裝備用流程**：
+
+### 1. 本機圖片 WebP 轉檔與封裝
+1. 在專案中執行 `convert.cjs` 或手動使用圖片工具（如 `sharp`、`Pillow`），將圖片等比例縮放至最高 `1600px`，並轉換為 `.webp` 格式（品質建議 80%）。
+2. 將圖片依序命名為 `graphic-01.webp` 至 `graphic-XX.webp`。
+3. 於專案目錄 `public/images/posts/[slug]/` 下建立以文章代稱命名的資料夾，並放入所有轉檔後的 WebP 圖片。
+
+### 2. 註冊資料與程式碼設定
+1. **編輯 `src/data/posts.ts`**：
+   * 將文章的圖片 Base 路徑直接指向本機相對路徑：
+     ```typescript
+     const [slug]GraphicBase = "/images/posts/[slug]";
+     ```
+   * 其餘 Gallery 宣告與文章註冊流程與正常步驟相同。
+2. **手動部署與推送**：
+   * 本機執行 `npm run build` 確認編譯成功。
+   * 使用 Git 將更新（包含 `public/images/posts/[slug]/` 的圖片與 `dist/` 建置產物）推送到 GitHub。
+   * 若 Cloudflare 自動建置未即時反映，請在本機設定 `set NODE_TLS_REJECT_UNAUTHORIZED=0` 後，手動執行 `npm run deploy:cloudflare` 以強制上傳最新靜態資源與更新 Worker 腳本。
+
