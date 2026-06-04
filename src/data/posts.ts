@@ -1,3 +1,4 @@
+import schoolAndWorkplaceBullyingHtml from "../article-html/posts/school-and-workplace-bullying.html?raw";
 import notEveryCorrectWordShouldBeSaidHtml from "../article-html/posts/not-every-correct-word-should-be-said.html?raw";
 import pityingChildhoodVsAdulthoodHtml from "../article-html/posts/pitying-childhood-vs-adulthood.html?raw";
 import talkingMoralsToKidsHtml from "../article-html/posts/talking-morals-to-kids.html?raw";
@@ -33,6 +34,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const schoolAndWorkplaceBullyingGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/school-and-workplace-bullying";
+
+const schoolAndWorkplaceBullyingGraphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${schoolAndWorkplaceBullyingGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `學校與職場的霸凌層出不窮：我們到底少教了孩子什麼圖文解析 ${page}/12`
+  };
+});
 
 const noPunishmentIsHardGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/no-punishment-is-hard";
@@ -185,6 +197,23 @@ const watchingEnglishCartoonsIsntLearningGraphics = Array.from({ length: 10 }, (
 
 export const posts = [
   {
+    title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
+    slug: "school-and-workplace-bullying",
+    date: "2026-06-04",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "霸凌層出不窮的背後，往往是集體沉默與旁觀的共犯機制。我們需要教給孩子的，不是簡單的對與錯，而是看見體制與人性的盲點，並長出採取行動的智慧與勇氣。",
+    categories: ["society", "core"],
+    coverImage: schoolAndWorkplaceBullyingGraphics[0].src,
+    coverAlt: schoolAndWorkplaceBullyingGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: schoolAndWorkplaceBullyingGraphics
+    },
+    relatedPosts: ["money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch"],
+    body: schoolAndWorkplaceBullyingHtml
+  },
+  {
     title: "不是每句正確的話，都適合說出口",
     slug: "not-every-correct-word-should-be-said",
     date: "2026-06-04",
@@ -283,7 +312,7 @@ export const posts = [
       label: "<圖文解析>",
       images: goldenBowlOrHandcuffsGraphics
     },
-    relatedPosts: ["money-cant-buy-trust", "should-kids-learn-coding", "parenting-rebel-switch"],
+    relatedPosts: ["school-and-workplace-bullying", "money-cant-buy-trust", "should-kids-learn-coding", "parenting-rebel-switch"],
     body: goldenBowlOrHandcuffsHtml
   },
   {
@@ -386,7 +415,7 @@ export const posts = [
       label: "<圖文解析>",
       images: moneyCantBuyTrustGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "golden-bowl-or-handcuffs"],
+    relatedPosts: ["school-and-workplace-bullying", "letting-go-responsible-attitude", "parenting-rebel-switch", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "golden-bowl-or-handcuffs"],
     body: moneyCantBuyTrustHtml
   },
   {
@@ -416,7 +445,7 @@ export const posts = [
     categories: ["parents", "core"],
     coverImage: "/images/ai-education-hero.png",
     coverAlt: "溫慢書桌上的筆記本、平板、教育書籍與 AI 學習網絡概念圖像",
-    relatedPosts: ["letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "i-dont-reply", "golden-bowl-or-handcuffs"],
+    relatedPosts: ["school-and-workplace-bullying", "letting-go-responsible-attitude", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "i-dont-reply", "golden-bowl-or-handcuffs"],
     body: parentingRebelHtml
   }
 ] satisfies Post[];

@@ -163,13 +163,13 @@ def generate_code_templates(slug, title, kicker, excerpt, categories, images_cou
     import_camel_lc = import_camel[0].lower() + import_camel[1:]
     
     print("\n" + "="*80)
-    print("📋 CODE GENERATION TEMPLATES FOR posts.ts AND fb-status.json")
+    print("CODE GENERATION TEMPLATES FOR posts.ts AND fb-status.json")
     print("="*80)
     
-    print(f"\n1️⃣ STEP 1: Add this import at the top of 'src/data/posts.ts':")
+    print(f"\nSTEP 1: Add this import at the top of 'src/data/posts.ts':")
     print(f'import {import_camel_lc}Html from "../article-html/posts/{slug}.html?raw";')
     
-    print(f"\n2️⃣ STEP 2: Add this definition above the 'export const posts = [' array:")
+    print(f"\nSTEP 2: Add this definition above the 'export const posts = [' array:")
     print(f'const {import_camel_lc}GraphicBase =')
     print(f'  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/{slug}";')
     print()
@@ -181,7 +181,7 @@ def generate_code_templates(slug, title, kicker, excerpt, categories, images_cou
     print(f'  }};')
     print(f'}});')
     
-    print(f"\n3️⃣ STEP 3: Insert this post object at the top of the 'posts' array:")
+    print(f"\nSTEP 3: Insert this post object at the top of the 'posts' array:")
     print(f'  {{')
     print(f'    title: "{title}",')
     print(f'    slug: "{slug}",')
@@ -200,7 +200,7 @@ def generate_code_templates(slug, title, kicker, excerpt, categories, images_cou
     print(f'    body: {import_camel_lc}Html')
     print(f'  }},')
     
-    print(f"\n4️⃣ STEP 4: Insert this key-value into 'src/data/fb-status.json':")
+    print(f"\nSTEP 4: Insert this key-value into 'src/data/fb-status.json':")
     print(f'  "{slug}": false,')
     
     print("\n" + "="*80)
