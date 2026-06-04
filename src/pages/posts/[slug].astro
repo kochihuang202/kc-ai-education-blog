@@ -26,6 +26,22 @@ const relatedPosts =
             item.slug !== post.slug && item.categories.some((category) => post.categories.includes(category))
         )
         .slice(0, 3);
+
+const bullyingTrilogy = [
+  {
+    slug: "school-and-workplace-bullying",
+    title: "第一部：有手段 ｜ 學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？"
+  },
+  {
+    slug: "not-all-harm-is-bullying",
+    title: "第二部：會分辨 ｜ 不是所有傷害都叫霸凌：孩子要先學會分辨這三件事"
+  },
+  {
+    slug: "how-high-can-an-unswayed-person-go",
+    title: "第三部：放得下 ｜ 不被左右的人，能走到什麼高度？"
+  }
+];
+const inBullyingTrilogy = post.categories.includes("facing-bullying");
 ---
 
 <BaseLayout title={title} description={post.excerpt} image={post.coverImage} type="article">
@@ -118,6 +134,33 @@ const relatedPosts =
               <img src={post.coverImage} alt={post.coverAlt ?? ""} width="1200" height="675" />
             </figure>
           )
+        )
+      }
+
+      {
+        inBullyingTrilogy && (
+          <div class="trilogy-nav">
+            <div class="trilogy-title">
+              📚 專題系列：面對霸凌三部曲
+            </div>
+            <div class="trilogy-steps">
+              {bullyingTrilogy.map((item, index) => {
+                const isActive = item.slug === post.slug;
+                const num = index + 1;
+                return isActive ? (
+                  <div class="trilogy-step is-active">
+                    <span class="step-num">{num}</span>
+                    <span class="step-text">{item.title}</span>
+                  </div>
+                ) : (
+                  <a href={`/posts/${item.slug}/`} class="trilogy-step">
+                    <span class="step-num">{num}</span>
+                    <span class="step-text">{item.title}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         )
       }
 

@@ -149,9 +149,35 @@ import { site } from "../data/site";
     setFilter(initialCategory);
 
     buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        setFilter(button.getAttribute("data-filter"));
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = button.getAttribute("data-filter");
+        setFilter(filter);
+
+        const newUrl = filter === "all" ? "/" : `/?category=${filter}`;
+        window.history.pushState({ category: filter }, "", newUrl);
+
+        document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
       });
+    });
+
+    const tagFilters = Array.from(document.querySelectorAll("[data-tag-filter]"));
+    tagFilters.forEach((tag) => {
+      tag.addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = tag.getAttribute("data-tag-filter");
+        setFilter(filter);
+
+        const newUrl = `/?category=${filter}`;
+        window.history.pushState({ category: filter }, "", newUrl);
+
+        document.querySelector("#articles")?.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    window.addEventListener("popstate", (e) => {
+      const category = e.state?.category || new URLSearchParams(window.location.search).get("category");
+      setFilter(category);
     });
   </script>
 </BaseLayout>

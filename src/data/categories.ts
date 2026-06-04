@@ -22,6 +22,12 @@ export const categories = [
     label: "核心思想",
     summary: "整理 KC 對教育、判斷與人的底層觀點。",
     accent: "#5A5F91"
+  },
+  {
+    id: "facing-bullying",
+    label: "面對霸凌",
+    summary: "從手段、分辨到放下，陪伴家長與孩子系統化面對同儕霸凌。",
+    accent: "#B84A39"
   }
 ] as const;
 

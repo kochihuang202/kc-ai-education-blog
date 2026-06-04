@@ -224,10 +224,10 @@ export const posts = [
     title: "不被左右的人，能走到什麼高度？",
     slug: "how-high-can-an-unswayed-person-go",
     date: "2026-06-04",
-    kicker: "KC 育兒思考",
+    kicker: "面對霸凌三部曲 · 第三部",
     excerpt:
       "真正自由的人，不是沒人能冒犯他，而是不把每個笨人的行為都放進心裡。放下不是忍受，是不讓不值得的事佔用你的心。",
-    categories: ["parents", "core"],
+    categories: ["parents", "core", "facing-bullying"],
     coverImage: howHighCanAnUnswayedPersonGoGraphics[0].src,
     coverAlt: howHighCanAnUnswayedPersonGoGraphics[0].alt,
     gallery: {
@@ -241,10 +241,10 @@ export const posts = [
     title: "不是所有傷害都叫霸凌：孩子要先學會分辨這三件事",
     slug: "not-all-harm-is-bullying",
     date: "2026-06-04",
-    kicker: "KC 育兒思考",
+    kicker: "面對霸凌三部曲 · 第二部",
     excerpt:
       "在談論霸凌前，我們應先協助孩子釐清「同儕衝突」、「惡意挑釁」與「霸凌」的關鍵差異。唯有正確識別傷害的本質，才能採取最適當的自我保護策略。",
-    categories: ["parents", "core"],
+    categories: ["parents", "core", "facing-bullying"],
     coverImage: notAllHarmIsBullyingGraphics[0].src,
     coverAlt: notAllHarmIsBullyingGraphics[0].alt,
     gallery: {
@@ -258,10 +258,10 @@ export const posts = [
     title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
     slug: "school-and-workplace-bullying",
     date: "2026-06-04",
-    kicker: "KC 育兒思考",
+    kicker: "面對霸凌三部曲 · 第一部",
     excerpt:
       "霸凌層出不窮的背後，往往是集體沉默與旁觀的共犯機制。我們需要教給孩子的，不是簡單的對與錯，而是看見體制與人性的盲點，並長出採取行動的智慧與勇氣。",
-    categories: ["society", "core"],
+    categories: ["society", "core", "facing-bullying"],
     coverImage: schoolAndWorkplaceBullyingGraphics[0].src,
     coverAlt: schoolAndWorkplaceBullyingGraphics[0].alt,
     gallery: {

@@ -211,7 +211,7 @@ main {
 
 .category-notes {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
   margin-top: 20px;
 }
@@ -709,3 +709,79 @@ body.gallery-open {
     bottom: 24px;
   }
 }
+
+/* Trilogy Navigation */
+.trilogy-nav {
+  margin: 32px auto;
+  max-width: 680px;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(251, 250, 247, 0.6) 0%, rgba(255, 255, 255, 0.95) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border-left: 4px solid #B84A39;
+}
+
+.trilogy-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trilogy-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trilogy-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+a.trilogy-step:hover {
+  background: rgba(184, 74, 57, 0.04);
+  border-color: rgba(184, 74, 57, 0.15);
+  color: #B84A39;
+}
+
+.trilogy-step.is-active {
+  background: rgba(184, 74, 57, 0.08);
+  border-color: rgba(184, 74, 57, 0.2);
+  color: #B84A39;
+  font-weight: 700;
+}
+
+.step-num {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 99px;
+  background: rgba(36, 35, 31, 0.08);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.trilogy-step.is-active .step-num {
+  background: #B84A39;
+  color: var(--paper);
+}
+
+a.trilogy-step:hover .step-num {
+  background: #B84A39;
+  color: var(--paper);
+}
+
