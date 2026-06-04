@@ -1,3 +1,4 @@
+import notAllHarmIsBullyingHtml from "../article-html/posts/not-all-harm-is-bullying.html?raw";
 import schoolAndWorkplaceBullyingHtml from "../article-html/posts/school-and-workplace-bullying.html?raw";
 import notEveryCorrectWordShouldBeSaidHtml from "../article-html/posts/not-every-correct-word-should-be-said.html?raw";
 import pityingChildhoodVsAdulthoodHtml from "../article-html/posts/pitying-childhood-vs-adulthood.html?raw";
@@ -34,6 +35,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const notAllHarmIsBullyingGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-all-harm-is-bullying";
+
+const notAllHarmIsBullyingGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${notAllHarmIsBullyingGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不是所有傷害都叫霸凌：孩子要先學會分辨這三件事圖文解析 ${page}/10`
+  };
+});
 
 const schoolAndWorkplaceBullyingGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/school-and-workplace-bullying";
@@ -197,6 +209,23 @@ const watchingEnglishCartoonsIsntLearningGraphics = Array.from({ length: 10 }, (
 
 export const posts = [
   {
+    title: "不是所有傷害都叫霸凌：孩子要先學會分辨這三件事",
+    slug: "not-all-harm-is-bullying",
+    date: "2026-06-04",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "在談論霸凌前，我們應先協助孩子釐清「同儕衝突」、「惡意挑釁」與「霸凌」的關鍵差異。唯有正確識別傷害的本質，才能採取最適當的自我保護策略。",
+    categories: ["parents", "core"],
+    coverImage: notAllHarmIsBullyingGraphics[0].src,
+    coverAlt: notAllHarmIsBullyingGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: notAllHarmIsBullyingGraphics
+    },
+    relatedPosts: ["school-and-workplace-bullying", "kids-dont-disobey-on-purpose", "teach-kid-emotional-recognition"],
+    body: notAllHarmIsBullyingHtml
+  },
+  {
     title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
     slug: "school-and-workplace-bullying",
     date: "2026-06-04",
@@ -210,7 +239,7 @@ export const posts = [
       label: "<圖文解析>",
       images: schoolAndWorkplaceBullyingGraphics
     },
-    relatedPosts: ["money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch"],
+    relatedPosts: ["not-all-harm-is-bullying", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "parenting-rebel-switch"],
     body: schoolAndWorkplaceBullyingHtml
   },
   {
@@ -278,7 +307,7 @@ export const posts = [
       label: "<圖文解析>",
       images: kidsDontDisobeyOnPurposeGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "talking-morals-to-kids"],
+    relatedPosts: ["not-all-harm-is-bullying", "no-punishment-is-hard", "teach-kid-emotional-recognition", "talking-morals-to-kids"],
     body: kidsDontDisobeyOnPurposeHtml
   },
   {
@@ -398,7 +427,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidEmotionalRecognitionGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding", "not-every-correct-word-should-be-said", "talking-morals-to-kids", "kids-dont-disobey-on-purpose"],
+    relatedPosts: ["not-all-harm-is-bullying", "no-punishment-is-hard", "letting-go-responsible-attitude", "parenting-rebel-switch", "gratitude-practice-letting-go", "should-kids-learn-coding", "not-every-correct-word-should-be-said", "talking-morals-to-kids", "kids-dont-disobey-on-purpose"],
     body: teachKidEmotionalRecognitionHtml
   },
   {
