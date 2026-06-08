@@ -1,3 +1,4 @@
+import notTechDifficultyButUncertaintyHtml from "../article-html/posts/not-tech-difficulty-but-uncertainty.html?raw";
 import protectorParadoxHtml from "../article-html/posts/protector-paradox.html?raw";
 import notAllHarmIsBullyingHtml from "../article-html/posts/not-all-harm-is-bullying.html?raw";
 import schoolAndWorkplaceBullyingHtml from "../article-html/posts/school-and-workplace-bullying.html?raw";
@@ -37,6 +38,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const notTechDifficultyButUncertaintyGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-tech-difficulty-but-uncertainty";
+
+const notTechDifficultyButUncertaintyGraphics = Array.from({ length: 13 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${notTechDifficultyButUncertaintyGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不是技術難才值錢，是你敢碰的不確定性越深越值錢圖文解析 ${page}/13`
+  };
+});
 
 const protectorParadoxGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/protector-paradox";
@@ -233,6 +245,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "不是技術難才值錢，是你敢碰的不確定性越深越值錢",
+    slug: "not-tech-difficulty-but-uncertainty",
+    date: "2026-06-08",
+    kicker: "職場觀察 · 育兒思考",
+    excerpt:
+      "從一個工程師的認知翻轉，到一個父親的育兒醒悟：不是技術難才值錢，是你敢碰的不確定性越深越值錢。",
+    categories: ["parents", "core"],
+    coverImage: notTechDifficultyButUncertaintyGraphics[0].src,
+    coverAlt: notTechDifficultyButUncertaintyGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: notTechDifficultyButUncertaintyGraphics
+    },
+    relatedPosts: ["protector-paradox", "letting-go-responsible-attitude", "should-kids-learn-coding"],
+    body: notTechDifficultyButUncertaintyHtml
+  },
+  {
     title: "保護者悖論",
     slug: "protector-paradox",
     date: "2026-06-08",
@@ -246,7 +275,7 @@ export const posts = [
       label: "<圖文解析>",
       images: protectorParadoxGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "pitying-childhood-vs-adulthood", "not-all-harm-is-bullying"],
+    relatedPosts: ["not-tech-difficulty-but-uncertainty", "letting-go-responsible-attitude", "pitying-childhood-vs-adulthood", "not-all-harm-is-bullying"],
     body: protectorParadoxHtml
   },
   {
@@ -451,7 +480,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsLearnCodingGraphics
     },
-    relatedPosts: ["no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["not-tech-difficulty-but-uncertainty", "no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
     body: shouldKidsLearnCodingHtml
   },
   {
@@ -519,7 +548,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["protector-paradox", "parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
+    relatedPosts: ["not-tech-difficulty-but-uncertainty", "protector-paradox", "parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
     body: lettingGoResponsibleHtml
   },
   {
