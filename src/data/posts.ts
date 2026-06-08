@@ -1,3 +1,4 @@
+import protectorParadoxHtml from "../article-html/posts/protector-paradox.html?raw";
 import notAllHarmIsBullyingHtml from "../article-html/posts/not-all-harm-is-bullying.html?raw";
 import schoolAndWorkplaceBullyingHtml from "../article-html/posts/school-and-workplace-bullying.html?raw";
 import notEveryCorrectWordShouldBeSaidHtml from "../article-html/posts/not-every-correct-word-should-be-said.html?raw";
@@ -36,6 +37,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const protectorParadoxGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/protector-paradox";
+
+const protectorParadoxGraphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${protectorParadoxGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `保護者悖論圖文解析 ${page}/12`
+  };
+});
 
 const notAllHarmIsBullyingGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-all-harm-is-bullying";
@@ -221,6 +233,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "保護者悖論",
+    slug: "protector-paradox",
+    date: "2026-06-08",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "過度的保護，往往會演變成無形的控制與限制。當我們試圖消除孩子生命中所有的風險，我們是否也同步消除了她長出力量與適應未來的可能性？",
+    categories: ["parents", "core"],
+    coverImage: protectorParadoxGraphics[0].src,
+    coverAlt: protectorParadoxGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: protectorParadoxGraphics
+    },
+    relatedPosts: ["letting-go-responsible-attitude", "pitying-childhood-vs-adulthood", "not-all-harm-is-bullying"],
+    body: protectorParadoxHtml
+  },
+  {
     title: "學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？",
     slug: "school-and-workplace-bullying",
     date: "2026-06-04",
@@ -251,7 +280,7 @@ export const posts = [
       label: "<圖文解析>",
       images: notAllHarmIsBullyingGraphics
     },
-    relatedPosts: ["school-and-workplace-bullying", "kids-dont-disobey-on-purpose", "teach-kid-emotional-recognition", "how-high-can-an-unswayed-person-go"],
+    relatedPosts: ["protector-paradox", "school-and-workplace-bullying", "kids-dont-disobey-on-purpose", "teach-kid-emotional-recognition", "how-high-can-an-unswayed-person-go"],
     body: notAllHarmIsBullyingHtml
   },
   {
@@ -302,7 +331,7 @@ export const posts = [
       label: "<圖文解析>",
       images: pityingChildhoodVsAdulthoodGraphics
     },
-    relatedPosts: ["letting-go-responsible-attitude", "gratitude-practice-letting-go", "no-punishment-is-hard", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["protector-paradox", "letting-go-responsible-attitude", "gratitude-practice-letting-go", "no-punishment-is-hard", "watching-english-cartoons-isnt-learning"],
     body: pityingChildhoodVsAdulthoodHtml
   },
   {
@@ -490,7 +519,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
+    relatedPosts: ["protector-paradox", "parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
     body: lettingGoResponsibleHtml
   },
   {
