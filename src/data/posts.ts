@@ -1,3 +1,4 @@
+import boundaryOfLettingGoHtml from "../article-html/posts/boundary-of-letting-go.html?raw";
 import mxShellGrowingOwnMethodHtml from "../article-html/posts/mx-shell-growing-own-method.html?raw";
 import notTechDifficultyButUncertaintyHtml from "../article-html/posts/not-tech-difficulty-but-uncertainty.html?raw";
 import protectorParadoxHtml from "../article-html/posts/protector-paradox.html?raw";
@@ -39,6 +40,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const boundaryOfLettingGoGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/boundary-of-letting-go";
+
+const boundaryOfLettingGoGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${boundaryOfLettingGoGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `放手的邊界——什麼時候該讓孩子自己「發現」，什麼時候不行圖文解析 ${page}/10`
+  };
+});
 
 const mxShellGrowingOwnMethodGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/mx-shell-growing-own-method";
@@ -257,6 +269,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "放手的邊界——什麼時候該讓孩子自己「發現」，什麼時候不行",
+    slug: "boundary-of-letting-go",
+    date: "2026-06-09",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "放手的邊界——什麼時候該讓孩子自己「發現」，什麼時候不行？從認知科學與圖式（Schema）理論，看透放手的核心判斷依據與指導淡出的藝術。",
+    categories: ["parents", "core"],
+    coverImage: boundaryOfLettingGoGraphics[0].src,
+    coverAlt: boundaryOfLettingGoGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: boundaryOfLettingGoGraphics
+    },
+    relatedPosts: ["mx-shell-growing-own-method", "letting-go-responsible-attitude", "pitying-childhood-vs-adulthood"],
+    body: boundaryOfLettingGoHtml
+  },
+  {
     title: "自學的終點不是學會別人的方法，而是長出自己的方法",
     slug: "mx-shell-growing-own-method",
     date: "2026-06-09",
@@ -270,7 +299,7 @@ export const posts = [
       label: "<圖文解析>",
       images: mxShellGrowingOwnMethodGraphics
     },
-    relatedPosts: ["not-tech-difficulty-but-uncertainty", "should-kids-learn-coding", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "should-kids-learn-coding", "watching-english-cartoons-isnt-learning"],
     body: mxShellGrowingOwnMethodHtml
   },
   {
@@ -389,7 +418,7 @@ export const posts = [
       label: "<圖文解析>",
       images: pityingChildhoodVsAdulthoodGraphics
     },
-    relatedPosts: ["protector-paradox", "letting-go-responsible-attitude", "gratitude-practice-letting-go", "no-punishment-is-hard", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["boundary-of-letting-go", "protector-paradox", "letting-go-responsible-attitude", "gratitude-practice-letting-go", "no-punishment-is-hard", "watching-english-cartoons-isnt-learning"],
     body: pityingChildhoodVsAdulthoodHtml
   },
   {
@@ -577,7 +606,7 @@ export const posts = [
       label: "<圖文解析>",
       images: lettingGoGraphics
     },
-    relatedPosts: ["not-tech-difficulty-but-uncertainty", "protector-paradox", "parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
+    relatedPosts: ["boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "protector-paradox", "parenting-rebel-switch", "money-cant-buy-trust", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "should-kids-learn-coding", "pitying-childhood-vs-adulthood"],
     body: lettingGoResponsibleHtml
   },
   {
