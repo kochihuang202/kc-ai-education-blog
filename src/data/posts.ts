@@ -1,3 +1,4 @@
+import mxShellGrowingOwnMethodHtml from "../article-html/posts/mx-shell-growing-own-method.html?raw";
 import notTechDifficultyButUncertaintyHtml from "../article-html/posts/not-tech-difficulty-but-uncertainty.html?raw";
 import protectorParadoxHtml from "../article-html/posts/protector-paradox.html?raw";
 import notAllHarmIsBullyingHtml from "../article-html/posts/not-all-harm-is-bullying.html?raw";
@@ -38,6 +39,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const mxShellGrowingOwnMethodGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/mx-shell-growing-own-method";
+
+const mxShellGrowingOwnMethodGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${mxShellGrowingOwnMethodGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `自學的終點不是學會別人的方法，而是長出自己的方法圖文解析 ${page}/8`
+  };
+});
 
 const notTechDifficultyButUncertaintyGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-tech-difficulty-but-uncertainty";
@@ -245,6 +257,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "自學的終點不是學會別人的方法，而是長出自己的方法",
+    slug: "mx-shell-growing-own-method",
+    date: "2026-06-09",
+    kicker: "自學思考",
+    excerpt:
+      "自學的終點不是學會別人的方法，而是長出自己的方法。從自學AI做出好萊塢驚嘆短片的Mx-Shell身上，看見「照這個來」與「朝這個去」的學習姿態。",
+    categories: ["parents", "core"],
+    coverImage: mxShellGrowingOwnMethodGraphics[0].src,
+    coverAlt: mxShellGrowingOwnMethodGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: mxShellGrowingOwnMethodGraphics
+    },
+    relatedPosts: ["not-tech-difficulty-but-uncertainty", "should-kids-learn-coding", "watching-english-cartoons-isnt-learning"],
+    body: mxShellGrowingOwnMethodHtml
+  },
+  {
     title: "不是技術難才值錢，是你敢碰的不確定性越深越值錢",
     slug: "not-tech-difficulty-but-uncertainty",
     date: "2026-06-08",
@@ -258,7 +287,7 @@ export const posts = [
       label: "<圖文解析>",
       images: notTechDifficultyButUncertaintyGraphics
     },
-    relatedPosts: ["protector-paradox", "letting-go-responsible-attitude", "should-kids-learn-coding"],
+    relatedPosts: ["mx-shell-growing-own-method", "protector-paradox", "letting-go-responsible-attitude", "should-kids-learn-coding"],
     body: notTechDifficultyButUncertaintyHtml
   },
   {
@@ -445,7 +474,7 @@ export const posts = [
       label: "<圖文解析>",
       images: watchingEnglishCartoonsIsntLearningGraphics
     },
-    relatedPosts: ["should-kids-learn-coding", "pitying-childhood-vs-adulthood", "talking-morals-to-kids"],
+    relatedPosts: ["mx-shell-growing-own-method", "should-kids-learn-coding", "pitying-childhood-vs-adulthood", "talking-morals-to-kids"],
     body: watchingEnglishCartoonsIsntLearningHtml
   },
 
@@ -480,7 +509,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsLearnCodingGraphics
     },
-    relatedPosts: ["not-tech-difficulty-but-uncertainty", "no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["mx-shell-growing-own-method", "not-tech-difficulty-but-uncertainty", "no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
     body: shouldKidsLearnCodingHtml
   },
   {
