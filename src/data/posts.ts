@@ -1,3 +1,4 @@
+import shouldKidsFollowTemplatesInExamsHtml from "../article-html/posts/should-kids-follow-templates-in-exams.html?raw";
 import boundaryOfLettingGoHtml from "../article-html/posts/boundary-of-letting-go.html?raw";
 import mxShellGrowingOwnMethodHtml from "../article-html/posts/mx-shell-growing-own-method.html?raw";
 import notTechDifficultyButUncertaintyHtml from "../article-html/posts/not-tech-difficulty-but-uncertainty.html?raw";
@@ -40,6 +41,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const shouldKidsFollowTemplatesInExamsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/should-kids-follow-templates-in-exams";
+
+const shouldKidsFollowTemplatesInExamsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${shouldKidsFollowTemplatesInExamsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `應試教育裡，孩子一定要「照這個來」嗎？圖文解析 ${page}/10`
+  };
+});
 
 const boundaryOfLettingGoGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/boundary-of-letting-go";
@@ -269,6 +281,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "應試教育裡，孩子一定要「照這個來」嗎？",
+    slug: "should-kids-follow-templates-in-exams",
+    date: "2026-06-10",
+    kicker: "KC 育兒思考",
+    excerpt:
+      "應試教育本身就是一張孩子不能不照著來的參考圖。但在應試教育裡，孩子一定要「照這個來」嗎？我們該如何透過「指導淡出」與建立「圖式（Schema）」，讓孩子既能過關，又不會永遠只會照著套模板？",
+    categories: ["parents", "core"],
+    coverImage: shouldKidsFollowTemplatesInExamsGraphics[0].src,
+    coverAlt: shouldKidsFollowTemplatesInExamsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: shouldKidsFollowTemplatesInExamsGraphics
+    },
+    relatedPosts: ["boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "kids-dont-disobey-on-purpose"],
+    body: shouldKidsFollowTemplatesInExamsHtml
+  },
+  {
     title: "放手的邊界——什麼時候該讓孩子自己「發現」，什麼時候不行",
     slug: "boundary-of-letting-go",
     date: "2026-06-09",
@@ -282,7 +311,7 @@ export const posts = [
       label: "<圖文解析>",
       images: boundaryOfLettingGoGraphics
     },
-    relatedPosts: ["mx-shell-growing-own-method", "letting-go-responsible-attitude", "pitying-childhood-vs-adulthood"],
+    relatedPosts: ["should-kids-follow-templates-in-exams", "mx-shell-growing-own-method", "letting-go-responsible-attitude", "pitying-childhood-vs-adulthood"],
     body: boundaryOfLettingGoHtml
   },
   {
@@ -316,7 +345,7 @@ export const posts = [
       label: "<圖文解析>",
       images: notTechDifficultyButUncertaintyGraphics
     },
-    relatedPosts: ["mx-shell-growing-own-method", "protector-paradox", "letting-go-responsible-attitude", "should-kids-learn-coding"],
+    relatedPosts: ["should-kids-follow-templates-in-exams", "mx-shell-growing-own-method", "protector-paradox", "letting-go-responsible-attitude", "should-kids-learn-coding"],
     body: notTechDifficultyButUncertaintyHtml
   },
   {
@@ -452,7 +481,7 @@ export const posts = [
       label: "<圖文解析>",
       images: kidsDontDisobeyOnPurposeGraphics
     },
-    relatedPosts: ["not-all-harm-is-bullying", "no-punishment-is-hard", "teach-kid-emotional-recognition", "talking-morals-to-kids"],
+    relatedPosts: ["should-kids-follow-templates-in-exams", "not-all-harm-is-bullying", "no-punishment-is-hard", "teach-kid-emotional-recognition", "talking-morals-to-kids"],
     body: kidsDontDisobeyOnPurposeHtml
   },
   {
