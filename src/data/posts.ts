@@ -1,3 +1,4 @@
+import vibeCodingRadarHtml from "../article-html/posts/vibe-coding-radar.html?raw";
 import shouldKidsFollowTemplatesInExamsHtml from "../article-html/posts/should-kids-follow-templates-in-exams.html?raw";
 import boundaryOfLettingGoHtml from "../article-html/posts/boundary-of-letting-go.html?raw";
 import mxShellGrowingOwnMethodHtml from "../article-html/posts/mx-shell-growing-own-method.html?raw";
@@ -41,6 +42,17 @@ export interface Post {
   relatedPosts: string[];
   body: string;
 }
+
+const vibeCodingRadarGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/vibe-coding-radar";
+
+const vibeCodingRadarGraphics = Array.from({ length: 3 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${vibeCodingRadarGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `給家長和孩子的 AI 編程入門圖文解析 ${page}/3`
+  };
+});
 
 const shouldKidsFollowTemplatesInExamsGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/should-kids-follow-templates-in-exams";
@@ -281,6 +293,23 @@ const howHighCanAnUnswayedPersonGoGraphics = Array.from({ length: 10 }, (_, inde
 
 export const posts = [
   {
+    title: "給家長和孩子的 AI 編程入門",
+    slug: "vibe-coding-radar",
+    date: "2026-06-10",
+    kicker: "家長推薦",
+    excerpt:
+      "給家長和孩子的 AI 編程入門：為什麼你需要一個「先照著做」的導航站？",
+    categories: ["parents", "core"],
+    coverImage: vibeCodingRadarGraphics[0].src,
+    coverAlt: vibeCodingRadarGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: vibeCodingRadarGraphics
+    },
+    relatedPosts: ["should-kids-learn-coding", "should-kids-follow-templates-in-exams", "mx-shell-growing-own-method"],
+    body: vibeCodingRadarHtml
+  },
+  {
     title: "應試教育裡，孩子一定要「照這個來」嗎？",
     slug: "should-kids-follow-templates-in-exams",
     date: "2026-06-10",
@@ -294,7 +323,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsFollowTemplatesInExamsGraphics
     },
-    relatedPosts: ["boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "kids-dont-disobey-on-purpose"],
+    relatedPosts: ["vibe-coding-radar", "boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "kids-dont-disobey-on-purpose"],
     body: shouldKidsFollowTemplatesInExamsHtml
   },
   {
@@ -328,7 +357,7 @@ export const posts = [
       label: "<圖文解析>",
       images: mxShellGrowingOwnMethodGraphics
     },
-    relatedPosts: ["boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "should-kids-learn-coding", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["vibe-coding-radar", "boundary-of-letting-go", "not-tech-difficulty-but-uncertainty", "should-kids-learn-coding", "watching-english-cartoons-isnt-learning"],
     body: mxShellGrowingOwnMethodHtml
   },
   {
@@ -567,7 +596,7 @@ export const posts = [
       label: "<圖文解析>",
       images: shouldKidsLearnCodingGraphics
     },
-    relatedPosts: ["mx-shell-growing-own-method", "not-tech-difficulty-but-uncertainty", "no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
+    relatedPosts: ["vibe-coding-radar", "mx-shell-growing-own-method", "not-tech-difficulty-but-uncertainty", "no-punishment-is-hard", "teach-kid-emotional-recognition", "gratitude-practice-letting-go", "money-cant-buy-trust", "golden-bowl-or-handcuffs", "watching-english-cartoons-isnt-learning"],
     body: shouldKidsLearnCodingHtml
   },
   {
