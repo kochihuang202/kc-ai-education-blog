@@ -47,7 +47,9 @@ python scripts/publish_helper.py --src "[來源資料夾絕對路徑]" --slug "[
 - `--src`：包含原始 HTML 及圖片的資料夾路徑。
 - `--slug`：文章網址代稱（如 `no-punishment-is-hard`）。
 - `--excerpt`：文章的大意摘要（用於首頁及 SEO 搜尋結果）。
-- `--start-line` 與 `--end-line`：原始 HTML 中，包含文章本文 `<section>...</section>` 區塊的起始與結束行數（預設為 9 到 331）。
+- `--start-line` 與 `--end-line`：原始 HTML 中，包含文章本文 `<section>...</section>` 區塊的起始與結束行數。
+  > [!IMPORTANT]
+  > **請務必先在文字編輯器中打開原始 HTML 檔案**，確認文章本文所在的 `<section>` 區塊起始與結束行數（例如：第 9 行到第 365 行），並將其填入參數中，切勿直接套用預設值，以免擷取到不完整或多餘的程式碼。
 
 **腳本將自動執行：**
 1. 提取指定行數的 HTML 並儲存至 `src/article-html/posts/[slug].html`。
@@ -235,3 +237,41 @@ git push origin main
 2. **導覽面板樣式 (CSS)**：
    - 面板與步驟樣式已整合在 `global.css` 中，必須包含 `is-active` 狀態的高亮背景與邊框，以及非作用中項目的懸停微動畫效果，以維持高品質的視覺互動。
 
+---
+
+## ⚙️ 管理後台與發文狀態管理 (Admin Dashboard)
+
+發布新文章後，系統預設會將該文章的 FB 狀態初始化為 `false`。若需要將文章狀態切換為已發布，必須透過管理後台進行：
+
+### 1. 存取方式
+- **線上後台**：直接開啟 [文章發布管理後台](https://kc-ai-education-blog.ji3cp31p4.workers.dev/admin/)。
+- **本機後台**：執行專案根目錄下的 `PO文網站管理後台.bat` 啟動本機 Astro 伺服器，系統會自動在瀏覽器開啟 `http://localhost:4321/admin/`。
+
+### 2. 登入憑證與操作
+- **管理密碼**：`khk12345`。
+- **操作方式**：登入後勾選對應的文章狀態，變更會即時儲存至 Cloudflare KV 資料庫。
+
+---
+
+## ⚡ 網頁快取與即時更新機制 (Cache Busting)
+
+由於線上 Cloudflare Worker 代理程式對 GitHub Raw 內容設有 **5 分鐘 (300 秒) 的 CDN 快取**，當您推送到 GitHub 後，首頁或舊頁面可能不會立刻顯示更新。若需要繞過快取「立刻」讓所有讀者看到最新狀態，請執行以下步驟：
+
+1. **更新快取版本號**：
+   - 打開 [cloudflare/worker-proxy.js](file:///C:/Users/ji3cp/OneDrive/Documents/40_AI_folder/PO%E6%96%87%E7%B6%B2%E7%AB%99/cloudflare/worker-proxy.js)。
+   - 找到第 27 行的 `const DEPLOY_VERSION = "v_xxxx_xx_xx_xx_xx";`。
+   - 將其修改為當前的時間戳記，例如 `v_2026_06_10_15_50`。
+2. **部署 Worker**：
+   - 在 PowerShell 終端機中執行：
+     ```powershell
+     $env:NODE_TLS_REJECT_UNAUTHORIZED="0"
+     npx wrangler deploy
+     ```
+   - 這會重新部署 Worker 程式，並以新的版本號作為快取鍵（Cache Key），立即使 Cloudflare CDN 快取失效並重新讀取 GitHub 的最新內容。
+3. **提交版本變更**：
+   - 請記得將 `cloudflare/worker-proxy.js` 的變更一同提交並 push 到 GitHub，以確保本機與線上程式碼完全一致：
+     ```powershell
+     git add cloudflare/worker-proxy.js
+     git commit -m "chore: bump deploy version to bust CDN cache"
+     git push origin main
+     ```
