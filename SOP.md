@@ -258,7 +258,7 @@ git push origin main
 由於線上 Cloudflare Worker 代理程式對 GitHub Raw 內容設有 **5 分鐘 (300 秒) 的 CDN 快取**，當您推送到 GitHub 後，首頁或舊頁面可能不會立刻顯示更新。若需要繞過快取「立刻」讓所有讀者看到最新狀態，請執行以下步驟：
 
 1. **更新快取版本號**：
-   - 打開 [cloudflare/worker-proxy.js](file:///C:/Users/ji3cp/OneDrive/Documents/40_AI_folder/PO%E6%96%87%E7%B6%B2%E7%AB%99/cloudflare/worker-proxy.js)。
+   - 打開 [cloudflare/worker-proxy.js](file:///C:/Users/ji3cp/Documents/antigravity/kc-ai-education-blog/cloudflare/worker-proxy.js)。
    - 找到第 27 行的 `const DEPLOY_VERSION = "v_xxxx_xx_xx_xx_xx";`。
    - 將其修改為當前的時間戳記，例如 `v_2026_06_10_15_50`。
 2. **部署 Worker**：
@@ -267,7 +267,7 @@ git push origin main
      $env:NODE_TLS_REJECT_UNAUTHORIZED="0"
      npx wrangler deploy
      ```
-   - 這會重新部署 Worker 程式，並以新的版本號作為快取鍵（Cache Key），立即使 Cloudflare CDN 快取失效並重新讀取 GitHub 的最新內容。
+   - 這會重新部署 Worker 程式，並以新的版本號作為快取鍵（Cache Key），立使 Cloudflare CDN 快取失效並重新讀取 GitHub 的最新內容。
 3. **提交版本變更**：
    - 請記得將 `cloudflare/worker-proxy.js` 的變更一同提交並 push 到 GitHub，以確保本機與線上程式碼完全一致：
      ```powershell
@@ -275,3 +275,58 @@ git push origin main
      git commit -m "chore: bump deploy version to bust CDN cache"
      git push origin main
      ```
+
+---
+
+## 📥 下載已發布文章的圖檔至本機 (Download Published Images)
+
+當使用者需要取得某一已發布文章的完整解析度圖檔（WebP 格式）時，可以使用我們提供的自動化下載流程，直接將圖片整批下載到本機的 `Downloads` 目錄中。
+
+### 步驟 1：確認文章的 Slug 與圖片數量
+1. 打開 `src/data/posts.ts`。
+2. 找到目標文章的 `slug`，以及宣告在該文章上方的 `Graphics` 陣列長度（例如 `length: 12`）。
+3. 取得圖片在 R2 的 Base URL，通常為：
+   `https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/[slug]`
+
+### 步驟 2：撰寫下載腳本
+在專案的臨時或 `scratch` 目錄中建立下載腳本 `download_images.py`：
+```python
+import os
+import urllib.request
+
+# 1. 定義本機儲存資料夾 (以下載到 Downloads/專屬資料夾 為例)
+output_dir = r"C:\Users\ji3cp\Downloads\[slug]-images"
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# 2. 定義 R2 來源 Base URL 與圖片總數
+base_url = "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/[slug]"
+image_count = [圖片總數]
+
+print(f"開始下載圖檔至: {output_dir}")
+for i in range(1, image_count + 1):
+    filename = f"graphic-{i:02d}.webp"
+    url = f"{base_url}/{filename}"
+    filepath = os.path.join(output_dir, filename)
+    print(f"正在下載: {filename} ...")
+    try:
+        # 使用標準 User-Agent 繞過 Cloudflare 的 WAF 爬蟲防護
+        req = urllib.request.Request(
+            url, 
+            headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+        )
+        with urllib.request.urlopen(req) as response:
+            with open(filepath, 'wb') as out_file:
+                out_file.write(response.read())
+    except Exception as e:
+        print(f"下載 {filename} 時發生錯誤: {e}")
+
+print("\n所有圖檔下載完成！")
+```
+
+### 步驟 3：執行下載
+在終端機中執行該 Python 腳本：
+```powershell
+python path/to/download_images.py
+```
+執行完畢後即可在 `C:\Users\ji3cp\Downloads\[slug]-images` 資料夾中取得所有高品質圖檔。
