@@ -28,7 +28,13 @@ export const categories = [
     label: "面對霸凌",
     summary: "從手段、分辨到放下，陪伴家長與孩子系統化面對同儕霸凌。",
     accent: "#B84A39"
-  }
+  },
+  {
+    id: "iron-fist-education",
+    label: "鐵拳教育",
+    summary: "十篇文章拆解一個核心命題：拒絕拳頭，我們有沒有一套足夠強韌的制度？",
+    accent: "#C0512F"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
