@@ -430,7 +430,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 系列導讀",
     excerpt:
-      "鐵　拳　教　育　·　系　列　導　讀 為什麼我們明明知道要管，卻管不動？ 你知道該管。 孩子賴在地上不起來，你知道不能就這樣算了。孩子在餐廳尖叫，你知道該設界線。孩子對你翻白眼，你知道不能假裝沒看見。 你都知道。 你不是不努力。你只是越來越覺得：明明知道要管，卻管不動。...",
+      "你知道該管。 孩子賴在地上不起來，你知道不能就這樣算了。孩子在餐廳尖叫，你知道該設界線。孩子對你翻白眼，你知道不能假裝沒看見。 你都知道。 但管了沒用。提醒三次，安靜兩分鐘，又來了。設了界線，守不住。跟老師溝通，老師說他也沒辦法。你回家想了一整晚，第...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationIntroGraphics[0].src,
     coverAlt: ironFistEducationIntroGraphics[0].alt,
@@ -447,7 +447,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第1篇",
     excerpt:
-      "真正刺痛人的，不是拳頭，而是制度沒有牙齒 2026年6月5日，Netflix上線了一部韓劇。IMDb 8.6，上線一週橫掃25個國家和地區熱播榜首。 劇名叫《鐵拳教育》。 劇情設定很粗暴：韓國全面實施《禁止體罰法》之後，法規意外成了霸凌者的保護傘——未滿14歲的施暴者免予刑責，教...",
+      "2026年6月5日，Netflix上線了一部韓劇。IMDb 8.6，上線一週橫掃25個國家和地區熱播榜首。 劇名叫《鐵拳教育》。 劇情設定很粗暴：韓國全面實施《禁止體罰法》之後，法規意外成了霸凌者的保護傘——未滿14歲的施暴者免予刑責，教師正常管教遭...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP1Graphics[0].src,
     coverAlt: ironFistEducationP1Graphics[0].alt,
@@ -464,7 +464,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第2篇",
     excerpt:
-      "孩子為什麼會守規矩？先看五個底層槓桿 你可能會說：因為善良。因為有教養。因為知道什麼是對、什麼是錯。 這些答案都對，但都不完整。 說白了，善良只是守規矩的原因之一。一個孩子守規矩，通常不是因為單一的力量，而是因為好幾種力量同時在拉住他。 有些力量來自內在——他真心認同這個規則。有...",
+      "上一篇我們留了一個問題：人為什麼會守規矩？ 你可能會說：因為善良。因為有教養。因為知道什麼是對、什麼是錯。 這些答案都對，但都不完整。 說白了，善良只是守規矩的原因之一。一個孩子守規矩，通常不是因為單一的力量，而是因為好幾種力量同時在拉住他。 有些力...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP2Graphics[0].src,
     coverAlt: ironFistEducationP2Graphics[0].alt,
@@ -481,7 +481,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第3篇",
     excerpt:
-      "孩子是怎麼一步一步變得什麼都不在乎的？ 那這個「連鎖反應」到底長什麼樣？一個孩子從「還算守規矩」走到「什麼都不在乎」，中間發生了什麼？ 不過先說清楚：不是每個孩子都走同一條路。有些孩子是後果長期不發生，慢慢學會不用怕。有些孩子是關係先轉向了，同儕把他拉走。有些孩子是五個槓桿從一開...",
+      "上一篇我們說了：五個底層槓桿撐住一個孩子守規矩的結構。也說了：槓桿撐不住沒有固定順序，但會有結構性的連鎖反應。 那這個「連鎖反應」到底長什麼樣？一個孩子從「還算守規矩」走到「什麼都不在乎」，中間發生了什麼？ 這篇我們來拆這個過程。 不過先說清楚：不是...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP3Graphics[0].src,
     coverAlt: ironFistEducationP3Graphics[0].alt,
@@ -498,7 +498,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第4篇",
     excerpt:
-      "孩子不是只缺規矩，也缺練習 短影片、社交媒體與社會化不足 但為什麼？為什麼現在的孩子，比以前更容易走到這一步？ 不是孩子變了。是練習場消失了。 練習場消失了 先說一個你可能沒注意到的變化。 以前的孩子放學之後，去哪裡？巷口、公園、球場、鄰居家、合作社、騎樓下、自己走回家的那條路。...",
+      "上一篇我們拆了三條崩塌路徑。其中第三條最讓人心酸：有些孩子不是槓桿斷了，是從來就沒有撐起來過。規矩這件事，從來就沒有真正長出來過。 但為什麼？為什麼現在的孩子，比以前更容易走到這一步？ 不是孩子變了。是練習場消失了。",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP4Graphics[0].src,
     coverAlt: ironFistEducationP4Graphics[0].alt,
@@ -515,7 +515,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第5篇",
     excerpt:
-      "日常秩序都不配合的孩子，到底是不能，還是不願意？ 但四型裡有一條分界線，比其他所有區分都重要： 這個孩子是不能，還是不願？ 你可能覺得這不難分。不配合就是不配合，誰分不清？ 先別急——做一個判斷。 一個國小三年級的男生，上課不聽，作業不寫，老師講了他也不動。你問他為什麼，他說「我...",
+      "上一篇我們說了三條崩塌路徑，也說了四種不配合類型。 但四型裡有一條分界線，比其他所有區分都重要： 這個孩子是不能，還是不願？ 你可能覺得這不難分。不配合就是不配合，誰分不清？ 先別急——做一個判斷。 一個國小三年級的男生，上課不聽，作業不寫，老師講了...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP5Graphics[0].src,
     coverAlt: ironFistEducationP5Graphics[0].alt,
@@ -532,7 +532,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第6篇",
     excerpt:
-      "為什麼老師越來越無力？ 不是老師不會管，是制度失靈被推給個人承擔 答案很殘酷：沒有人扛。 你可能會說：制度都在啊——學校有輔導室、有學務處、有校安通報系統，老師為什麼不管？ 這句話暗含一個判斷：問題出在老師身上。 但如果你看完下面這組數字，你可能會改口：不是老師不管，是老師管不動...",
+      "上一篇我們留了一個問號：一個班三十個孩子，有一個持續不配合的，老師的精力就被吃掉大半。如果同時有兩三個——老師能補嗎？補不了的部分，誰來扛？ 答案很殘酷：沒有人扛。 你可能會說：制度都在啊——學校有輔導室、有學務處、有校安通報系統，老師為什麼不管？ ...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP6Graphics[0].src,
     coverAlt: ironFistEducationP6Graphics[0].alt,
@@ -549,7 +549,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第7篇",
     excerpt:
-      "灰色秩序消失後，正式制度補上了嗎？ 以前看似比較亂，為什麼反而有制衡？ 你可能會說：以前的校園不是更亂嗎？有體罰、有教官、有黑幫滲透，怎麼可能比現在好？ 這句話暗含一個判斷：以前更差，現在至少有制度。 先說一個反常識的判斷：以前的校園，不是靠正式制度維持秩序的。...",
+      "上一篇我們留了一個問號：灰色秩序消失了，正式制度補上了嗎？ 你可能會說：以前的校園不是更亂嗎？有體罰、有教官、有黑幫滲透，怎麼可能比現在好？ 這句話暗含一個判斷：以前更差，現在至少有制度。 但如果你看完這篇，你可能會改口：以前確實亂，但以前有制衡；現...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP7Graphics[0].src,
     coverAlt: ironFistEducationP7Graphics[0].alt,
@@ -566,7 +566,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第8篇",
     excerpt:
-      "不是木匠，也不能放任 從蒙特梭利與《木匠與園丁》看教育界線 建制度之前，有一個更根本的問題要先回答：教育的界線到底在哪裡？ 你可能會說：蒙特梭利不是說了嗎？給孩子自由。高普尼克不是也說了嗎？做園丁，不做木匠。所以結論就是界線要軟、後果要少、讓孩子自己長。...",
+      "建制度之前，有一個更根本的問題要先回答：教育的界線到底在哪裡？ 你可能會說：蒙特梭利不是說了嗎？給孩子自由。高普尼克不是也說了嗎？做園丁，不做木匠。所以結論就是界線要軟、後果要少、讓孩子自己長。 這句話，兩個人都被誤讀了。 蒙特梭利有牙齒。高普尼克有...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP8Graphics[0].src,
     coverAlt: ironFistEducationP8Graphics[0].alt,
@@ -583,7 +583,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第9篇",
     excerpt:
-      "好制度不是要求老師更強，而是給老師後勤 讓越界有成本、改變有路 我們已經拆解了孩子不守規矩的底層邏輯，也看見了灰色秩序消失後的真空。現在，必須面對最核心的問題：教育不能回到拳頭，但如果我們拒絕拳頭，拿什麼來補位？ 當舊的威權工具被拿掉，我們補上了很多「正向管教」的理念，卻沒有給老...",
+      "我們已經拆解了孩子不守規矩的底層邏輯，也看見了灰色秩序消失後的真空。現在，必須面對最核心的問題：教育不能回到拳頭，但如果我們拒絕拳頭，拿什麼來補位？ 當舊的威權工具被拿掉，我們補上了很多「正向管教」的理念，卻沒有給老師「後勤」。 這正是現在教育現場最...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP9Graphics[0].src,
     coverAlt: ironFistEducationP9Graphics[0].alt,
@@ -600,7 +600,7 @@ export const posts = [
     date: "2026-06-15",
     kicker: "鐵拳教育 · 第10篇",
     excerpt:
-      "不要等孩子什麼都不怕，才開始問怎麼管 愛要穩，界線要硬 愛要穩，界線要硬。 只有愛沒有界線是縱容，只有界線沒有愛是壓迫。 這句話，你可能聽過無數遍。但聽過和做到之間，隔著一條巨大的溝。 《家庭教育藍皮書2024》調查了上百萬個家庭，數據很刺眼：80%的家長對孩子的學業表現感到焦慮...",
+      "愛要穩，界線要硬。 只有愛沒有界線是縱容，只有界線沒有愛是壓迫。 這句話，你可能聽過無數遍。但聽過和做到之間，隔著一條巨大的溝。 《家庭教育藍皮書2024》調查了上百萬個家庭，數據很刺眼：80%的家長對孩子的學業表現感到焦慮，60%時刻擔心孩子出意外...",
     categories: ["iron-fist-education", "parents", "core"],
     coverImage: ironFistEducationP10Graphics[0].src,
     coverAlt: ironFistEducationP10Graphics[0].alt,
