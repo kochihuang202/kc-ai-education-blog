@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/minimum-effort-infinite-future/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/iron-fist-education-intro/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>

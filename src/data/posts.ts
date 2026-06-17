@@ -32,6 +32,7 @@ import ironFistEducationP7Html from "../article-html/posts/iron-fist-education-p
 import ironFistEducationP8Html from "../article-html/posts/iron-fist-education-p8.html?raw";
 import ironFistEducationP9Html from "../article-html/posts/iron-fist-education-p9.html?raw";
 import ironFistEducationP10Html from "../article-html/posts/iron-fist-education-p10.html?raw";
+import minimumEffortInfiniteFutureHtml from "../article-html/posts/minimum-effort-infinite-future.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -423,7 +424,36 @@ const ironFistEducationP10Graphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const minimumEffortInfiniteFutureGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/minimum-effort-infinite-future";
+
+const minimumEffortInfiniteFutureGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${minimumEffortInfiniteFutureGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `花最小努力，換孩子無限未來圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "花最小努力，換孩子無限未來",
+    slug: "minimum-effort-infinite-future",
+    date: "2026-06-17",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "為什麼最簡單的三件事，大多數父母反而做不到 前幾天跟一個年輕同事聊天，聊到我對孩子的期待。 我說，我希望花最小的努力——包含時間和金錢——但又希望孩子有無限的未來。 他愣了一下，然後說了一句很厲害的話：那就要有方法。 對，方法。方法對了，就會相對輕鬆...",
+    categories: ["parents", "core"],
+    coverImage: minimumEffortInfiniteFutureGraphics[0].src,
+    coverAlt: minimumEffortInfiniteFutureGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: minimumEffortInfiniteFutureGraphics
+    },
+    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p1", "iron-fist-education-p2"],
+    body: minimumEffortInfiniteFutureHtml
+  },
+
   {
     title: "《鐵拳教育》系列導讀：為什麼我們明明知道要管，卻管不動？",
     slug: "iron-fist-education-intro",
@@ -438,7 +468,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ironFistEducationIntroGraphics
     },
-    relatedPosts: ["iron-fist-education-p1", "iron-fist-education-p10", "iron-fist-education-p2"],
+    relatedPosts: ["iron-fist-education-p1", "iron-fist-education-p10", "iron-fist-education-p2", "minimum-effort-infinite-future"],
     body: ironFistEducationIntroHtml
   },
   {
@@ -455,7 +485,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ironFistEducationP1Graphics
     },
-    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p2"],
+    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p2", "minimum-effort-infinite-future"],
     body: ironFistEducationP1Html
   },
   {
@@ -472,7 +502,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ironFistEducationP2Graphics
     },
-    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p1", "iron-fist-education-p3"],
+    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p1", "iron-fist-education-p3", "minimum-effort-infinite-future"],
     body: ironFistEducationP2Html
   },
   {
