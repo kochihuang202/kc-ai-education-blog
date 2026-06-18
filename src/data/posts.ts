@@ -34,6 +34,7 @@ import ironFistEducationP9Html from "../article-html/posts/iron-fist-education-p
 import ironFistEducationP10Html from "../article-html/posts/iron-fist-education-p10.html?raw";
 import minimumEffortInfiniteFutureHtml from "../article-html/posts/minimum-effort-infinite-future.html?raw";
 import isMemoryUnimportantInAiEraHtml from "../article-html/posts/is-memory-unimportant-in-ai-era.html?raw";
+import memoryScienceIsMisunderstoodHtml from "../article-html/posts/memory-science-is-misunderstood.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -447,7 +448,36 @@ const isMemoryUnimportantInAiEraGraphics = Array.from({ length: 10 }, (_, index)
   };
 });
 
+const memoryScienceIsMisunderstoodGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood";
+
+const memoryScienceIsMisunderstoodGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${memoryScienceIsMisunderstoodGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `記憶學被冤枉了圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "記憶學被冤枉了",
+    slug: "memory-science-is-misunderstood",
+    date: "2026-06-18",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "你以為它只是死背，其實它練的是所有學習的底層能力 結果文章發出去之後，我收到好幾條私訊，意思都差不多：KC，你說記憶力很重要我信了，但記憶學？那不就是死背嗎？ 我理解這個反應。因為我自己以前也是這麼想的。 記憶學這三個字，你聽到之後腦子裡浮現的是什麼...",
+    categories: ["parents", "core"],
+    coverImage: memoryScienceIsMisunderstoodGraphics[0].src,
+    coverAlt: memoryScienceIsMisunderstoodGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: memoryScienceIsMisunderstoodGraphics
+    },
+    relatedPosts: ["is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future", "iron-fist-education-intro"],
+    body: memoryScienceIsMisunderstoodHtml
+  },
+
   {
     title: "AI時代，記憶力不重要？說這話的人不是蠢就是壞",
     slug: "is-memory-unimportant-in-ai-era",
@@ -462,7 +492,7 @@ export const posts = [
       label: "<圖文解析>",
       images: isMemoryUnimportantInAiEraGraphics
     },
-    relatedPosts: ["minimum-effort-infinite-future", "iron-fist-education-intro", "iron-fist-education-p1"],
+    relatedPosts: ["minimum-effort-infinite-future", "iron-fist-education-intro", "iron-fist-education-p1", "memory-science-is-misunderstood"],
     body: isMemoryUnimportantInAiEraHtml
   },
 
@@ -480,7 +510,7 @@ export const posts = [
       label: "<圖文解析>",
       images: minimumEffortInfiniteFutureGraphics
     },
-    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p1", "iron-fist-education-p2", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["iron-fist-education-intro", "iron-fist-education-p1", "iron-fist-education-p2", "is-memory-unimportant-in-ai-era", "memory-science-is-misunderstood"],
     body: minimumEffortInfiniteFutureHtml
   },
 
@@ -498,7 +528,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ironFistEducationIntroGraphics
     },
-    relatedPosts: ["iron-fist-education-p1", "iron-fist-education-p10", "iron-fist-education-p2", "minimum-effort-infinite-future", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["iron-fist-education-p1", "iron-fist-education-p10", "iron-fist-education-p2", "minimum-effort-infinite-future", "is-memory-unimportant-in-ai-era", "memory-science-is-misunderstood"],
     body: ironFistEducationIntroHtml
   },
   {
