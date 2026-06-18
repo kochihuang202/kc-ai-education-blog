@@ -36,6 +36,7 @@ import minimumEffortInfiniteFutureHtml from "../article-html/posts/minimum-effor
 import isMemoryUnimportantInAiEraHtml from "../article-html/posts/is-memory-unimportant-in-ai-era.html?raw";
 import memoryScienceIsMisunderstoodHtml from "../article-html/posts/memory-science-is-misunderstood.html?raw";
 import howToTrainMemorySinceChildhoodHtml from "../article-html/posts/how-to-train-memory-since-childhood.html?raw";
+import memoryScienceIsMisunderstoodP4Html from "../article-html/posts/memory-science-is-misunderstood-p4.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -460,6 +461,17 @@ const memoryScienceIsMisunderstoodGraphics = Array.from({ length: 10 }, (_, inde
   };
 });
 
+const memoryScienceIsMisunderstoodP4GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p4";
+
+const memoryScienceIsMisunderstoodP4Graphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${memoryScienceIsMisunderstoodP4GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `記憶學被冤枉·第四篇——教孩子認字，大人先掌握學習方法圖文解析 ${page}/12`
+  };
+});
+
 const howToTrainMemorySinceChildhoodGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-to-train-memory-since-childhood";
 
@@ -472,6 +484,24 @@ const howToTrainMemorySinceChildhoodGraphics = Array.from({ length: 10 }, (_, in
 });
 
 export const posts = [
+  {
+    title: "記憶學被冤枉·第四篇——教孩子認字，大人先掌握學習方法",
+    slug: "memory-science-is-misunderstood-p4",
+    date: "2026-06-18",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "教孩子認字，心態先對：學不了是大人的問題，腦沒長好就是不會。掌握拉長戰線、早上學習、已知引導未知、多感官輸入四原則，並理解拆字不求正確、求孩子能理解。",
+    categories: ["parents", "core"],
+    coverImage: memoryScienceIsMisunderstoodP4Graphics[0].src,
+    coverAlt: memoryScienceIsMisunderstoodP4Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: memoryScienceIsMisunderstoodP4Graphics
+    },
+    relatedPosts: ["memory-science-is-misunderstood", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
+    body: memoryScienceIsMisunderstoodP4Html
+  },
+
   {
     title: "記憶學實操前傳——從小怎麼練",
     slug: "how-to-train-memory-since-childhood",
@@ -486,7 +516,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToTrainMemorySinceChildhoodGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future"],
+    relatedPosts: ["memory-science-is-misunderstood-p4", "memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future"],
     body: howToTrainMemorySinceChildhoodHtml
   },
 
@@ -504,7 +534,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodGraphics
     },
-    relatedPosts: ["is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future", "iron-fist-education-intro", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p4", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future", "iron-fist-education-intro", "how-to-train-memory-since-childhood"],
     body: memoryScienceIsMisunderstoodHtml
   },
 
@@ -522,7 +552,7 @@ export const posts = [
       label: "<圖文解析>",
       images: isMemoryUnimportantInAiEraGraphics
     },
-    relatedPosts: ["minimum-effort-infinite-future", "iron-fist-education-intro", "iron-fist-education-p1", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p4", "minimum-effort-infinite-future", "iron-fist-education-intro", "iron-fist-education-p1", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood"],
     body: isMemoryUnimportantInAiEraHtml
   },
 
