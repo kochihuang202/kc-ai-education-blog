@@ -478,7 +478,7 @@ export const posts = [
     date: "2026-06-18",
     kicker: "KC 育兒手記",
     excerpt:
-      "從小怎麼練——符號進去，畫面出來 但文章發出去之後，我又收到一個問題：KC，我信了，記憶學不只是死背。但一說到「練記憶學」，我腦子裡浮現的還是——記憶宮殿、聯想記憶、那些比賽選手用的技巧。這些東西，我孩子學得來嗎？ 我理解這個感覺。因為記憶宮殿太有名...",
+      "上一篇，我們講了記憶學被冤枉了——你以為它只是死背，其實它練的是底層能力：圖像、拆解、組合。但文章發出去之後，我又收到一個問題：KC，我信了，記憶學不只是死背。但一說到「練記憶學」，我腦子裡浮現的還是...",
     categories: ["parents", "core"],
     coverImage: howToTrainMemorySinceChildhoodGraphics[0].src,
     coverAlt: howToTrainMemorySinceChildhoodGraphics[0].alt,
