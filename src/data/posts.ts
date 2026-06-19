@@ -488,10 +488,10 @@ export const posts = [
     title: "記憶學被冤枉·第四篇——教孩子認字，大人先掌握學習方法",
     slug: "memory-science-is-misunderstood-p4",
     date: "2026-06-18",
-    kicker: "KC 育兒手記",
+    kicker: "記憶學 · 第四篇",
     excerpt:
       "教孩子認字，心態先對：學不了是大人的問題，腦沒長好就是不會。掌握拉長戰線、早上學習、已知引導未知、多感官輸入四原則，並理解拆字不求正確、求孩子能理解。",
-    categories: ["parents", "core"],
+    categories: ["memory-science", "parents", "core"],
     coverImage: memoryScienceIsMisunderstoodP4Graphics[0].src,
     coverAlt: memoryScienceIsMisunderstoodP4Graphics[0].alt,
     gallery: {
@@ -506,10 +506,10 @@ export const posts = [
     title: "記憶學實操前傳——從小怎麼練",
     slug: "how-to-train-memory-since-childhood",
     date: "2026-06-18",
-    kicker: "KC 育兒手記",
+    kicker: "記憶學 · 第三篇",
     excerpt:
       "上一篇，我們講了記憶學被冤枉了——你以為它只是死背，其實它練的是底層能力：圖像、拆解、組合。但文章發出去之後，我又收到一個問題：KC，我信了，記憶學不只是死背。但一說到「練記憶學」，我腦子裡浮現的還是...",
-    categories: ["parents", "core"],
+    categories: ["memory-science", "parents", "core"],
     coverImage: howToTrainMemorySinceChildhoodGraphics[0].src,
     coverAlt: howToTrainMemorySinceChildhoodGraphics[0].alt,
     gallery: {
@@ -524,10 +524,10 @@ export const posts = [
     title: "記憶學被冤枉了",
     slug: "memory-science-is-misunderstood",
     date: "2026-06-18",
-    kicker: "KC 育兒手記",
+    kicker: "記憶學 · 第二篇",
     excerpt:
       "你以為它只是死背，其實它練的是所有學習的底層能力 結果文章發出去之後，我收到好幾條私訊，意思都差不多：KC，你說記憶力很重要我信了，但記憶學？那不就是死背嗎？ 我理解這個反應。因為我自己以前也是這麼想的。 記憶學這三個字，你聽到之後腦子裡浮現的是什麼...",
-    categories: ["parents", "core"],
+    categories: ["memory-science", "parents", "core"],
     coverImage: memoryScienceIsMisunderstoodGraphics[0].src,
     coverAlt: memoryScienceIsMisunderstoodGraphics[0].alt,
     gallery: {
@@ -542,10 +542,10 @@ export const posts = [
     title: "AI時代，記憶力不重要？說這話的人不是蠢就是壞",
     slug: "is-memory-unimportant-in-ai-era",
     date: "2026-06-17",
-    kicker: "KC 育兒手記",
+    kicker: "記憶學 · 第一篇",
     excerpt:
       "說這話的人不是蠢就是壞 前幾天跟一個朋友吃飯，聊到孩子的教育。 他說，現在AI什麼都能查，幹嘛還讓孩子背東西？記憶力又不重要了，重要的是會問問題、會用工具。 我放下筷子看著他，說了一句他沒預期的話： 說「記憶力不重要」的人，不是蠢，就是壞。 他愣住了...",
-    categories: ["parents", "core"],
+    categories: ["memory-science", "parents", "core"],
     coverImage: isMemoryUnimportantInAiEraGraphics[0].src,
     coverAlt: isMemoryUnimportantInAiEraGraphics[0].alt,
     gallery: {

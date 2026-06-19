@@ -35,6 +35,12 @@ export const categories = [
     summary: "十篇文章拆解一個核心命題：拒絕拳頭，我們有沒有一套足夠強韌的制度？",
     accent: "#C0512F"
   },
+  {
+    id: "memory-science",
+    label: "記憶學",
+    summary: "你以為它只是死背，其實它練的是所有學習的底層能力。從大腦發育、實操練習到拆字認字，建立孩子的學習鷹架。",
+    accent: "#4A6FA5"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];

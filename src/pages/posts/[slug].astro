@@ -27,36 +27,8 @@ const relatedPosts =
         )
         .slice(0, 3);
 
-const bullyingTrilogy = [
-  {
-    slug: "school-and-workplace-bullying",
-    title: "第一部：有手段 ｜ 學校與職場的霸凌層出不窮：我們到底少教了孩子什麼？"
-  },
-  {
-    slug: "not-all-harm-is-bullying",
-    title: "第二部：會分辨 ｜ 不是所有傷害都叫霸凌：孩子要先學會分辨這三件事"
-  },
-  {
-    slug: "how-high-can-an-unswayed-person-go",
-    title: "第三部：放得下 ｜ 不被左右的人，能走到什麼高度？"
-  }
-];
-const inBullyingTrilogy = post.categories.includes("facing-bullying");
-
-const ironFistSeries = [
-  { slug: "iron-fist-education-intro", title: "導讀 ｜ 為什麼我們明明知道要管，卻管不動？" },
-  { slug: "iron-fist-education-p1", title: "第1篇 ｜ 真正刺痛人的，不是拳頭，而是制度沒有牙齒" },
-  { slug: "iron-fist-education-p2", title: "第2篇 ｜ 孩子為什麼會守規矩？先看五個底層槓桿" },
-  { slug: "iron-fist-education-p3", title: "第3篇 ｜ 孩子是怎麼一步一步變得什麼都不在乎的？" },
-  { slug: "iron-fist-education-p4", title: "第4篇 ｜ 孩子不是只缺規矩，也缺練習" },
-  { slug: "iron-fist-education-p5", title: "第5篇 ｜ 日常秩序都不配合的孩子，到底是不能，還是不願意？" },
-  { slug: "iron-fist-education-p6", title: "第6篇 ｜ 為什麼老師越來越無力？" },
-  { slug: "iron-fist-education-p7", title: "第7篇 ｜ 灰色秩序消失後，正式制度補上了嗎？" },
-  { slug: "iron-fist-education-p8", title: "第8篇 ｜ 不是木匠，也不能放任" },
-  { slug: "iron-fist-education-p9", title: "第9篇 ｜ 好制度不是要求老師更強，而是給老師後勤" },
-  { slug: "iron-fist-education-p10", title: "第10篇 ｜ 不要等孩子什麼都不怕，才開始問怎麼管" }
-];
-const inIronFistSeries = post.categories.includes("iron-fist-education");
+import { seriesList } from "../../data/series";
+const activeSeries = seriesList.find((s) => post.categories.includes(s.id));
 ---
 
 <BaseLayout title={title} description={post.excerpt} image={post.coverImage} type="article">
@@ -153,50 +125,22 @@ const inIronFistSeries = post.categories.includes("iron-fist-education");
       }
 
       {
-        inBullyingTrilogy && (
-          <div class="trilogy-nav">
-            <div class="trilogy-title">
-              📚 專題系列：面對霸凌三部曲
+        activeSeries && (
+          <div class="series-nav" style={`--series-accent: ${activeSeries.accent}`}>
+            <div class="series-title">
+              📚 專題系列：{activeSeries.name}
             </div>
-            <div class="trilogy-steps">
-              {bullyingTrilogy.map((item, index) => {
+            <div class="series-steps" class:list={{ "is-grid": activeSeries.steps.length > 3 }}>
+              {activeSeries.steps.map((item) => {
                 const isActive = item.slug === post.slug;
-                const num = index + 1;
                 return isActive ? (
-                  <div class="trilogy-step is-active">
-                    <span class="step-num">{num}</span>
+                  <div class="series-step is-active">
+                    <span class="step-num">{item.label}</span>
                     <span class="step-text">{item.title}</span>
                   </div>
                 ) : (
-                  <a href={`/posts/${item.slug}/`} class="trilogy-step">
-                    <span class="step-num">{num}</span>
-                    <span class="step-text">{item.title}</span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        )
-      }
-
-      {
-        inIronFistSeries && (
-          <div class="iron-fist-nav">
-            <div class="iron-fist-title">
-              📚 專題系列：鐵拳教育（共 11 篇）
-            </div>
-            <div class="iron-fist-steps">
-              {ironFistSeries.map((item, index) => {
-                const isActive = item.slug === post.slug;
-                const stepLabel = index === 0 ? "導" : String(index);
-                return isActive ? (
-                  <div class="iron-fist-step is-active">
-                    <span class="step-num">{stepLabel}</span>
-                    <span class="step-text">{item.title}</span>
-                  </div>
-                ) : (
-                  <a href={`/posts/${item.slug}/`} class="iron-fist-step">
-                    <span class="step-num">{stepLabel}</span>
+                  <a href={`/posts/${item.slug}/`} class="series-step">
+                    <span class="step-num">{item.label}</span>
                     <span class="step-text">{item.title}</span>
                   </a>
                 );
