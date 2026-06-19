@@ -24,7 +24,7 @@ function resolveAssetPath(pathname) {
   return pathname;
 }
 
-const DEPLOY_VERSION = "v_2026_06_19_23_35";
+const DEPLOY_VERSION = "v_2026_06_19_23_39";
 
 async function fetchAsset(pathname) {
   const assetPath = resolveAssetPath(pathname);
