@@ -38,6 +38,7 @@ import memoryScienceIsMisunderstoodHtml from "../article-html/posts/memory-scien
 import howToTrainMemorySinceChildhoodHtml from "../article-html/posts/how-to-train-memory-since-childhood.html?raw";
 import memoryScienceIsMisunderstoodP4Html from "../article-html/posts/memory-science-is-misunderstood-p4.html?raw";
 import memoryScienceIsMisunderstoodP5Html from "../article-html/posts/memory-science-is-misunderstood-p5.html?raw";
+import memoryScienceIsMisunderstoodP6Html from "../article-html/posts/memory-science-is-misunderstood-p6.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -484,6 +485,17 @@ const memoryScienceIsMisunderstoodP5Graphics = Array.from({ length: 10 }, (_, in
   };
 });
 
+const memoryScienceIsMisunderstoodP6GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p6";
+
+const memoryScienceIsMisunderstoodP6Graphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${memoryScienceIsMisunderstoodP6GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `記憶學被冤枉·第六篇——象形字圖卡（二）：人物姿態與動物飛禽圖文解析 ${page}/8`
+  };
+});
+
 const howToTrainMemorySinceChildhoodGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-to-train-memory-since-childhood";
 
@@ -496,6 +508,24 @@ const howToTrainMemorySinceChildhoodGraphics = Array.from({ length: 10 }, (_, in
 });
 
 export const posts = [
+  {
+    title: "記憶學被冤枉·第六篇——象形字圖卡（二）：人物姿態與動物飛禽",
+    slug: "memory-science-is-misunderstood-p6",
+    date: "2026-06-20",
+    kicker: "記憶學 · 第六篇",
+    excerpt:
+      "用記憶學認字第二步：人物姿態與動物飛禽。本文提供「人物姿態」與「動物飛禽」兩大類共 21 個象形字的自製字卡，並附有具體的操作步驟與注意事項，幫助孩子輕鬆建立認字鷹架。",
+    categories: ["memory-science", "parents", "core"],
+    coverImage: memoryScienceIsMisunderstoodP6Graphics[0].src,
+    coverAlt: memoryScienceIsMisunderstoodP6Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: memoryScienceIsMisunderstoodP6Graphics
+    },
+    relatedPosts: ["memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
+    body: memoryScienceIsMisunderstoodP6Html
+  },
+
   {
     title: "記憶學被冤枉·第五篇——象形字圖卡，認字的第一步",
     slug: "memory-science-is-misunderstood-p5",
@@ -510,7 +540,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP5Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
     body: memoryScienceIsMisunderstoodP5Html
   },
 
@@ -528,7 +558,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP4Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p5", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
     body: memoryScienceIsMisunderstoodP4Html
   },
 
@@ -546,7 +576,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToTrainMemorySinceChildhoodGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future"],
+    relatedPosts: ["memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future"],
     body: howToTrainMemorySinceChildhoodHtml
   },
 
