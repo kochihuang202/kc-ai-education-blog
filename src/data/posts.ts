@@ -509,7 +509,7 @@ const howToTrainMemorySinceChildhoodGraphics = Array.from({ length: 10 }, (_, in
 
 export const posts = [
   {
-    title: "記憶學被冤枉·第六篇——象形字圖卡（二）：人物姿態與動物飛禽",
+    title: "象形字圖卡（二）：人物姿態與動物飛禽",
     slug: "memory-science-is-misunderstood-p6",
     date: "2026-06-20",
     kicker: "記憶學 · 第六篇",
@@ -527,7 +527,7 @@ export const posts = [
   },
 
   {
-    title: "記憶學被冤枉·第五篇——象形字圖卡，認字的第一步",
+    title: "象形字圖卡，認字的第一步",
     slug: "memory-science-is-misunderstood-p5",
     date: "2026-06-20",
     kicker: "記憶學 · 第五篇",
@@ -545,7 +545,7 @@ export const posts = [
   },
 
   {
-    title: "記憶學被冤枉·第四篇——教孩子認字，大人先掌握學習方法",
+    title: "教孩子認字，大人先掌握學習方法",
     slug: "memory-science-is-misunderstood-p4",
     date: "2026-06-18",
     kicker: "記憶學 · 第四篇",
