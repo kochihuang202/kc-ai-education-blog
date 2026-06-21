@@ -50,7 +50,8 @@ export const seriesList: SeriesConfig[] = [
       { slug: "how-to-train-memory-since-childhood", title: "第三篇 ｜ 記憶學實操前傳——從小怎麼練", label: "3" },
       { slug: "memory-science-is-misunderstood-p4", title: "第四篇 ｜ 教孩子認字，大人先掌握學習方法", label: "4" },
       { slug: "memory-science-is-misunderstood-p5", title: "第五篇 ｜ 象形字圖卡，認字的第一步", label: "5" },
-      { slug: "memory-science-is-misunderstood-p6", title: "第六篇 ｜ 象形字圖卡（二）：人物姿態與動物飛禽", label: "6" }
+      { slug: "memory-science-is-misunderstood-p6", title: "第六篇 ｜ 象形字圖卡（二）：人物姿態與動物飛禽", label: "6" },
+      { slug: "memory-science-is-misunderstood-p7", title: "第七篇 ｜ 象形字圖卡（三）：植物草木與器物建築", label: "7" }
     ]
   }
 ];
