@@ -509,6 +509,17 @@ const memoryScienceIsMisunderstoodP7Graphics = Array.from({ length: 8 }, (_, ind
   };
 });
 
+const memoryScienceIsMisunderstoodP8GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p8";
+
+const memoryScienceIsMisunderstoodP8Graphics = Array.from({ length: 7 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${memoryScienceIsMisunderstoodP8GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `拆字實戰：二十幾個字，帶你走一遍圖文解析 ${page}/7`
+  };
+});
+
 const howToTrainMemorySinceChildhoodGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-to-train-memory-since-childhood";
 
@@ -529,8 +540,12 @@ export const posts = [
     excerpt:
       "打好 70 個象形字零件的地基後，我們正式進入拆字實戰。本文帶您和孩子一起動手拆解「看、垂、睡、相、想、王、主、青、眼、睛、眉、之、乏、止、眨、見、現、卡、丁、金、釘、盯、立」等 23 個常用字，體會記憶學拆字組合的核心手感。",
     categories: ["memory-science", "parents", "core"],
-    coverImage: "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p8/card-73.webp",
-    coverAlt: "拆字圖卡：看",
+    coverImage: memoryScienceIsMisunderstoodP8Graphics[0].src,
+    coverAlt: memoryScienceIsMisunderstoodP8Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: memoryScienceIsMisunderstoodP8Graphics
+    },
     relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4"],
     body: memoryScienceIsMisunderstoodP8Html
   },

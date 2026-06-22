@@ -7,6 +7,9 @@ from pillow_heif import register_heif_opener
 
 register_heif_opener()
 
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+
 src_dir = r"C:\Users\ji3cp\Downloads\20260622記憶學被冤枉·第八篇——拆字實戰：二十幾個字，帶你走一遍-1"
 project_root = r"C:\Users\ji3cp\Documents\antigravity\kc-ai-education-blog"
 slug = "memory-science-is-misunderstood-p8"
@@ -56,10 +59,45 @@ with open(dest_html_path, "w", encoding="utf-8") as f:
 print(f"[+] Saved extracted HTML to {dest_html_path}")
 
 # 2. Process and optimize images
+# 2a. Carousel images (graphic-XX.webp)
+carousel_files = []
+for f in os.listdir(src_dir):
+    if f.startswith("ChatGPT Image") and f.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+        # Extract number: (1) to (7)
+        match = re.search(r"\((\d+)\)\.(?:png|jpg|jpeg|webp)$", f)
+        if match:
+            num = int(match.group(1))
+            carousel_files.append((num, f))
+carousel_files.sort()
+
+print("[+] Sorted Carousel images:")
+for num, f in carousel_files:
+    print(f"  {num}: {f}")
+
+processed_carousel = []
+for idx, (num, f) in enumerate(carousel_files, 1):
+    new_name = f"graphic-{idx:02d}.webp"
+    src_path = os.path.join(src_dir, f)
+    dest_path = os.path.join(tmp_dir, new_name)
+    with Image.open(src_path) as img:
+        w, h = img.size
+        max_size = 1600
+        if w > max_size or h > max_size:
+            if w > h:
+                new_w = max_size
+                new_h = int(h * max_size / w)
+            else:
+                new_h = max_size
+                new_w = int(w * max_size / h)
+            img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+        img.save(dest_path, "WEBP", quality=75)
+    print(f"Processed: {f} -> {new_name}")
+    processed_carousel.append(new_name)
+
 # 2b. Card images (card-XX.webp)
 card_files = []
 for f in os.listdir(src_dir):
-    if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+    if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp")) and not f.startswith("ChatGPT Image"):
         # Match number prefix: "73_看_圖卡.png" or "84_之.png"
         match = re.match(r"^(\d+)_", f)
         if match:
@@ -117,7 +155,7 @@ def upload_file(filename):
         print(result.stderr)
         sys.exit(1)
 
-for f in processed_cards:
+for f in processed_carousel + processed_cards:
     upload_file(f)
 
 print("[+] All uploads completed successfully!")
