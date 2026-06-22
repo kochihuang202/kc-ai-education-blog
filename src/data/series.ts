@@ -51,7 +51,8 @@ export const seriesList: SeriesConfig[] = [
       { slug: "memory-science-is-misunderstood-p4", title: "第四篇 ｜ 教孩子認字，大人先掌握學習方法", label: "4" },
       { slug: "memory-science-is-misunderstood-p5", title: "第五篇 ｜ 象形字圖卡，認字的第一步", label: "5" },
       { slug: "memory-science-is-misunderstood-p6", title: "第六篇 ｜ 象形字圖卡（二）：人物姿態與動物飛禽", label: "6" },
-      { slug: "memory-science-is-misunderstood-p7", title: "第七篇 ｜ 象形字圖卡（三）：植物草木與器物建築", label: "7" }
+      { slug: "memory-science-is-misunderstood-p7", title: "第七篇 ｜ 象形字圖卡（三）：植物草木與器物建築", label: "7" },
+      { slug: "memory-science-is-misunderstood-p8", title: "第八篇 ｜ 拆字實戰：二十幾個字，帶你走一遍", label: "8" }
     ]
   }
 ];

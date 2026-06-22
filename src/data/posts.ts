@@ -40,6 +40,7 @@ import memoryScienceIsMisunderstoodP4Html from "../article-html/posts/memory-sci
 import memoryScienceIsMisunderstoodP5Html from "../article-html/posts/memory-science-is-misunderstood-p5.html?raw";
 import memoryScienceIsMisunderstoodP6Html from "../article-html/posts/memory-science-is-misunderstood-p6.html?raw";
 import memoryScienceIsMisunderstoodP7Html from "../article-html/posts/memory-science-is-misunderstood-p7.html?raw";
+import memoryScienceIsMisunderstoodP8Html from "../article-html/posts/memory-science-is-misunderstood-p8.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -521,6 +522,20 @@ const howToTrainMemorySinceChildhoodGraphics = Array.from({ length: 10 }, (_, in
 
 export const posts = [
   {
+    title: "拆字實戰：二十幾個字，帶你走一遍",
+    slug: "memory-science-is-misunderstood-p8",
+    date: "2026-06-22",
+    kicker: "記憶學 · 第八篇",
+    excerpt:
+      "打好 70 個象形字零件的地基後，我們正式進入拆字實戰。本文帶您和孩子一起動手拆解「看、垂、睡、相、想、王、主、青、眼、睛、眉、之、乏、止、眨、見、現、卡、丁、金、釘、盯、立」等 23 個常用字，體會記憶學拆字組合的核心手感。",
+    categories: ["memory-science", "parents", "core"],
+    coverImage: "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p8/card-73.webp",
+    coverAlt: "拆字圖卡：看",
+    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4"],
+    body: memoryScienceIsMisunderstoodP8Html
+  },
+
+  {
     title: "象形字圖卡（三）：植物草木與器物建築",
     slug: "memory-science-is-misunderstood-p7",
     date: "2026-06-21",
@@ -534,7 +549,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP7Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
     body: memoryScienceIsMisunderstoodP7Html
   },
 
@@ -552,7 +567,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP6Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
     body: memoryScienceIsMisunderstoodP6Html
   },
 
@@ -570,7 +585,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP5Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
     body: memoryScienceIsMisunderstoodP5Html
   },
 
@@ -588,7 +603,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP4Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood", "how-to-train-memory-since-childhood", "is-memory-unimportant-in-ai-era"],
     body: memoryScienceIsMisunderstoodP4Html
   },
 
