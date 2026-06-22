@@ -6,7 +6,7 @@ export const site = {
   author: "KC",
   url: "https://kc-ai-education-blog.ji3cp31p4.workers.dev",
   social: {
-    facebook: "https://www.facebook.com/kochihuang", // Placeholder/example link
+    facebook: "https://www.facebook.com/profile.php?id=100000138814337", // User's FB profile
     line: "https://line.me/ti/p/@kc-ai-education" // Placeholder/example link
   }
 };
