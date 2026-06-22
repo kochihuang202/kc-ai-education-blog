@@ -512,11 +512,11 @@ const memoryScienceIsMisunderstoodP7Graphics = Array.from({ length: 8 }, (_, ind
 const memoryScienceIsMisunderstoodP8GraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p8";
 
-const memoryScienceIsMisunderstoodP8Graphics = Array.from({ length: 7 }, (_, index) => {
+const memoryScienceIsMisunderstoodP8Graphics = Array.from({ length: 10 }, (_, index) => {
   const page = index + 1;
   return {
     src: `${memoryScienceIsMisunderstoodP8GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
-    alt: `拆字實戰：二十幾個字，帶你走一遍圖文解析 ${page}/7`
+    alt: `拆字實戰：二十幾個字，帶你走一遍圖文解析 ${page}/10`
   };
 });
 
