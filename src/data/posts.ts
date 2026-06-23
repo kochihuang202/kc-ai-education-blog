@@ -41,6 +41,7 @@ import memoryScienceIsMisunderstoodP5Html from "../article-html/posts/memory-sci
 import memoryScienceIsMisunderstoodP6Html from "../article-html/posts/memory-science-is-misunderstood-p6.html?raw";
 import memoryScienceIsMisunderstoodP7Html from "../article-html/posts/memory-science-is-misunderstood-p7.html?raw";
 import memoryScienceIsMisunderstoodP8Html from "../article-html/posts/memory-science-is-misunderstood-p8.html?raw";
+import memoryScienceIsMisunderstoodP9Html from "../article-html/posts/memory-science-is-misunderstood-p9.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -531,7 +532,37 @@ const howToTrainMemorySinceChildhoodGraphics = Array.from({ length: 10 }, (_, in
   };
 });
 
+const memoryScienceIsMisunderstoodP9GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/memory-science-is-misunderstood-p9";
+
+const memoryScienceIsMisunderstoodP9Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${memoryScienceIsMisunderstoodP9GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `記憶學被冤枉·第九篇——拆字進階：核心觀點與更多範例圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "記憶學被冤枉·第九篇——拆字進階：核心觀點與更多範例",
+    slug: "memory-science-is-misunderstood-p9",
+    date: "2026-06-23",
+    kicker: "記憶學 · 第九篇",
+    excerpt:
+      "上一篇，我們開始拆字了。二十幾字走一遍，你大概有了手感。但你可能遇到了幾個問題：孩子記不住、拆出來的部件孩子聽不懂、孩子自己想了一個你覺得不合理的拆法——到底該聽誰的？這篇，我要把底層邏輯講清楚。",
+    categories: ["memory-science", "parents", "core"],
+    coverImage: memoryScienceIsMisunderstoodP9Graphics[0].src,
+    coverAlt: memoryScienceIsMisunderstoodP9Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: memoryScienceIsMisunderstoodP9Graphics
+    },
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "how-to-train-memory-since-childhood"],
+    body: memoryScienceIsMisunderstoodP9Html
+  },
+
+
   {
     title: "拆字實戰：二十幾個字，帶你走一遍",
     slug: "memory-science-is-misunderstood-p8",
@@ -546,7 +577,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP8Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4"],
+    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood-p9"],
     body: memoryScienceIsMisunderstoodP8Html
   },
 
@@ -564,7 +595,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP7Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "memory-science-is-misunderstood-p9"],
     body: memoryScienceIsMisunderstoodP7Html
   },
 
@@ -582,7 +613,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP6Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "memory-science-is-misunderstood-p9"],
     body: memoryScienceIsMisunderstoodP6Html
   },
 
@@ -636,7 +667,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToTrainMemorySinceChildhoodGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future"],
+    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood", "is-memory-unimportant-in-ai-era", "minimum-effort-infinite-future", "memory-science-is-misunderstood-p9"],
     body: howToTrainMemorySinceChildhoodHtml
   },
 
