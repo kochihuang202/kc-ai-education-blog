@@ -61,7 +61,8 @@ export const seriesList: SeriesConfig[] = [
     name: "記憶學_應用系列",
     accent: "#3E8E7E",
     steps: [
-      { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" }
+      { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" },
+      { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 記憶學到底怎麼用——一個同事的四次試錯", label: "2" }
     ]
   }
 ];

@@ -43,6 +43,7 @@ import memoryScienceIsMisunderstoodP7Html from "../article-html/posts/memory-sci
 import memoryScienceIsMisunderstoodP8Html from "../article-html/posts/memory-science-is-misunderstood-p8.html?raw";
 import memoryScienceIsMisunderstoodP9Html from "../article-html/posts/memory-science-is-misunderstood-p9.html?raw";
 import howWouldYouRememberFruitsOfFourSeasonsHtml from "../article-html/posts/how-would-you-remember-fruits-of-four-seasons.html?raw";
+import howToActuallyUseMemoryScienceHtml from "../article-html/posts/how-to-actually-use-memory-science.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -555,7 +556,37 @@ const howWouldYouRememberFruitsOfFourSeasonsGraphics = Array.from({ length: 10 }
   };
 });
 
+const howToActuallyUseMemoryScienceGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-to-actually-use-memory-science";
+
+const howToActuallyUseMemoryScienceGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${howToActuallyUseMemoryScienceGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `四季的水果，你會怎麼記圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "記憶學到底怎麼用——一個同事的四次試錯",
+    slug: "how-to-actually-use-memory-science",
+    date: "2026-06-25",
+    kicker: "記憶學_應用 · 第二篇",
+    excerpt:
+      "我同事問我，你到底是怎麼做到的？ 他之前問GPT怎麼用記憶學記四季水果，拿到一套看著全面、實際上全是花式背誦的方案。後來我當面用記憶學的方式跟他講了一遍，他沒有背，就記住了。 他很好奇。 於是我把記憶學最基本的「聯想連結法」傳給他。 核心概念很簡單—...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: howToActuallyUseMemoryScienceGraphics[0].src,
+    coverAlt: howToActuallyUseMemoryScienceGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: howToActuallyUseMemoryScienceGraphics
+    },
+    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8"],
+    body: howToActuallyUseMemoryScienceHtml
+  },
+
+
   {
     title: "四季的水果，你會怎麼記",
     slug: "how-would-you-remember-fruits-of-four-seasons",
@@ -570,7 +601,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howWouldYouRememberFruitsOfFourSeasonsGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7"],
+    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "how-to-actually-use-memory-science"],
     body: howWouldYouRememberFruitsOfFourSeasonsHtml
   },
 
@@ -588,7 +619,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP9Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "how-to-train-memory-since-childhood", "how-would-you-remember-fruits-of-four-seasons"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "how-to-train-memory-since-childhood", "how-would-you-remember-fruits-of-four-seasons", "how-to-actually-use-memory-science"],
     body: memoryScienceIsMisunderstoodP9Html
   },
 
@@ -607,7 +638,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP8Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood-p9", "how-would-you-remember-fruits-of-four-seasons"],
+    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood-p9", "how-would-you-remember-fruits-of-four-seasons", "how-to-actually-use-memory-science"],
     body: memoryScienceIsMisunderstoodP8Html
   },
 
