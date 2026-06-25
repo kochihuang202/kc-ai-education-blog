@@ -42,6 +42,7 @@ import memoryScienceIsMisunderstoodP6Html from "../article-html/posts/memory-sci
 import memoryScienceIsMisunderstoodP7Html from "../article-html/posts/memory-science-is-misunderstood-p7.html?raw";
 import memoryScienceIsMisunderstoodP8Html from "../article-html/posts/memory-science-is-misunderstood-p8.html?raw";
 import memoryScienceIsMisunderstoodP9Html from "../article-html/posts/memory-science-is-misunderstood-p9.html?raw";
+import howWouldYouRememberFruitsOfFourSeasonsHtml from "../article-html/posts/how-would-you-remember-fruits-of-four-seasons.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -543,7 +544,36 @@ const memoryScienceIsMisunderstoodP9Graphics = Array.from({ length: 10 }, (_, in
   };
 });
 
+const howWouldYouRememberFruitsOfFourSeasonsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-would-you-remember-fruits-of-four-seasons";
+
+const howWouldYouRememberFruitsOfFourSeasonsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${howWouldYouRememberFruitsOfFourSeasonsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `四季的水果，你會怎麼記圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "四季的水果，你會怎麼記",
+    slug: "how-would-you-remember-fruits-of-four-seasons",
+    date: "2026-06-25",
+    kicker: "記憶學_應用 · 第一篇",
+    excerpt:
+      "我同事那天回家，推開門就聽到老婆跟女兒在小爭執。 爭執什麼？四季的水果。 女兒背不住，老婆急了，覺得這麼簡單的東西怎麼就是記不住。同事站在旁邊看了一會兒，突然想起來——我之前跟他聊過記憶學，說這東西真的能幫孩子記東西，而且不是死背那種。 他心想，對啊...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: howWouldYouRememberFruitsOfFourSeasonsGraphics[0].src,
+    coverAlt: howWouldYouRememberFruitsOfFourSeasonsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: howWouldYouRememberFruitsOfFourSeasonsGraphics
+    },
+    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7"],
+    body: howWouldYouRememberFruitsOfFourSeasonsHtml
+  },
+
   {
     title: "記憶學被冤枉·第九篇——拆字進階：核心觀點與更多範例",
     slug: "memory-science-is-misunderstood-p9",
@@ -558,7 +588,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP9Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "how-to-train-memory-since-childhood"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "how-to-train-memory-since-childhood", "how-would-you-remember-fruits-of-four-seasons"],
     body: memoryScienceIsMisunderstoodP9Html
   },
 
@@ -577,7 +607,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP8Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood-p9"],
+    relatedPosts: ["memory-science-is-misunderstood-p7", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "memory-science-is-misunderstood-p9", "how-would-you-remember-fruits-of-four-seasons"],
     body: memoryScienceIsMisunderstoodP8Html
   },
 
@@ -595,7 +625,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP7Graphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "memory-science-is-misunderstood-p9"],
+    relatedPosts: ["memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p6", "memory-science-is-misunderstood-p5", "memory-science-is-misunderstood-p4", "how-to-train-memory-since-childhood", "memory-science-is-misunderstood-p9", "how-would-you-remember-fruits-of-four-seasons"],
     body: memoryScienceIsMisunderstoodP7Html
   },
 

@@ -41,6 +41,12 @@ export const categories = [
     summary: "你以為它只是死背，其實它練的是所有學習的底層能力。從大腦發育、實操練習到拆字認字，建立孩子的學習鷹架。",
     accent: "#4A6FA5"
   },
+  {
+    id: "memory-science-app",
+    label: "記憶學_應用",
+    summary: "如何將記憶學的方法實際應用在日常學習與生活中？透過實例解析，讓學習事半功倍。",
+    accent: "#3E8E7E"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];

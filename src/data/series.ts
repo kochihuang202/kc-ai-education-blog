@@ -55,5 +55,13 @@ export const seriesList: SeriesConfig[] = [
       { slug: "memory-science-is-misunderstood-p8", title: "第八篇 ｜ 拆字實戰：二十幾個字，帶你走一遍", label: "8" },
       { slug: "memory-science-is-misunderstood-p9", title: "第九篇 ｜ 拆字進階：核心觀點與更多範例", label: "9" }
     ]
+  },
+  {
+    id: "memory-science-app",
+    name: "記憶學_應用系列",
+    accent: "#3E8E7E",
+    steps: [
+      { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" }
+    ]
   }
 ];
