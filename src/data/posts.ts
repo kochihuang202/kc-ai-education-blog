@@ -569,7 +569,7 @@ const howToActuallyUseMemoryScienceGraphics = Array.from({ length: 10 }, (_, ind
 
 export const posts = [
   {
-    title: "記憶學到底怎麼用——一個同事的四次試錯",
+    title: "來了解記憶學如何快速記憶四季水果",
     slug: "how-to-actually-use-memory-science",
     date: "2026-06-25",
     kicker: "記憶學_應用 · 第二篇",

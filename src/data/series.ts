@@ -62,7 +62,7 @@ export const seriesList: SeriesConfig[] = [
     accent: "#3E8E7E",
     steps: [
       { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" },
-      { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 記憶學到底怎麼用——一個同事的四次試錯", label: "2" }
+      { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 來了解記憶學如何快速記憶四季水果", label: "2" }
     ]
   }
 ];
