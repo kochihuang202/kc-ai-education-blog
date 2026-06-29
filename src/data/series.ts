@@ -53,7 +53,8 @@ export const seriesList: SeriesConfig[] = [
       { slug: "memory-science-is-misunderstood-p6", title: "第六篇 ｜ 象形字圖卡（二）：人物姿態與動物飛禽", label: "6" },
       { slug: "memory-science-is-misunderstood-p7", title: "第七篇 ｜ 象形字圖卡（三）：植物草木與器物建築", label: "7" },
       { slug: "memory-science-is-misunderstood-p8", title: "第八篇 ｜ 拆字實戰：二十幾個字，帶你走一遍", label: "8" },
-      { slug: "memory-science-is-misunderstood-p9", title: "第九篇 ｜ 拆字進階：核心觀點與更多範例", label: "9" }
+      { slug: "memory-science-is-misunderstood-p9", title: "第九篇 ｜ 拆字進階：核心觀點與更多範例", label: "9" },
+      { slug: "memory-science-is-misunderstood-p10", title: "第十篇 ｜ AI不行，印太累，所以我做了一個網頁", label: "10" }
     ]
   },
   {
