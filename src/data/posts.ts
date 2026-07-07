@@ -45,6 +45,7 @@ import memoryScienceIsMisunderstoodP9Html from "../article-html/posts/memory-sci
 import howWouldYouRememberFruitsOfFourSeasonsHtml from "../article-html/posts/how-would-you-remember-fruits-of-four-seasons.html?raw";
 import howToActuallyUseMemoryScienceHtml from "../article-html/posts/how-to-actually-use-memory-science.html?raw";
 import memoryScienceIsMisunderstoodP10Html from "../article-html/posts/memory-science-is-misunderstood-p10.html?raw";
+import becauseILoveYouIDontLetYouGoHtml from "../article-html/posts/because-i-love-you-i-dont-let-you-go.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -579,7 +580,36 @@ const memoryScienceIsMisunderstoodP10Graphics = Array.from({ length: 10 }, (_, i
   };
 });
 
+const becauseILoveYouIDontLetYouGoGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/because-i-love-you-i-dont-let-you-go";
+
+const becauseILoveYouIDontLetYouGoGraphics = Array.from({ length: 9 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${becauseILoveYouIDontLetYouGoGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `因為愛你，所以不讓你去圖文解析 ${page}/9`
+  };
+});
+
 export const posts = [
+  {
+    title: "因為愛你，所以不讓你去",
+    slug: "because-i-love-you-i-dont-let-you-go",
+    date: "2026-07-07",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "昨天，我跟女兒說了一件事。 我說，為什麼我不讓她去學校上學，也不送她去補習班。 她看著我，沒有驚訝，也沒有抗拒。就是那種「好，你說，我聽著」的表情。 我說—— 「每個爸爸媽媽都是很愛孩子的，但大家看到的東西不見得一樣。」 「他們因為愛孩子，所以送孩子...",
+    categories: ["parents", "core"],
+    coverImage: becauseILoveYouIDontLetYouGoGraphics[0].src,
+    coverAlt: becauseILoveYouIDontLetYouGoGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: becauseILoveYouIDontLetYouGoGraphics
+    },
+    relatedPosts: ["memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    body: becauseILoveYouIDontLetYouGoHtml
+  },
+
   {
     title: "記憶學被冤枉·第十篇——AI不行，印太累，所以我做了一個網頁",
     slug: "memory-science-is-misunderstood-p10",
@@ -594,7 +624,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP10Graphics
     },
-    relatedPosts: ["how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9"],
+    relatedPosts: ["how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "because-i-love-you-i-dont-let-you-go"],
     body: memoryScienceIsMisunderstoodP10Html
   },
 
@@ -612,7 +642,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToActuallyUseMemoryScienceGraphics
     },
-    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10"],
+    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go"],
     body: howToActuallyUseMemoryScienceHtml
   },
 
@@ -631,7 +661,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howWouldYouRememberFruitsOfFourSeasonsGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "how-to-actually-use-memory-science", "memory-science-is-misunderstood-p10"],
+    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "how-to-actually-use-memory-science", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go"],
     body: howWouldYouRememberFruitsOfFourSeasonsHtml
   },
 

@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/because-i-love-you-i-dont-let-you-go/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/memory-science-is-misunderstood-p10/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
