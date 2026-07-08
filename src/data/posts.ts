@@ -46,6 +46,7 @@ import howWouldYouRememberFruitsOfFourSeasonsHtml from "../article-html/posts/ho
 import howToActuallyUseMemoryScienceHtml from "../article-html/posts/how-to-actually-use-memory-science.html?raw";
 import memoryScienceIsMisunderstoodP10Html from "../article-html/posts/memory-science-is-misunderstood-p10.html?raw";
 import becauseILoveYouIDontLetYouGoHtml from "../article-html/posts/because-i-love-you-i-dont-let-you-go.html?raw";
+import remembering48StationsIn43MinutesHtml from "../article-html/posts/remembering-48-stations-in-43-minutes.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -591,7 +592,36 @@ const becauseILoveYouIDontLetYouGoGraphics = Array.from({ length: 9 }, (_, index
   };
 });
 
+const remembering48StationsIn43MinutesGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/remembering-48-stations-in-43-minutes";
+
+const remembering48StationsIn43MinutesGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${remembering48StationsIn43MinutesGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `教孩子記48個車站名的43分鐘——見招拆招的真實教學圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "教孩子記48個車站名的43分鐘——見招拆招的真實教學",
+    slug: "remembering-48-stations-in-43-minutes",
+    date: "2026-07-08",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "「你不是說明天嗎？」 週六早上九點，我跟我女兒說，該開始記台鐵車站名了。她一臉不情願。 前一天我們約好的——把板橋到花蓮沿線四十八個車站，用諧音聯想法，一個一個綁上具體的東西。她答應了，但那時候「明天」還是個遙遠的概念。現在明天變成了今天，她反悔了。...",
+    categories: ["parents", "core"],
+    coverImage: remembering48StationsIn43MinutesGraphics[0].src,
+    coverAlt: remembering48StationsIn43MinutesGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: remembering48StationsIn43MinutesGraphics
+    },
+    relatedPosts: ["because-i-love-you-i-dont-let-you-go", "memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science"],
+    body: remembering48StationsIn43MinutesHtml
+  },
+
   {
     title: "因為愛你，所以不讓你去",
     slug: "because-i-love-you-i-dont-let-you-go",
@@ -606,7 +636,7 @@ export const posts = [
       label: "<圖文解析>",
       images: becauseILoveYouIDontLetYouGoGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    relatedPosts: ["memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons", "remembering-48-stations-in-43-minutes"],
     body: becauseILoveYouIDontLetYouGoHtml
   },
 
@@ -624,7 +654,7 @@ export const posts = [
       label: "<圖文解析>",
       images: memoryScienceIsMisunderstoodP10Graphics
     },
-    relatedPosts: ["how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "because-i-love-you-i-dont-let-you-go"],
+    relatedPosts: ["how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "because-i-love-you-i-dont-let-you-go", "remembering-48-stations-in-43-minutes"],
     body: memoryScienceIsMisunderstoodP10Html
   },
 
@@ -642,7 +672,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToActuallyUseMemoryScienceGraphics
     },
-    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go"],
+    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go", "remembering-48-stations-in-43-minutes"],
     body: howToActuallyUseMemoryScienceHtml
   },
 
