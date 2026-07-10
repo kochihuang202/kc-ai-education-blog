@@ -47,6 +47,12 @@ export const categories = [
     summary: "如何將記憶學的方法實際應用在日常學習與生活中？透過實例解析，讓學習事半功倍。",
     accent: "#3E8E7E"
   },
+  {
+    id: "ziwei-ai-parenting",
+    label: "紫微+AI育兒",
+    summary: "當傳統紫微命盤遇上 AI：不求鐵口直斷，只求為孩子提取專屬的成長參數與教育破解路徑。",
+    accent: "#7B1FA2"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];

@@ -65,5 +65,17 @@ export const seriesList: SeriesConfig[] = [
       { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" },
       { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 來了解記憶學如何快速記憶四季水果", label: "2" }
     ]
+  },
+  {
+    id: "ziwei-ai-parenting",
+    name: "紫微+AI育兒系列",
+    accent: "#7B1FA2",
+    steps: [
+      { slug: "ziwei-ai-parenting-p1", title: "第一篇 ｜ 弔胃口", label: "1" },
+      { slug: "ziwei-ai-parenting-p2", title: "第二篇 ｜ 運動七型", label: "2" },
+      { slug: "ziwei-ai-parenting-p3", title: "第三篇 ｜ 愛漂亮五型", label: "3" },
+      { slug: "ziwei-ai-parenting-p4a", title: "第四篇（上） ｜ 當命盤看見閱讀障礙", label: "4上" },
+      { slug: "ziwei-ai-parenting-p4b", title: "第四篇（下） ｜ 閱讀障礙的破解路徑", label: "4下" }
+    ]
   }
 ];

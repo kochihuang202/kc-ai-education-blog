@@ -47,6 +47,11 @@ import howToActuallyUseMemoryScienceHtml from "../article-html/posts/how-to-actu
 import memoryScienceIsMisunderstoodP10Html from "../article-html/posts/memory-science-is-misunderstood-p10.html?raw";
 import becauseILoveYouIDontLetYouGoHtml from "../article-html/posts/because-i-love-you-i-dont-let-you-go.html?raw";
 import remembering48StationsIn43MinutesHtml from "../article-html/posts/remembering-48-stations-in-43-minutes.html?raw";
+import ziweiAiParentingP1Html from "../article-html/posts/ziwei-ai-parenting-p1.html?raw";
+import ziweiAiParentingP2Html from "../article-html/posts/ziwei-ai-parenting-p2.html?raw";
+import ziweiAiParentingP3Html from "../article-html/posts/ziwei-ai-parenting-p3.html?raw";
+import ziweiAiParentingP4aHtml from "../article-html/posts/ziwei-ai-parenting-p4a.html?raw";
+import ziweiAiParentingP4bHtml from "../article-html/posts/ziwei-ai-parenting-p4b.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -603,7 +608,147 @@ const remembering48StationsIn43MinutesGraphics = Array.from({ length: 10 }, (_, 
   };
 });
 
+const ziweiAiParentingP1GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p1";
+const ziweiAiParentingP1Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP1GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（一）：弔胃口圖文解析 ${page}/10`
+  };
+});
+
+const ziweiAiParentingP2GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p2";
+const ziweiAiParentingP2Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP2GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（二）：運動七型圖文解析 ${page}/10`
+  };
+});
+
+const ziweiAiParentingP3GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p3";
+const ziweiAiParentingP3Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP3GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（三）：愛漂亮五型圖文解析 ${page}/10`
+  };
+});
+
+const ziweiAiParentingP4aGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p4a";
+const ziweiAiParentingP4aGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP4aGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（四上）：當命盤看見閱讀障礙圖文解析 ${page}/10`
+  };
+});
+
+const ziweiAiParentingP4bGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p4b";
+const ziweiAiParentingP4bGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP4bGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（四下）：閱讀障礙的破解路徑圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "紫微+AI育兒系列（一）：弔胃口",
+    slug: "ziwei-ai-parenting-p1",
+    date: "2026-07-10",
+    kicker: "紫微+AI育兒系列 · 第一篇",
+    excerpt:
+      "驚天秘密：我發現紫微+AI可以在育兒有大用途。我拿AI解了女兒的紫微命盤，不是為了算她未來嫁誰、考不考得上大學。我是想知道——如何在她成長的路上，給予更多的協助。",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP1Graphics[0].src,
+    coverAlt: ziweiAiParentingP1Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP1Graphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p2", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4a", "ziwei-ai-parenting-p4b"],
+    body: ziweiAiParentingP1Html
+  },
+
+  {
+    title: "紫微+AI育兒系列（二）：運動七型",
+    slug: "ziwei-ai-parenting-p2",
+    date: "2026-07-10",
+    kicker: "紫微+AI育兒系列 · 第二篇",
+    excerpt:
+      "「喜不喜歡運動」能拆多細？傳統大師頂多告訴你「適合運動」或「不愛動」。但透過AI，我可以把「喜不喜歡運動」拆成七種類型，逐項打分，轉化為具體行動。",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP2Graphics[0].src,
+    coverAlt: ziweiAiParentingP2Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP2Graphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4a", "ziwei-ai-parenting-p4b"],
+    body: ziweiAiParentingP2Html
+  },
+
+  {
+    title: "紫微+AI育兒系列（三）：愛漂亮五型",
+    slug: "ziwei-ai-parenting-p3",
+    date: "2026-07-10",
+    kicker: "紫微+AI育兒系列 · 第三篇",
+    excerpt:
+      "「愛不愛漂亮」能告訴你什麼？拆成乾淨整齊型、打扮裝飾型、質感品牌型、被稱讚型、表演舞台型五種類型。這不是算命，是家長把有限的焦慮投到該投的地方。",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP3Graphics[0].src,
+    coverAlt: ziweiAiParentingP3Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP3Graphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p2", "ziwei-ai-parenting-p4a", "ziwei-ai-parenting-p4b"],
+    body: ziweiAiParentingP3Html
+  },
+
+  {
+    title: "紫微+AI育兒系列（四上）：當命盤看見閱讀障礙",
+    slug: "ziwei-ai-parenting-p4a",
+    date: "2026-07-10",
+    kicker: "紫微+AI育兒系列 · 第四篇（上）",
+    excerpt:
+      "命盤看得出孩子有閱讀障礙傾向——但不是天生讀不了書，而是「用傳統方法教才會出問題」。這篇聊聊文字和聲音連線不穩的底層循環。",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP4aGraphics[0].src,
+    coverAlt: ziweiAiParentingP4aGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP4aGraphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p2", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4b"],
+    body: ziweiAiParentingP4aHtml
+  },
+
+  {
+    title: "紫微+AI育兒系列（四下）：閱讀障礙的破解路徑",
+    slug: "ziwei-ai-parenting-p4b",
+    date: "2026-07-10",
+    kicker: "紫微+AI育兒系列 · 第四篇（下）",
+    excerpt:
+      "找出閱讀障礙的破解路徑：用圖像進入、用口語理解、用分類建立規則、讓她當老師而不是被考、小量重複低壓累積。別讓錯的方法毀掉孩子的自尊。",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP4bGraphics[0].src,
+    coverAlt: ziweiAiParentingP4bGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP4bGraphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p2", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4a"],
+    body: ziweiAiParentingP4bHtml
+  },
+
   {
     title: "教孩子記48個車站名的43分鐘——見招拆招的真實教學",
     slug: "remembering-48-stations-in-43-minutes",
