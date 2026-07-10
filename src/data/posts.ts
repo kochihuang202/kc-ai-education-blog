@@ -614,7 +614,7 @@ const ziweiAiParentingP1Graphics = Array.from({ length: 10 }, (_, index) => {
   const page = index + 1;
   return {
     src: `${ziweiAiParentingP1GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
-    alt: `紫微+AI育兒系列（一）：吊胃口圖文解析 ${page}/10`
+    alt: `紫微+AI育兒系列（一）：這不是算命，是孩子的成長參數圖文解析 ${page}/10`
   };
 });
 
@@ -660,7 +660,7 @@ const ziweiAiParentingP4bGraphics = Array.from({ length: 10 }, (_, index) => {
 
 export const posts = [
   {
-    title: "紫微+AI育兒系列（一）：吊胃口",
+    title: "紫微+AI育兒系列（一）：這不是算命，是孩子的成長參數",
     slug: "ziwei-ai-parenting-p1",
     date: "2026-07-10",
     kicker: "紫微+AI育兒系列 · 第一篇",
