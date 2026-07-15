@@ -52,6 +52,10 @@ import ziweiAiParentingP2Html from "../article-html/posts/ziwei-ai-parenting-p2.
 import ziweiAiParentingP3Html from "../article-html/posts/ziwei-ai-parenting-p3.html?raw";
 import ziweiAiParentingP4aHtml from "../article-html/posts/ziwei-ai-parenting-p4a.html?raw";
 import ziweiAiParentingP4bHtml from "../article-html/posts/ziwei-ai-parenting-p4b.html?raw";
+import howToLinkTwoObjectsHtml from "../article-html/posts/how-to-link-two-objects.html?raw";
+import makingBrainImagesVisibleHtml from "../article-html/posts/making-brain-images-visible.html?raw";
+import scalingUpMethodOfLociHtml from "../article-html/posts/scaling-up-method-of-loci.html?raw";
+import numberCoding0099Html from "../article-html/posts/number-coding-00-99.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -658,7 +662,123 @@ const ziweiAiParentingP4bGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const howToLinkTwoObjectsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-to-link-two-objects";
+
+const howToLinkTwoObjectsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${howToLinkTwoObjectsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `兩個物體怎麼連？——從硬想到AI幫你想圖文解析 ${page}/10`
+  };
+});
+
+const makingBrainImagesVisibleGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/making-brain-images-visible";
+
+const makingBrainImagesVisibleGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${makingBrainImagesVisibleGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `腦中的圖，要看得見——AI製圖讓記憶從模糊變確定圖文解析 ${page}/10`
+  };
+});
+
+const scalingUpMethodOfLociGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/scaling-up-method-of-loci";
+
+const scalingUpMethodOfLociGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${scalingUpMethodOfLociGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `位置記憶法的規模化——從A4排版到5∞結構圖圖文解析 ${page}/10`
+  };
+});
+
+const numberCoding0099GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/number-coding-00-99";
+
+const numberCoding0099Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${numberCoding0099GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `數字編碼00-99——當孩子編不出來，AI幫他找到能懂的配對圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "數字編碼00-99——當孩子編不出來，AI幫他找到能懂的配對",
+    slug: "number-coding-00-99",
+    date: "2026-07-14",
+    kicker: "記憶學_應用 · 第七篇",
+    excerpt:
+      "數字變圖像，1不等於01 這就是數字編碼——把抽象的數字，轉成具體的圖像。 先說清楚一件事：數字編碼有兩種規模。一種是0到9，十組；一種是00到99，一百組。在記憶學裡，1不等於01——它們是不同的數字，配不同的圖像，要分開記憶。 為什麼兩種都需要？...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: numberCoding0099Graphics[0].src,
+    coverAlt: numberCoding0099Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: numberCoding0099Graphics
+    },
+    relatedPosts: ["remembering-48-stations-in-43-minutes", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    body: numberCoding0099Html
+  },
+
+  {
+    title: "位置記憶法的規模化——從A4排版到5∞結構圖",
+    slug: "scaling-up-method-of-loci",
+    date: "2026-07-13",
+    kicker: "記憶學_應用 · 第六篇",
+    excerpt:
+      "48個排得下，480個呢？ 但這裡有一個問題我一直放在心裡：四十八個，排得下。如果是一百個呢？四百八十個呢？ 四張A4不夠用了，你得印更多張。更多張紙翻來翻去，位置開始模糊——「那個東西在哪一張的哪一排？」你記得圖像，但位置亂了，提取就卡住。 A4排...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: scalingUpMethodOfLociGraphics[0].src,
+    coverAlt: scalingUpMethodOfLociGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: scalingUpMethodOfLociGraphics
+    },
+    relatedPosts: ["remembering-48-stations-in-43-minutes", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    body: scalingUpMethodOfLociHtml
+  },
+
+  {
+    title: "腦中的圖，要看得見——AI製圖讓記憶從模糊變確定",
+    slug: "making-brain-images-visible",
+    date: "2026-07-13",
+    kicker: "記憶學_應用 · 第五篇",
+    excerpt:
+      "畫面有了，但夠清楚嗎？ 但這裡有一個很容易被忽略的問題：那些畫面，在她腦中到底有多清楚？ 「巧虎」——她腦中的巧虎長什麼樣？是站著的還是坐著的？有尾巴嗎？「金色串珠」——多大？什麼顏色？是項鍊還是手鍊？ 你問她，她會說「我知道啊」。但如果你讓她畫出來...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: makingBrainImagesVisibleGraphics[0].src,
+    coverAlt: makingBrainImagesVisibleGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: makingBrainImagesVisibleGraphics
+    },
+    relatedPosts: ["remembering-48-stations-in-43-minutes", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    body: makingBrainImagesVisibleHtml
+  },
+
+  {
+    title: "兩個物體怎麼連？——從硬想到AI幫你想",
+    slug: "how-to-link-two-objects",
+    date: "2026-07-13",
+    kicker: "記憶學_應用 · 第四篇",
+    excerpt:
+      "物體有了，然後呢？ 但問題來了：巧虎跟金色串珠怎麼連？鋼鐵人跟色紙怎麼連？牡蠣跟瀑布怎麼連？ 物體有了，物體跟物體之間的連結，才是記憶真正鎖住的地方。沒有連結，四十八個物體就是四十八個孤島，你記住了巧虎，但想不起來下一站是什麼。 過去，倆倆物體怎麼連...",
+    categories: ["memory-science-app", "parents", "core"],
+    coverImage: howToLinkTwoObjectsGraphics[0].src,
+    coverAlt: howToLinkTwoObjectsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: howToLinkTwoObjectsGraphics
+    },
+    relatedPosts: ["remembering-48-stations-in-43-minutes", "how-to-actually-use-memory-science", "how-would-you-remember-fruits-of-four-seasons"],
+    body: howToLinkTwoObjectsHtml
+  },
+
   {
     title: "紫微+AI育兒系列（一）：這不是算命，是孩子的成長參數",
     slug: "ziwei-ai-parenting-p1",
@@ -753,17 +873,17 @@ export const posts = [
     title: "教孩子記48個車站名的43分鐘——見招拆招的真實教學",
     slug: "remembering-48-stations-in-43-minutes",
     date: "2026-07-08",
-    kicker: "KC 育兒手記",
+    kicker: "記憶學_應用 · 第三篇",
     excerpt:
       "「你不是說明天嗎？」 週六早上九點，我跟我女兒說，該開始記台鐵車站名了。她一臉不情願。 前一天我們約好的——把板橋到花蓮沿線四十八個車站，用諧音聯想法，一個一個綁上具體的東西。她答應了，但那時候「明天」還是個遙遠的概念。現在明天變成了今天，她反悔了。...",
-    categories: ["parents", "core"],
+    categories: ["memory-science-app", "parents", "core"],
     coverImage: remembering48StationsIn43MinutesGraphics[0].src,
     coverAlt: remembering48StationsIn43MinutesGraphics[0].alt,
     gallery: {
       label: "<圖文解析>",
       images: remembering48StationsIn43MinutesGraphics
     },
-    relatedPosts: ["because-i-love-you-i-dont-let-you-go", "memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science"],
+    relatedPosts: ["because-i-love-you-i-dont-let-you-go", "memory-science-is-misunderstood-p10", "how-to-actually-use-memory-science", "how-to-link-two-objects", "making-brain-images-visible", "scaling-up-method-of-loci", "number-coding-00-99"],
     body: remembering48StationsIn43MinutesHtml
   },
 
@@ -817,7 +937,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howToActuallyUseMemoryScienceGraphics
     },
-    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go", "remembering-48-stations-in-43-minutes"],
+    relatedPosts: ["how-would-you-remember-fruits-of-four-seasons", "memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go", "remembering-48-stations-in-43-minutes", "how-to-link-two-objects", "making-brain-images-visible", "scaling-up-method-of-loci", "number-coding-00-99"],
     body: howToActuallyUseMemoryScienceHtml
   },
 
@@ -836,7 +956,7 @@ export const posts = [
       label: "<圖文解析>",
       images: howWouldYouRememberFruitsOfFourSeasonsGraphics
     },
-    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "how-to-actually-use-memory-science", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go"],
+    relatedPosts: ["memory-science-is-misunderstood-p9", "memory-science-is-misunderstood-p8", "memory-science-is-misunderstood-p7", "how-to-actually-use-memory-science", "memory-science-is-misunderstood-p10", "because-i-love-you-i-dont-let-you-go", "how-to-link-two-objects", "making-brain-images-visible", "scaling-up-method-of-loci", "number-coding-00-99"],
     body: howWouldYouRememberFruitsOfFourSeasonsHtml
   },
 

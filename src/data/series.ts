@@ -63,7 +63,12 @@ export const seriesList: SeriesConfig[] = [
     accent: "#3E8E7E",
     steps: [
       { slug: "how-would-you-remember-fruits-of-four-seasons", title: "第一篇 ｜ 四季的水果，你會怎麼記", label: "1" },
-      { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 來了解記憶學如何快速記憶四季水果", label: "2" }
+      { slug: "how-to-actually-use-memory-science", title: "第二篇 ｜ 來了解記憶學如何快速記憶四季水果", label: "2" },
+      { slug: "remembering-48-stations-in-43-minutes", title: "第三篇 ｜ 教孩子記48個車站名的43分鐘——見招拆招的真實教學", label: "3" },
+      { slug: "how-to-link-two-objects", title: "第四篇 ｜ 兩個物體怎麼連？——從硬想到AI幫你想", label: "4" },
+      { slug: "making-brain-images-visible", title: "第五篇 ｜ 腦中的圖，要看得見——AI製圖讓記憶從模糊變確定", label: "5" },
+      { slug: "scaling-up-method-of-loci", title: "第六篇 ｜ 位置記憶法的規模化——從A4排版到5∞結構圖", label: "6" },
+      { slug: "number-coding-00-99", title: "第七篇 ｜ 數字編碼00-99——當孩子編不出來，AI幫他找到能懂的配對", label: "7" }
     ]
   },
   {
