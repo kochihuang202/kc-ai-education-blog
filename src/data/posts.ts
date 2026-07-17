@@ -56,6 +56,10 @@ import howToLinkTwoObjectsHtml from "../article-html/posts/how-to-link-two-objec
 import makingBrainImagesVisibleHtml from "../article-html/posts/making-brain-images-visible.html?raw";
 import scalingUpMethodOfLociHtml from "../article-html/posts/scaling-up-method-of-loci.html?raw";
 import numberCoding0099Html from "../article-html/posts/number-coding-00-99.html?raw";
+import cognitiveFrictionInAiEraHtml from "../article-html/posts/cognitive-friction-in-ai-era.html?raw";
+import antDeathSpiralP1Html from "../article-html/posts/ant-death-spiral-p1.html?raw";
+import notGrammarButLimitHtml from "../article-html/posts/not-grammar-but-limit.html?raw";
+import antDeathSpiralP2Html from "../article-html/posts/ant-death-spiral-p2.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -706,7 +710,123 @@ const numberCoding0099Graphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const cognitiveFrictionInAiEraGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/cognitive-friction-in-ai-era";
+
+const cognitiveFrictionInAiEraGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${cognitiveFrictionInAiEraGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `AI時代的思維摩擦——孩子用AI，哪些嚼的功夫不能省圖文解析 ${page}/10`
+  };
+});
+
+const antDeathSpiralP1GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ant-death-spiral-p1";
+
+const antDeathSpiralP1Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${antDeathSpiralP1GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `螞蟻死亡螺旋——看見的人為什麼也走不出來圖文解析 ${page}/10`
+  };
+});
+
+const notGrammarButLimitGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/not-grammar-but-limit";
+
+const notGrammarButLimitGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${notGrammarButLimitGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `你選的不是文法，是一條有上限的路圖文解析 ${page}/10`
+  };
+});
+
+const antDeathSpiralP2GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ant-death-spiral-p2";
+
+const antDeathSpiralP2Graphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${antDeathSpiralP2GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `螞蟻死亡螺旋（二）——看見新路，為什麼不走上去圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "螞蟻死亡螺旋（二）——看見新路，為什麼不走上去",
+    slug: "ant-death-spiral-p2",
+    date: "2026-07-17",
+    kicker: "螞蟻死亡螺旋系列 · 第二篇",
+    excerpt:
+      "我身邊的軟體工程師同事，十個裡面大概只有一個在用AI工作。不是連不上，不是花不起——對一個工程師來說，付費訂閱一個AI工具，門檻低到不行。但就是不碰。 有個問題，有人卡了三天。三天、一行一行啃程式碼，不斷的測試，就是找不到答案。我實在看不下去，去要了...",
+    categories: ["parents", "core"],
+    coverImage: antDeathSpiralP2Graphics[0].src,
+    coverAlt: antDeathSpiralP2Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: antDeathSpiralP2Graphics
+    },
+    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "not-grammar-but-limit"],
+    body: antDeathSpiralP2Html
+  },
+
+  {
+    title: "你選的不是文法，是一條有上限的路",
+    slug: "not-grammar-but-limit",
+    date: "2026-07-17",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "前幾天，我老婆問我一個問題。 「孩子之後自學，中文的部分，需不需要學詞性和語法？英文呢？」 我當下幾乎沒有猶豫，說不用。 但說完之後，我發現自己說不清為什麼。 不是不知道答案，是答案還沒有沉澱出來。那種感覺像什麼呢？像你吃過一道菜，知道它好吃，但要你...",
+    categories: ["parents", "core"],
+    coverImage: notGrammarButLimitGraphics[0].src,
+    coverAlt: notGrammarButLimitGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: notGrammarButLimitGraphics
+    },
+    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "ant-death-spiral-p2"],
+    body: notGrammarButLimitHtml
+  },
+
+  {
+    title: "螞蟻死亡螺旋——看見的人為什麼也走不出來",
+    slug: "ant-death-spiral-p1",
+    date: "2026-07-16",
+    kicker: "螞蟻死亡螺旋系列 · 第一篇",
+    excerpt:
+      "你見過螞蟻死亡螺旋嗎？ 這不是什麼恐怖片的橋段，是真實發生在熱帶雨林裡的事。一百年前，生物學家威廉·比比在雨林裡撞見了一個讓人後背發涼的畫面——幾萬隻行軍蟻首尾相連，繞成一個巨大的黑色漩渦，周長超過三百公尺。密密麻麻，沒有終點，沒有誰知道自己到底要去...",
+    categories: ["parents", "core"],
+    coverImage: antDeathSpiralP1Graphics[0].src,
+    coverAlt: antDeathSpiralP1Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: antDeathSpiralP1Graphics
+    },
+    relatedPosts: ["cognitive-friction-in-ai-era", "not-grammar-but-limit", "ant-death-spiral-p2"],
+    body: antDeathSpiralP1Html
+  },
+
+  {
+    title: "AI時代的思維摩擦——孩子用AI，哪些嚼的功夫不能省",
+    slug: "cognitive-friction-in-ai-era",
+    date: "2026-07-16",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "你站在旁邊，心裡糾結：該讓他用，還是該攔住他？ 攔住他，怕他落後——別人家的小孩都在用了。讓他用，又怕他以後什麼都不會自己想。 這個糾結，幾乎每個小學階段的父母都有。多數人隱約也知道，問題不是「用不用」，而是「怎麼用」。但知道這句話，不等於你真的看見...",
+    categories: ["parents", "core"],
+    coverImage: cognitiveFrictionInAiEraGraphics[0].src,
+    coverAlt: cognitiveFrictionInAiEraGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: cognitiveFrictionInAiEraGraphics
+    },
+    relatedPosts: ["ant-death-spiral-p1", "not-grammar-but-limit", "ant-death-spiral-p2"],
+    body: cognitiveFrictionInAiEraHtml
+  },
+
   {
     title: "數字編碼00-99——當孩子編不出來，AI幫他找到能懂的配對",
     slug: "number-coding-00-99",

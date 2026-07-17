@@ -82,5 +82,14 @@ export const seriesList: SeriesConfig[] = [
       { slug: "ziwei-ai-parenting-p4a", title: "第四篇（上） ｜ 當命盤看見閱讀障礙", label: "4上" },
       { slug: "ziwei-ai-parenting-p4b", title: "第四篇（下） ｜ 閱讀障礙的破解路徑", label: "4下" }
     ]
+  },
+  {
+    id: "ant-death-spiral",
+    name: "螞蟻死亡螺旋系列",
+    accent: "#C0512F",
+    steps: [
+      { slug: "ant-death-spiral-p1", title: "第一篇 ｜ 螞蟻死亡螺旋——看見的人為什麼也走不出來", label: "1" },
+      { slug: "ant-death-spiral-p2", title: "第二篇 ｜ 螞蟻死亡螺旋（二）——看見新路，為什麼不走上去", label: "2" }
+    ]
   }
 ];

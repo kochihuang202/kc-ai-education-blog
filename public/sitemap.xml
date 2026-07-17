@@ -11,6 +11,26 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/ant-death-spiral-p2/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/not-grammar-but-limit/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/ant-death-spiral-p1/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/cognitive-friction-in-ai-era/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/number-coding-00-99/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
