@@ -80,7 +80,8 @@ export const seriesList: SeriesConfig[] = [
       { slug: "ziwei-ai-parenting-p2", title: "第二篇 ｜ 運動七型", label: "2" },
       { slug: "ziwei-ai-parenting-p3", title: "第三篇 ｜ 愛漂亮五型", label: "3" },
       { slug: "ziwei-ai-parenting-p4a", title: "第四篇（上） ｜ 當命盤看見閱讀障礙", label: "4上" },
-      { slug: "ziwei-ai-parenting-p4b", title: "第四篇（下） ｜ 閱讀障礙的破解路徑", label: "4下" }
+      { slug: "ziwei-ai-parenting-p4b", title: "第四篇（下） ｜ 閱讀障礙的破解路徑", label: "4下" },
+      { slug: "ziwei-ai-parenting-p5", title: "第五篇 ｜ 同一個家，兩張命盤", label: "5" }
     ]
   },
   {

@@ -60,6 +60,8 @@ import cognitiveFrictionInAiEraHtml from "../article-html/posts/cognitive-fricti
 import antDeathSpiralP1Html from "../article-html/posts/ant-death-spiral-p1.html?raw";
 import notGrammarButLimitHtml from "../article-html/posts/not-grammar-but-limit.html?raw";
 import antDeathSpiralP2Html from "../article-html/posts/ant-death-spiral-p2.html?raw";
+import teachKidsEmotionalSeparationHtml from "../article-html/posts/teach-kids-emotional-separation.html?raw";
+import ziweiAiParentingP5Html from "../article-html/posts/ziwei-ai-parenting-p5.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -754,7 +756,65 @@ const antDeathSpiralP2Graphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const teachKidsEmotionalSeparationGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/teach-kids-emotional-separation";
+
+const teachKidsEmotionalSeparationGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${teachKidsEmotionalSeparationGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `教孩子切割情緒：小怪獸不是你，也不能替你做決定圖文解析 ${page}/10`
+  };
+});
+
+const ziweiAiParentingP5GraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/ziwei-ai-parenting-p5";
+
+const ziweiAiParentingP5Graphics = Array.from({ length: 9 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ziweiAiParentingP5GraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `紫微+AI育兒系列（五）：同一個家，兩張命盤圖文解析 ${page}/9`
+  };
+});
+
 export const posts = [
+  {
+    title: "紫微+AI育兒系列（五）：同一個家，兩張命盤",
+    slug: "ziwei-ai-parenting-p5",
+    date: "2026-07-23",
+    kicker: "紫微+AI育兒系列 · 第五篇",
+    excerpt:
+      "兩個孩子都會生氣，但生氣的樣子有差 所有的孩子都容易哭鬧，我家兩個女兒當然也不例外。如果你只看表面行為，會覺得她們「差不多」——都是會哭會鬧會不爽。 但如果你仔細觀察，她們生氣之後卡住的地方，完全不同。 阿云生氣的時候—— 念國字越念越不順，情緒慢慢...",
+    categories: ["ziwei-ai-parenting", "parents", "core"],
+    coverImage: ziweiAiParentingP5Graphics[0].src,
+    coverAlt: ziweiAiParentingP5Graphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ziweiAiParentingP5Graphics
+    },
+    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2"],
+    body: ziweiAiParentingP5Html
+  },
+
+  {
+    title: "教孩子切割情緒：小怪獸不是你，也不能替你做決定",
+    slug: "teach-kids-emotional-separation",
+    date: "2026-07-23",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "有一次，孩子因為一個國字一直念不順，情緒慢慢升了起來。 一開始只是皺眉，接著喊熱、喊不舒服，最後把書推開，大聲說： 「我不要念了！」 「我最討厭爸爸媽媽了！」 以前遇到這種情況，我會先問： 「你現在是不是很生氣？」 「是不是因為一直念不好，覺得很挫折...",
+    categories: ["parents", "core"],
+    coverImage: teachKidsEmotionalSeparationGraphics[0].src,
+    coverAlt: teachKidsEmotionalSeparationGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: teachKidsEmotionalSeparationGraphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p5", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2"],
+    body: teachKidsEmotionalSeparationHtml
+  },
+
   {
     title: "螞蟻死亡螺旋（二）——看見新路，為什麼不走上去",
     slug: "ant-death-spiral-p2",
@@ -769,7 +829,7 @@ export const posts = [
       label: "<圖文解析>",
       images: antDeathSpiralP2Graphics
     },
-    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "not-grammar-but-limit"],
+    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "not-grammar-but-limit", "teach-kids-emotional-separation", "ziwei-ai-parenting-p5"],
     body: antDeathSpiralP2Html
   },
 
@@ -985,7 +1045,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ziweiAiParentingP4bGraphics
     },
-    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p2", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4a"],
+    relatedPosts: ["ziwei-ai-parenting-p1", "ziwei-ai-parenting-p2", "ziwei-ai-parenting-p3", "ziwei-ai-parenting-p4a", "teach-kids-emotional-separation", "ziwei-ai-parenting-p5"],
     body: ziweiAiParentingP4bHtml
   },
 
