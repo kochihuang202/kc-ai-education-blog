@@ -209,7 +209,7 @@ def register_codebase(slug, title, kicker, categories_str, date_str, images_coun
     with open(posts_path, "r", encoding="utf-8") as f:
         posts_content = f.read()
         
-    if slug not in posts_content:
+    if f'slug: "{slug}"' not in posts_content:
         import_camel = "".join(x.capitalize() for x in slug.split("-"))
         import_camel_lc = import_camel[0].lower() + import_camel[1:]
         

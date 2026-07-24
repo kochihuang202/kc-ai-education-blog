@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/reading-toolbox-for-kids/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/ziwei-ai-parenting-p5/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>

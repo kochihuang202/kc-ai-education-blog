@@ -62,6 +62,7 @@ import notGrammarButLimitHtml from "../article-html/posts/not-grammar-but-limit.
 import antDeathSpiralP2Html from "../article-html/posts/ant-death-spiral-p2.html?raw";
 import teachKidsEmotionalSeparationHtml from "../article-html/posts/teach-kids-emotional-separation.html?raw";
 import ziweiAiParentingP5Html from "../article-html/posts/ziwei-ai-parenting-p5.html?raw";
+import readingToolboxForKidsHtml from "../article-html/posts/reading-toolbox-for-kids.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -778,7 +779,36 @@ const ziweiAiParentingP5Graphics = Array.from({ length: 9 }, (_, index) => {
   };
 });
 
+const readingToolboxForKidsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/reading-toolbox-for-kids";
+
+const readingToolboxForKidsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${readingToolboxForKidsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `給孩子的閱讀工具箱圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "給孩子的閱讀工具箱",
+    slug: "reading-toolbox-for-kids",
+    date: "2026-07-24",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "女兒快上小一了。最近她開始能自己看那種字很多、圖很少的書，帶注音的，一本一本啃下來，當爸的看著當然高興。 所以我知道，下一個階段的時機到了。 因為我知道她現在只是在「讀」，就是在「看個熱鬧」。 你想想看，孩子識字量到了，能把字念出來，不代表她知道作者...",
+    categories: ["parents", "core"],
+    coverImage: readingToolboxForKidsGraphics[0].src,
+    coverAlt: readingToolboxForKidsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: readingToolboxForKidsGraphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "ant-death-spiral-p2"],
+    body: readingToolboxForKidsHtml
+  },
+
   {
     title: "紫微+AI育兒系列（五）：同一個家，兩張命盤",
     slug: "ziwei-ai-parenting-p5",
@@ -793,7 +823,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ziweiAiParentingP5Graphics
     },
-    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2"],
+    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids"],
     body: ziweiAiParentingP5Html
   },
 
@@ -811,7 +841,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidsEmotionalSeparationGraphics
     },
-    relatedPosts: ["ziwei-ai-parenting-p5", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2"],
+    relatedPosts: ["ziwei-ai-parenting-p5", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids"],
     body: teachKidsEmotionalSeparationHtml
   },
 
@@ -829,7 +859,7 @@ export const posts = [
       label: "<圖文解析>",
       images: antDeathSpiralP2Graphics
     },
-    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "not-grammar-but-limit", "teach-kids-emotional-separation", "ziwei-ai-parenting-p5"],
+    relatedPosts: ["cognitive-friction-in-ai-era", "ant-death-spiral-p1", "not-grammar-but-limit", "teach-kids-emotional-separation", "ziwei-ai-parenting-p5", "reading-toolbox-for-kids"],
     body: antDeathSpiralP2Html
   },
 
