@@ -64,6 +64,7 @@ import teachKidsEmotionalSeparationHtml from "../article-html/posts/teach-kids-e
 import ziweiAiParentingP5Html from "../article-html/posts/ziwei-ai-parenting-p5.html?raw";
 import readingToolboxForKidsHtml from "../article-html/posts/reading-toolbox-for-kids.html?raw";
 import theMomentAfterMasteryHtml from "../article-html/posts/the-moment-after-mastery.html?raw";
+import timeManagementForPreliterateKidsHtml from "../article-html/posts/time-management-for-preliterate-kids.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -802,7 +803,36 @@ const theMomentAfterMasteryGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const timeManagementForPreliterateKidsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/time-management-for-preliterate-kids";
+
+const timeManagementForPreliterateKidsGraphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${timeManagementForPreliterateKidsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `不會寫字的孩子，怎麼管理自己的時間圖文解析 ${page}/12`
+  };
+});
+
 export const posts = [
+  {
+    title: "不會寫字的孩子，怎麼管理自己的時間",
+    slug: "time-management-for-preliterate-kids",
+    date: "2026-07-31",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "我女兒快七歲了，下半年準備開始自學。 申請自學的時候，我把每天的時間表排得很完整：幾點閱讀、幾點運動、幾點學英文，連休息時間都安排好了。 表格看起來井井有條。 但我盯著那張表看了半天，突然覺得哪裡不太對。 後來我終於想明白了：",
+    categories: ["parents", "core"],
+    coverImage: timeManagementForPreliterateKidsGraphics[0].src,
+    coverAlt: timeManagementForPreliterateKidsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: timeManagementForPreliterateKidsGraphics
+    },
+    relatedPosts: ["the-moment-after-mastery", "reading-toolbox-for-kids", "ziwei-ai-parenting-p5"],
+    body: timeManagementForPreliterateKidsHtml
+  },
+
   {
     title: "學會之後的那個瞬間",
     slug: "the-moment-after-mastery",
@@ -817,7 +847,7 @@ export const posts = [
       label: "<圖文解析>",
       images: theMomentAfterMasteryGraphics
     },
-    relatedPosts: ["reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "teach-kids-emotional-separation"],
+    relatedPosts: ["reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "time-management-for-preliterate-kids"],
     body: theMomentAfterMasteryHtml
   },
 
@@ -835,7 +865,7 @@ export const posts = [
       label: "<圖文解析>",
       images: readingToolboxForKidsGraphics
     },
-    relatedPosts: ["ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "ant-death-spiral-p2", "the-moment-after-mastery"],
+    relatedPosts: ["ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "ant-death-spiral-p2", "the-moment-after-mastery", "time-management-for-preliterate-kids"],
     body: readingToolboxForKidsHtml
   },
 
@@ -853,7 +883,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ziweiAiParentingP5Graphics
     },
-    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids", "the-moment-after-mastery"],
+    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids", "the-moment-after-mastery", "time-management-for-preliterate-kids"],
     body: ziweiAiParentingP5Html
   },
 
