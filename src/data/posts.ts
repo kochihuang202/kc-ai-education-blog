@@ -63,6 +63,7 @@ import antDeathSpiralP2Html from "../article-html/posts/ant-death-spiral-p2.html
 import teachKidsEmotionalSeparationHtml from "../article-html/posts/teach-kids-emotional-separation.html?raw";
 import ziweiAiParentingP5Html from "../article-html/posts/ziwei-ai-parenting-p5.html?raw";
 import readingToolboxForKidsHtml from "../article-html/posts/reading-toolbox-for-kids.html?raw";
+import theMomentAfterMasteryHtml from "../article-html/posts/the-moment-after-mastery.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -790,7 +791,36 @@ const readingToolboxForKidsGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const theMomentAfterMasteryGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/the-moment-after-mastery";
+
+const theMomentAfterMasteryGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${theMomentAfterMasteryGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `學會之後的那個瞬間圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "學會之後的那個瞬間",
+    slug: "the-moment-after-mastery",
+    date: "2026-07-31",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "昨天帶女兒去游泳。 她現在可以在比較淺的成人區游了。因為稍微會換氣了，也能沉入池底，跳起來換氣。 她玩得很開心，一直潛下去、跳上來、再潛下去。我叫她過來，跟她說了一句：「是不是學會之後，覺得游泳又更有趣了？」",
+    categories: ["parents", "core"],
+    coverImage: theMomentAfterMasteryGraphics[0].src,
+    coverAlt: theMomentAfterMasteryGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: theMomentAfterMasteryGraphics
+    },
+    relatedPosts: ["reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "teach-kids-emotional-separation"],
+    body: theMomentAfterMasteryHtml
+  },
+
   {
     title: "給孩子的閱讀工具箱",
     slug: "reading-toolbox-for-kids",
@@ -805,7 +835,7 @@ export const posts = [
       label: "<圖文解析>",
       images: readingToolboxForKidsGraphics
     },
-    relatedPosts: ["ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "ant-death-spiral-p2"],
+    relatedPosts: ["ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "ant-death-spiral-p2", "the-moment-after-mastery"],
     body: readingToolboxForKidsHtml
   },
 
@@ -823,7 +853,7 @@ export const posts = [
       label: "<圖文解析>",
       images: ziweiAiParentingP5Graphics
     },
-    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids"],
+    relatedPosts: ["teach-kids-emotional-separation", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids", "the-moment-after-mastery"],
     body: ziweiAiParentingP5Html
   },
 
@@ -841,7 +871,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachKidsEmotionalSeparationGraphics
     },
-    relatedPosts: ["ziwei-ai-parenting-p5", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids"],
+    relatedPosts: ["ziwei-ai-parenting-p5", "ziwei-ai-parenting-p4b", "ant-death-spiral-p2", "reading-toolbox-for-kids", "the-moment-after-mastery"],
     body: teachKidsEmotionalSeparationHtml
   },
 
