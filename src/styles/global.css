@@ -545,6 +545,11 @@ body.gallery-open {
   overflow-wrap: anywhere;
 }
 
+.article-body,
+.article-body * {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 .article-body img {
   height: auto;
   border-radius: 8px;
