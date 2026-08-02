@@ -263,22 +263,19 @@ main {
 }
 
 .post-card-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  background: #faf7f2;
-  height: 360px;
+  display: block;
+  width: 100%;
+  height: auto;
   overflow: hidden;
+  background: var(--surface);
 }
 
 .post-card-media img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
   object-fit: contain;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .post-card-body {
