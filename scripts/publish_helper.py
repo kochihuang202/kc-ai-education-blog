@@ -6,6 +6,9 @@ import subprocess
 import shutil
 from PIL import Image
 
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+
 def get_args():
     parser = argparse.ArgumentParser(description="KC AI Education Blog - Article Publishing Helper")
     parser.add_argument("--src", required=True, help="Path to source folder containing HTML and images")

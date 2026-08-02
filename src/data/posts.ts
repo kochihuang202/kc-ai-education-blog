@@ -65,6 +65,7 @@ import ziweiAiParentingP5Html from "../article-html/posts/ziwei-ai-parenting-p5.
 import readingToolboxForKidsHtml from "../article-html/posts/reading-toolbox-for-kids.html?raw";
 import theMomentAfterMasteryHtml from "../article-html/posts/the-moment-after-mastery.html?raw";
 import timeManagementForPreliterateKidsHtml from "../article-html/posts/time-management-for-preliterate-kids.html?raw";
+import teachingKidsTradeoffsHtml from "../article-html/posts/teaching-kids-tradeoffs.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -814,7 +815,36 @@ const timeManagementForPreliterateKidsGraphics = Array.from({ length: 12 }, (_, 
   };
 });
 
+const teachingKidsTradeoffsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/teaching-kids-tradeoffs";
+
+const teachingKidsTradeoffsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${teachingKidsTradeoffsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `教孩子取捨圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "教孩子取捨",
+    slug: "teaching-kids-tradeoffs",
+    date: "2026-08-02",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "那天，女兒要出門，換了一個大背包。她把小背包裡的東西掏出來往大背包裡塞，我看了一眼叫她停下來：「把小背包直接放進大背包就好。」她哭了。這不是整理問題，是她不理解為什麼明明有大背包還要留著小背包多此一舉。真正的獨立，不是教孩子方法，而是教她權衡代價的能力。",
+    categories: ["parents", "core"],
+    coverImage: teachingKidsTradeoffsGraphics[0].src,
+    coverAlt: teachingKidsTradeoffsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: teachingKidsTradeoffsGraphics
+    },
+    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids"],
+    body: teachingKidsTradeoffsHtml
+  },
+
   {
     title: "不會寫字的孩子，怎麼管理自己的時間",
     slug: "time-management-for-preliterate-kids",
