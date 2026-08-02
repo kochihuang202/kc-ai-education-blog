@@ -155,8 +155,7 @@ main {
 }
 
 .intro-media img,
-.article-cover img,
-.post-card-media img {
+.article-cover img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -264,7 +263,18 @@ main {
 }
 
 .post-card-media {
-  background: #e9ece6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #faf7f2;
+  height: 280px;
+  overflow: hidden;
+}
+
+.post-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .post-card-body {
