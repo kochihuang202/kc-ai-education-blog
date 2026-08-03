@@ -66,6 +66,7 @@ import readingToolboxForKidsHtml from "../article-html/posts/reading-toolbox-for
 import theMomentAfterMasteryHtml from "../article-html/posts/the-moment-after-mastery.html?raw";
 import timeManagementForPreliterateKidsHtml from "../article-html/posts/time-management-for-preliterate-kids.html?raw";
 import teachingKidsTradeoffsHtml from "../article-html/posts/teaching-kids-tradeoffs.html?raw";
+import threeYearsInLibraryFromDisappointmentToFunHtml from "../article-html/posts/three-years-in-library-from-disappointment-to-fun.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -826,7 +827,36 @@ const teachingKidsTradeoffsGraphics = Array.from({ length: 10 }, (_, index) => {
   };
 });
 
+const threeYearsInLibraryFromDisappointmentToFunGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/three-years-in-library-from-disappointment-to-fun";
+
+const threeYearsInLibraryFromDisappointmentToFunGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${threeYearsInLibraryFromDisappointmentToFunGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `圖書館三年——從每次失望到「讀書超好玩」圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "圖書館三年——從每次失望到「讀書超好玩」",
+    slug: "three-years-in-library-from-disappointment-to-fun",
+    date: "2026-08-03",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "昨天在圖書館，我女兒跟我說了一句話。 她跟我轉述了一段對話。她說同學都說讀書不好玩，但她覺得讀書超好玩。同學還追問她：「為什麼你覺得什麼都很好玩？連讀書都覺得很好玩？」 我聽完愣了一下。這句話，我等了將近三年。",
+    categories: ["parents", "core"],
+    coverImage: threeYearsInLibraryFromDisappointmentToFunGraphics[0].src,
+    coverAlt: threeYearsInLibraryFromDisappointmentToFunGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: threeYearsInLibraryFromDisappointmentToFunGraphics
+    },
+    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery"],
+    body: threeYearsInLibraryFromDisappointmentToFunHtml
+  },
+
   {
     title: "教孩子取捨",
     slug: "teaching-kids-tradeoffs",
@@ -841,7 +871,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachingKidsTradeoffsGraphics
     },
-    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids"],
+    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids", "three-years-in-library-from-disappointment-to-fun"],
     body: teachingKidsTradeoffsHtml
   },
 
@@ -859,7 +889,7 @@ export const posts = [
       label: "<圖文解析>",
       images: timeManagementForPreliterateKidsGraphics
     },
-    relatedPosts: ["the-moment-after-mastery", "reading-toolbox-for-kids", "ziwei-ai-parenting-p5"],
+    relatedPosts: ["the-moment-after-mastery", "reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "three-years-in-library-from-disappointment-to-fun"],
     body: timeManagementForPreliterateKidsHtml
   },
 
@@ -877,7 +907,7 @@ export const posts = [
       label: "<圖文解析>",
       images: theMomentAfterMasteryGraphics
     },
-    relatedPosts: ["reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "time-management-for-preliterate-kids"],
+    relatedPosts: ["reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "teach-kids-emotional-separation", "time-management-for-preliterate-kids", "three-years-in-library-from-disappointment-to-fun"],
     body: theMomentAfterMasteryHtml
   },
 
