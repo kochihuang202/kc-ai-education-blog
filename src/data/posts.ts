@@ -67,6 +67,7 @@ import theMomentAfterMasteryHtml from "../article-html/posts/the-moment-after-ma
 import timeManagementForPreliterateKidsHtml from "../article-html/posts/time-management-for-preliterate-kids.html?raw";
 import teachingKidsTradeoffsHtml from "../article-html/posts/teaching-kids-tradeoffs.html?raw";
 import threeYearsInLibraryFromDisappointmentToFunHtml from "../article-html/posts/three-years-in-library-from-disappointment-to-fun.html?raw";
+import tabletSelfLearningProvenPathHtml from "../article-html/posts/tablet-self-learning-proven-path.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -838,7 +839,36 @@ const threeYearsInLibraryFromDisappointmentToFunGraphics = Array.from({ length: 
   };
 });
 
+const tabletSelfLearningProvenPathGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/tablet-self-learning-proven-path";
+
+const tabletSelfLearningProvenPathGraphics = Array.from({ length: 12 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${tabletSelfLearningProvenPathGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `平板自學是一條走通的康莊大道圖文解析 ${page}/12`
+  };
+});
+
 export const posts = [
+  {
+    title: "平板自學是一條走通的康莊大道",
+    slug: "tablet-self-learning-proven-path",
+    date: "2026-08-05",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "你可能跟大多數家長一樣，對「給孩子平板」這件事心裡發毛。平板=打遊戲=傷眼睛=不務正業，這幾乎是條件反射。但你心裡可能也隱約覺得，平板不該只是這樣——只是你不知道，除了限制使用時間，還能怎麼辦。 我想告訴你一件事：平板可能是目前最好的自學工具——只要...",
+    categories: ["parents", "core"],
+    coverImage: tabletSelfLearningProvenPathGraphics[0].src,
+    coverAlt: tabletSelfLearningProvenPathGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: tabletSelfLearningProvenPathGraphics
+    },
+    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids"],
+    body: tabletSelfLearningProvenPathHtml
+  },
+
   {
     title: "圖書館三年——從每次失望到「讀書超好玩」",
     slug: "three-years-in-library-from-disappointment-to-fun",
@@ -853,7 +883,7 @@ export const posts = [
       label: "<圖文解析>",
       images: threeYearsInLibraryFromDisappointmentToFunGraphics
     },
-    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery"],
+    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path"],
     body: threeYearsInLibraryFromDisappointmentToFunHtml
   },
 
@@ -871,7 +901,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachingKidsTradeoffsGraphics
     },
-    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids", "three-years-in-library-from-disappointment-to-fun"],
+    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids", "three-years-in-library-from-disappointment-to-fun", "tablet-self-learning-proven-path"],
     body: teachingKidsTradeoffsHtml
   },
 
@@ -889,7 +919,7 @@ export const posts = [
       label: "<圖文解析>",
       images: timeManagementForPreliterateKidsGraphics
     },
-    relatedPosts: ["the-moment-after-mastery", "reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "three-years-in-library-from-disappointment-to-fun"],
+    relatedPosts: ["the-moment-after-mastery", "reading-toolbox-for-kids", "ziwei-ai-parenting-p5", "three-years-in-library-from-disappointment-to-fun", "tablet-self-learning-proven-path"],
     body: timeManagementForPreliterateKidsHtml
   },
 
