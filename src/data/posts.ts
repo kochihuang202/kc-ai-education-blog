@@ -70,6 +70,7 @@ import threeYearsInLibraryFromDisappointmentToFunHtml from "../article-html/post
 import tabletSelfLearningProvenPathHtml from "../article-html/posts/tablet-self-learning-proven-path.html?raw";
 import whyLearningMethodIsntMainstreamHtml from "../article-html/posts/why-learning-method-isnt-mainstream.html?raw";
 import weKnowHowToLearnIcapFrameworkHtml from "../article-html/posts/we-know-how-to-learn-icap-framework.html?raw";
+import giveLearningTimeBackToKidsHtml from "../article-html/posts/give-learning-time-back-to-kids.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -874,7 +875,36 @@ const weKnowHowToLearnIcapFrameworkGraphics = Array.from({ length: 8 }, (_, inde
   };
 });
 
+const giveLearningTimeBackToKidsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/give-learning-time-back-to-kids";
+
+const giveLearningTimeBackToKidsGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${giveLearningTimeBackToKidsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `改變不了學校，也能把時間還給孩子圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "改變不了學校，也能把時間還給孩子",
+    slug: "give-learning-time-back-to-kids",
+    date: "2026-08-10",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "父母改變不了學校，還能為孩子做什麼？ 前陣子，我和一位同事聊到孩子的教育。他以前覺得我的育兒方式太激進：讓孩子保有大量自己的時間、相信孩子可以安排生活，甚至選擇自學，不把學校的進度當成唯一標準。 但那一次，他很認真地告訴我，想了很久之後，他開始覺得，...",
+    categories: ["parents", "core"],
+    coverImage: giveLearningTimeBackToKidsGraphics[0].src,
+    coverAlt: giveLearningTimeBackToKidsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: giveLearningTimeBackToKidsGraphics
+    },
+    relatedPosts: ["we-know-how-to-learn-icap-framework", "why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path"],
+    body: giveLearningTimeBackToKidsHtml
+  },
+
   {
     title: "我們其實都知道怎麼學，只是從來沒有用它來檢視學習",
     slug: "we-know-how-to-learn-icap-framework",
@@ -889,7 +919,7 @@ export const posts = [
       label: "<圖文解析>",
       images: weKnowHowToLearnIcapFrameworkGraphics
     },
-    relatedPosts: ["why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun"],
+    relatedPosts: ["why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "give-learning-time-back-to-kids"],
     body: weKnowHowToLearnIcapFrameworkHtml
   },
 
@@ -907,7 +937,7 @@ export const posts = [
       label: "<圖文解析>",
       images: whyLearningMethodIsntMainstreamGraphics
     },
-    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "we-know-how-to-learn-icap-framework"],
+    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "we-know-how-to-learn-icap-framework", "give-learning-time-back-to-kids"],
     body: whyLearningMethodIsntMainstreamHtml
   },
 
@@ -925,7 +955,7 @@ export const posts = [
       label: "<圖文解析>",
       images: tabletSelfLearningProvenPathGraphics
     },
-    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "why-learning-method-isnt-mainstream", "we-know-how-to-learn-icap-framework"],
+    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "why-learning-method-isnt-mainstream", "we-know-how-to-learn-icap-framework", "give-learning-time-back-to-kids"],
     body: tabletSelfLearningProvenPathHtml
   },
 

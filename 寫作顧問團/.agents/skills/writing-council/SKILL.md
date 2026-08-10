@@ -73,12 +73,20 @@ Use `共用資料/寫作偏好.md` and `共用資料/發布平台.md` when they 
 - Keep Markdown as the editable source of truth.
 - After creating or changing any `04-初稿-vNN.md` or `08-發布版.md`, immediately run `scripts/render_article_html.py` to create a same-name `.html` file.
 - When rendering the newest draft or release version, also replace `目前稿件.html` and `文章工作台.html` in that article directory. Treat `文章工作台.html` as the user's stable reading/editing entry point and `目前稿件.html` as a compatibility preview; neither is a versioned source.
+- After a normal revision, direct the user only to the fixed `文章工作台.html`; do not ask them to switch to `04-初稿-vNN.html`. Keep versioned HTML files as background archives for comparison only. The user's everyday workflow is: create a new versioned Markdown source, overwrite the same fixed workbench with its content, then refresh that one page.
 - Never edit generated HTML by hand. Regenerate it from the corresponding Markdown so both formats stay synchronized.
 - Hide paragraph IDs in the rendered page while retaining them as HTML metadata for precise revision mapping.
 - Make the workbench directly editable in the browser and include undo, redo, text-size, theme, browser autosave, reset, and Markdown export controls. Treat browser edits as review work, not as source changes; have the user click `儲存修改稿` to save/export Markdown, then import that file into a new version without overwriting the prior draft.
 - On every content revision, replace `09-本次修改.json` with the newest source filename, short user-facing summaries, and only the paragraph IDs changed in that revision. Keep full historical changes in `07-修改紀錄.md`.
 - Render a `本次修改` panel before the article and visually highlight only the IDs from matching `09-本次修改.json`. When the next revision is created, remove the prior highlights by replacing this transient file; never accumulate old highlights in the workbench.
-- Include the matching HTML and `文章工作台.html` in the completion report. Do not publish preview files without separate user approval.
+- Include `文章工作台.html` as the primary link in the completion report. Mention or link the matching versioned HTML only when the user asks to compare or inspect an older version. Do not publish preview files without separate user approval.
+
+## Format a release version
+
+- Before laying out `08-發布版.md`, read the entire latest approved draft. Choose emphasis from the article's argument, turning points, methods, and closing; never decorate paragraphs mechanically or only from keywords.
+- Keep the editable `文章工作台.html` as the drafting workspace. Generate a separate clean release HTML whose filename exactly matches the article project directory name, with no workbench controls, source metadata, revision summary, or editing instructions above the title.
+- Apply user-approved brand opening, closing, colors, width, heading treatment, and callout hierarchy from `共用資料/寫作偏好.md` and `共用資料/發布平台.md`.
+- Preserve the article's wording unless the user separately authorizes content changes. Formatting may reorder only presentation wrappers, not arguments or paragraphs.
 
 ## Stop conditions
 
