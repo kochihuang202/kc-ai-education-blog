@@ -1,0 +1,4 @@
+interface:
+  display_name: "寫作顧問團"
+  short_description: "管理選題、企劃、研究、寫作、審稿與排版的完整文章流程"
+  default_prompt: "使用 $writing-council 從一個初步想法開始新的文章專案。"

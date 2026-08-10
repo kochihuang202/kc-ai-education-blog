@@ -68,6 +68,7 @@ import timeManagementForPreliterateKidsHtml from "../article-html/posts/time-man
 import teachingKidsTradeoffsHtml from "../article-html/posts/teaching-kids-tradeoffs.html?raw";
 import threeYearsInLibraryFromDisappointmentToFunHtml from "../article-html/posts/three-years-in-library-from-disappointment-to-fun.html?raw";
 import tabletSelfLearningProvenPathHtml from "../article-html/posts/tablet-self-learning-proven-path.html?raw";
+import whyLearningMethodIsntMainstreamHtml from "../article-html/posts/why-learning-method-isnt-mainstream.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -850,7 +851,36 @@ const tabletSelfLearningProvenPathGraphics = Array.from({ length: 12 }, (_, inde
   };
 });
 
+const whyLearningMethodIsntMainstreamGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/why-learning-method-isnt-mainstream";
+
+const whyLearningMethodIsntMainstreamGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${whyLearningMethodIsntMainstreamGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `學習方法為什麼不是顯學？圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "學習方法為什麼不是顯學？",
+    slug: "why-learning-method-isnt-mainstream",
+    date: "2026-08-10",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "我真正想說的不是： 「為什麼現在的老師不多教一點心智圖、記憶法、費曼學習法？」 也不是要把更多責任丟給已經很忙的老師。 其實我之所以會提出這個問題，跟我自己的經驗有很大的關係。 我從小根本不知道，原來「學習」這件事情，也是有方法可以學的。",
+    categories: ["parents", "core"],
+    coverImage: whyLearningMethodIsntMainstreamGraphics[0].src,
+    coverAlt: whyLearningMethodIsntMainstreamGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: whyLearningMethodIsntMainstreamGraphics
+    },
+    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs"],
+    body: whyLearningMethodIsntMainstreamHtml
+  },
+
   {
     title: "平板自學是一條走通的康莊大道",
     slug: "tablet-self-learning-proven-path",
@@ -865,7 +895,7 @@ export const posts = [
       label: "<圖文解析>",
       images: tabletSelfLearningProvenPathGraphics
     },
-    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids"],
+    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "why-learning-method-isnt-mainstream"],
     body: tabletSelfLearningProvenPathHtml
   },
 
@@ -883,7 +913,7 @@ export const posts = [
       label: "<圖文解析>",
       images: threeYearsInLibraryFromDisappointmentToFunGraphics
     },
-    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path"],
+    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path", "why-learning-method-isnt-mainstream"],
     body: threeYearsInLibraryFromDisappointmentToFunHtml
   },
 
@@ -901,7 +931,7 @@ export const posts = [
       label: "<圖文解析>",
       images: teachingKidsTradeoffsGraphics
     },
-    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids", "three-years-in-library-from-disappointment-to-fun", "tablet-self-learning-proven-path"],
+    relatedPosts: ["time-management-for-preliterate-kids", "the-moment-after-mastery", "reading-toolbox-for-kids", "three-years-in-library-from-disappointment-to-fun", "tablet-self-learning-proven-path", "why-learning-method-isnt-mainstream"],
     body: teachingKidsTradeoffsHtml
   },
 

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>就算不能自學，也要把學習時間還給孩子</title>
+  <style>
+    :root { --ink:#2d2926; --muted:#7d746d; --accent:#c0512f; --paper:#fffdf9; --page:#f4efe8; --line:#eadfd5; --reading-size:1.08rem; }
+    * { box-sizing:border-box; }
+    body[data-theme="dark"] { --ink:#e8dfd7; --muted:#ac9e94; --accent:#e58a65; --paper:#24201d; --page:#171513; --line:#423a35; }
+    body { margin:0; background:var(--page); color:var(--ink); font-family:"Noto Serif TC","Microsoft JhengHei",serif; line-height:1.95; transition:background .2s,color .2s; }
+    main { width:min(760px, calc(100% - 32px)); margin:32px auto; padding:52px 64px; background:var(--paper); border:1px solid var(--line); border-radius:18px; box-shadow:0 14px 44px rgba(74,55,42,.08); }
+    .workspace-label { display:block; margin-bottom:4px; color:var(--accent); font-family:"Microsoft JhengHei",sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.16em; }
+    .workspace-help { margin:0 0 26px; color:var(--muted); font-family:"Microsoft JhengHei",sans-serif; font-size:.9rem; line-height:1.7; }
+    .latest-changes { margin:0 0 42px; padding:22px 24px; border:1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); border-radius:14px; background:color-mix(in srgb, var(--accent) 7%, var(--paper)); font-family:"Microsoft JhengHei",sans-serif; }
+    .latest-changes .change-kicker { color:var(--accent); font-size:.7rem; font-weight:800; letter-spacing:.15em; }
+    .latest-changes h2 { margin:4px 0 10px; color:var(--ink); font-size:1.25rem; }
+    .latest-changes ul { margin:0; padding-left:1.3em; }
+    .latest-changes li { margin:.35em 0; }
+    .latest-changes p { margin:10px 0 0; color:var(--muted); font-size:.82rem; }
+    .toolbar { position:sticky; top:12px; z-index:10; display:flex; flex-wrap:wrap; gap:8px; margin:-18px 0 36px; padding:10px; border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb, var(--paper) 94%, transparent); box-shadow:0 8px 24px rgba(74,55,42,.08); font-family:"Microsoft JhengHei",sans-serif; backdrop-filter:blur(10px); }
+    button { min-height:38px; padding:8px 13px; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ink); cursor:pointer; font:inherit; }
+    button.primary { border-color:var(--accent); background:var(--accent); color:#fff; }
+    button:hover { transform:translateY(-1px); }
+    .toolbar-divider { width:1px; margin:3px 2px; background:var(--line); }
+    #edit-status { align-self:center; margin-left:auto; color:var(--muted); font-size:.8rem; }
+    .meta { margin-bottom:36px; padding-bottom:18px; border-bottom:1px solid var(--line); color:var(--muted); font-family:"Microsoft JhengHei",sans-serif; font-size:.86rem; }
+    h1 { margin:0 0 12px; color:#302722; font-size:clamp(2rem,5vw,3.15rem); line-height:1.25; letter-spacing:.02em; }
+    h2 { margin:56px 0 20px; color:var(--accent); font-size:1.45rem; line-height:1.45; }
+    h3 { margin:36px 0 16px; font-size:1.15rem; }
+    p { margin:0 0 1.35em; font-size:var(--reading-size); }
+    article[contenteditable="true"] { outline:none; }
+    article p.latest-change { margin-left:-16px; margin-right:-16px; padding:12px 16px; border-left:4px solid #e7a263; border-radius:0 10px 10px 0; background:color-mix(in srgb, #f1b77e 17%, var(--paper)); }
+    article[contenteditable="true"] p:hover, article[contenteditable="true"] h1:hover, article[contenteditable="true"] h2:hover, article[contenteditable="true"] blockquote:hover, article[contenteditable="true"] li:hover { background:#fff6e9; }
+    article[contenteditable="true"] p:focus, article[contenteditable="true"] h1:focus, article[contenteditable="true"] h2:focus, article[contenteditable="true"] blockquote:focus, article[contenteditable="true"] li:focus { outline:2px solid #e6aa74; outline-offset:5px; background:#fffaf2; }
+    blockquote { margin:20px 0 36px; padding:16px 22px; border-left:4px solid var(--accent); background:#fbf3ed; color:#5b4438; font-size:1.12rem; }
+    strong { color:#5f2d1c; }
+    a { color:var(--accent); text-underline-offset:3px; }
+    ul { padding-left:1.4em; }
+    li { margin:.55em 0; }
+    hr { margin:52px 0; border:0; border-top:1px solid var(--line); }
+    code { padding:.12em .35em; border-radius:4px; background:#f3ece6; font-family:ui-monospace,Consolas,monospace; }
+    article[contenteditable="true"]::before { content:"編輯模式"; position:fixed; right:18px; bottom:18px; z-index:20; padding:7px 11px; border-radius:999px; background:var(--accent); color:#fff; font:700 .75rem "Microsoft JhengHei",sans-serif; box-shadow:0 5px 18px rgba(0,0,0,.15); }
+    @media (max-width:640px) {
+      main { width:100%; margin:0; padding:32px 22px 56px; border:0; border-radius:0; }
+      h2 { margin-top:44px; }
+      .toolbar { top:0; margin:-16px -8px 24px; }
+      #edit-status { width:100%; margin-left:2px; }
+      .toolbar-divider { display:none; }
+    }
+    @media print { body { background:#fff; } main { width:100%; margin:0; border:0; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="workspace-label">文章工作台</span>
+    <div class="meta">最新版來源：04-初稿-v02.md｜同步時間：2026-08-07 17:31</div>
+    <p class="workspace-help">閱讀時保持乾淨版面；要自己修改時按「開始編輯」，完成後按「儲存修改稿」。你也可以不自行修改，直接回到 Codex 告訴我想改哪裡。</p>
+    <div class="toolbar">
+      <button class="primary" id="edit-button" type="button">開始編輯</button>
+      <button id="save-button" type="button">儲存修改稿</button>
+      <span class="toolbar-divider"></span>
+      <button id="undo-button" type="button" title="復原上一步">復原</button>
+      <button id="redo-button" type="button" title="重做上一步">重做</button>
+      <button id="smaller-button" type="button" title="縮小文字">A−</button>
+      <button id="larger-button" type="button" title="放大文字">A＋</button>
+      <button id="theme-button" type="button">深色</button>
+      <button id="reset-button" type="button">放棄本頁修改</button>
+      <span id="edit-status">閱讀模式</span>
+    </div>
+    <section class="latest-changes" aria-label="本次修改"><span class="change-kicker">LATEST CHANGES</span><h2>本次修改</h2><ul><li>新增說明：學習方法早已有大量書籍與研究，父母不需要自行發明一套理論。</li><li>新增父母起步書單，介紹四本學習方法書籍及各自適合的用途。</li><li>補上提醒：書單是起點，不應變成孩子額外的學習負擔。</li></ul><p>正文中的淡色區塊是這次有變動的部分；下一次修改時會自動換成新的標示。</p></section>
+    <article id="article" spellcheck="true"><h1>就算不能自學，也要把學習時間還給孩子</h1>
+<blockquote>父母改變不了學校，還能為孩子做什麼？</blockquote>
+<p id="P01" data-paragraph-id="P01">嗨，大家好，我是 KC。每天陪你多想一點教養，少一點焦慮。</p>
+<p id="P02" data-paragraph-id="P02">前陣子，我和一位同事聊到孩子的教育。他以前覺得我的育兒方式太激進：讓孩子保有大量自己的時間、相信孩子可以安排生活，甚至選擇自學，不把學校的進度當成唯一標準。</p>
+<p id="P03" data-paragraph-id="P03">但那一次，他很認真地告訴我，想了很久之後，他開始覺得，也許我是對的。</p>
+<p id="P04" data-paragraph-id="P04">他發現自己對孩子太嚴格了。他也發現，孩子每天上學、寫作業、準備考試，真正可以自己決定要做什麼的時間，少得可憐。</p>
+<p id="P05" data-paragraph-id="P05">可是，他不可能像我一樣讓孩子自學。</p>
+<p id="P06" data-paragraph-id="P06">所以他問我：「如果孩子還是得去一般學校，我還能做什麼？」</p>
+<p id="P07" data-paragraph-id="P07">我當下的回答很直接，也很殘酷。</p>
+<p id="P08" data-paragraph-id="P08">「沒有救。」</p>
+<h2>我為什麼會這樣回答？</h2>
+<p id="P09" data-paragraph-id="P09">因為我一直相信，人非常容易受到環境影響。孩子一天最清醒的幾個小時都在學校裡，他身邊的同學、老師、規則與評價方式，不斷告訴他什麼重要、什麼不重要，以及怎樣才算一個好學生。</p>
+<p id="P10" data-paragraph-id="P10">古人會說孟母三遷，不是因為孟母有一套厲害的說教技巧，而是因為她知道：環境每天都在教育一個人，而且它的力量通常比父母偶爾說的一番大道理更強。</p>
+<p id="P11" data-paragraph-id="P11">如果把我的孩子送進一套我無法選擇進度、教材、同儕與評量方式的系統，我能掌控的事情確實很少。這不是哪一位老師的錯，也不是選擇公立學校的父母不夠努力，而是大多數家庭本來就有現實限制。</p>
+<p id="P12" data-paragraph-id="P12">所以那一刻，我真的覺得自己給不出答案。</p>
+<p id="P13" data-paragraph-id="P13">但那段對話沒有結束。它一直留在我的腦中。</p>
+<p id="P14" data-paragraph-id="P14">我後來反覆想：真的什麼都不能做嗎？還是因為不能改變全部，我就忽略了仍然可以改變的一小部分？</p>
+<h2>父母仍能做的一件事</h2>
+<p id="P15" data-paragraph-id="P15">我現在會修正當時的回答。</p>
+<p id="P16" data-paragraph-id="P16">不是沒有救。父母至少還可以做一件重要的事：<strong>協助孩子減少浪費在低效學習上的時間。</strong></p>
+<p id="P17" data-paragraph-id="P17">我說的不是把孩子送去更多補習班。補習往往只是把原本已經很長的學習時間再延長。孩子不會學，我們就再找一個人教；作業寫不完，我們就把晚上的自由時間也拿來寫。這可能暫時解決成績問題，卻未必解決「孩子不知道該怎麼學」這件事。</p>
+<p id="P18" data-paragraph-id="P18">真正浪費孩子時間的，不一定只是功課太多，也可能是他從來沒有人教過，該怎麼把一件事學會。</p>
+<p id="P19" data-paragraph-id="P19">他可能把同一頁課本看了三次，卻沒有試過把書闔起來，說出自己記得什麼；可能寫了幾十題，卻不知道自己一直錯在題意、觀念還是計算；也可能做了一張很漂亮的心智圖，最後只是把課本重新抄了一遍。</p>
+<p id="P20" data-paragraph-id="P20">這些行為看起來都很認真，但「花了很多時間」不等於「真的學會了」。</p>
+<h2>把時間還給孩子，不只是讓他少讀一點書</h2>
+<p id="P21" data-paragraph-id="P21">如果孩子能用更有效的方法完成必須完成的學習，最直接的結果，是他可能拿回一些自己的時間。這些時間可以拿來發呆、閱讀、運動、玩遊戲、研究奇怪的興趣，或只是什麼都不做。</p>
+<p id="P22" data-paragraph-id="P22">對我來說，這不是浪費。孩子只有在擁有可以自行支配的時間時，才有機會知道自己喜歡什麼、想追求什麼，也才有練習安排人生的可能。</p>
+<p id="P23" data-paragraph-id="P23">第二個改變，可能是學習上的掌控感。</p>
+<p id="P24" data-paragraph-id="P24">很多孩子不是能力不好，而是長期不知道自己為什麼不會。他只看見別人寫得比自己快、考得比自己高，最後得到一個模糊而沉重的結論：「我就是不會讀書。」</p>
+<p id="P25" data-paragraph-id="P25">但如果他能把問題說得更清楚——我不是數學不好，我只是讀不懂這類題目的條件；我不是記性差，我只是從來沒有練習主動回想——問題就從對自己的否定，變成一件可以處理的任務。</p>
+<p id="P26" data-paragraph-id="P26">當孩子開始知道「我卡在哪裡」和「下一步要做什麼」，他才可能慢慢累積真正的學習信心。不是因為有人一直稱讚他很棒，而是因為他確實看見自己有能力解決問題。</p>
+<p id="P27" data-paragraph-id="P27">更長遠來看，這套能力也不只用來應付學校。世界變動得越快，一個人越不可能只靠學生時代學到的知識工作一輩子。能不能面對一個陌生主題、拆解它、找到方法、練習並修正，會成為一種可以跟著孩子很久的能力。</p>
+<h2>「學會學習」到底要學什麼？</h2>
+<p id="P28" data-paragraph-id="P28">這聽起來很大，但父母不用一次教完一套複雜系統。可以先從下面五件事，替孩子建立一張學習地圖。</p>
+<p id="P48" data-paragraph-id="P48" class="latest-change" data-latest-change="true">而且，這些方法並不是我發明的。談記憶、專注、筆記、自我測試與自主學習的書早已出了很多。真正的問題不是人類不知道怎麼學，而是我們花了很多年教孩子國文、英文、數學，卻很少正式教他：大腦怎麼記住東西、怎麼判斷自己是否理解，以及遇到不會的內容時該如何調整方法。父母不必自己創造一套理論，可以先從一本書、一個方法開始，親自試過，再挑適合孩子年齡與困難的部分陪他練習。</p>
+<p id="P29" data-paragraph-id="P29"><strong>第一，重新理解記憶。</strong>有效的複習不是一直重看，而是隔一段時間，試著從腦中把內容找回來。例如讀完一小節，先闔上書，用三分鐘寫下記得的重點，再打開課本補缺口。孩子會更清楚自己是真的會了，還是只是看著答案覺得熟悉。</p>
+<p id="P30" data-paragraph-id="P30"><strong>第二，把知識關係畫出來。</strong>心智圖、概念圖或簡單的表格都可以使用，但重點不是畫得漂亮。真正有用的是讓孩子回答：這幾個概念是什麼關係？哪一個是原因、哪一個是結果？它們有什麼相同與不同？如果只是把課文換個位置抄寫，工具反而可能增加時間。</p>
+<p id="P31" data-paragraph-id="P31"><strong>第三，學會拆解一門科目。</strong>不要籠統地說「英文不好」或「數學很差」。英文可能要拆成單字、句型、閱讀、聽力與表達；數學也可以拆成觀念理解、題意判讀、運算、公式提取與檢查。問題拆小之後，才知道時間應該花在哪裡。</p>
+<p id="P32" data-paragraph-id="P32"><strong>第四，學會預習與複習。</strong>預習不是要求孩子上課前自己把整章學完，而是先看標題、例題與關鍵詞，圈出看不懂的地方，帶著問題進教室。複習也不是從第一頁重新看到最後一頁，而是先測試自己，再針對不會的部分補強。這兩個動作都在幫助孩子把力氣用在真正的缺口上。</p>
+<p id="P33" data-paragraph-id="P33"><strong>第五，一定要學會透過 AI 學習。</strong>但我說的不是把題目貼上去，等 AI 給出答案。那只是更快完成作業，不代表孩子更會學習。</p>
+<p id="P34" data-paragraph-id="P34">AI 最適合做的，不是替孩子回答，而是在孩子快要想出答案時，給他一個剛剛好的提示。它可以換一種方式解釋觀念、一次問一個問題、依照孩子的程度出練習題，也可以在孩子回答後指出可能漏掉的地方。</p>
+<p id="P35" data-paragraph-id="P35">父母甚至可以先替孩子設定一條規則：「不要直接告訴我答案。先問我哪一步不懂，再給我一個提示；最後請出一道相似題，確認我能不能自己完成。」</p>
+<p id="P36" data-paragraph-id="P36">研究已經提醒我們，沒有這些限制的 AI，可能讓孩子在使用當下做得更快，離開 AI 後卻沒有真的學會。AI 能不能幫助學習，關鍵不只在模型有多厲害，而在孩子究竟拿它來思考，還是拿它來逃避思考。</p>
+<h2>父母不是孩子的第二位老師</h2>
+<p id="P37" data-paragraph-id="P37">寫到這裡，我最擔心的是，父母讀完後又得到一張新的責任清單：白天學校有老師，晚上回家再由父母檢查記憶、心智圖、預習、複習和 AI，孩子只是換了一個地方繼續被管理。</p>
+<p id="P38" data-paragraph-id="P38">如果變成這樣，我們就失去了原本的目的。</p>
+<p id="P39" data-paragraph-id="P39">父母真正的角色，不是精通每一個科目，也不是每天盯著孩子執行所有方法。父母可以先理解幾個基本原則，再陪孩子找出目前最浪費時間的一個環節，試一種方法，看看有沒有改善。</p>
+<p id="P40" data-paragraph-id="P40">更重要的是，方法最後要交還給孩子。父母一開始可以示範、提醒和陪伴，但要慢慢退出。因為我們想培養的不是一個更聽話、更有效率地完成指令的孩子，而是一個知道如何管理自己學習的人。</p>
+<p id="P41" data-paragraph-id="P41">父母不必成為每一科的老師，但可以幫孩子建立一套判斷：<strong>我現在會了嗎？我卡在哪裡？下一步要做什麼？</strong></p>
+<h2>先替孩子拿回一小段時間</h2>
+<p id="P42" data-paragraph-id="P42">我仍然不認為，只靠家庭裡幾個學習技巧，就能抵消整個環境對孩子的影響。我們無法假裝學校制度、同儕文化、考試壓力與家庭條件都不重要。</p>
+<p id="P43" data-paragraph-id="P43">但我也不再認為，不能改變全部，就等於什麼都不能改變。</p>
+<p id="P44" data-paragraph-id="P44">如果你的孩子也被學業占滿了生活，不妨先觀察一週。不要急著增加課程，先找出他最耗時、最沒有成效的一個環節：是反覆重讀？盲目刷題？不知道錯在哪裡？還是把 AI 當成答案機？</p>
+<p id="P45" data-paragraph-id="P45">然後，父母先學會一種方法，再陪孩子試一次。不是要求他立刻變成學霸，而是看看能不能少浪費二十分鐘，少一次無助，多一次「原來我知道該怎麼做」。</p>
+<p id="P46" data-paragraph-id="P46">那天同事問我還能怎麼辦，我回答「沒有救」。現在如果再讓我回答一次，我會說：我們確實不能替孩子選擇所有環境，但我們仍然可以教他，如何在有限的時間裡真正學會一件事。</p>
+<p id="P47" data-paragraph-id="P47">能拿回多少時間，也許每個孩子都不同。但只要能先拿回一小段，那一小段就可能成為孩子重新認識自己、安排自己人生的開始。</p>
+<h2>父母可以從哪些書開始？</h2>
+<p id="P49" data-paragraph-id="P49" class="latest-change" data-latest-change="true"><strong>《學習如何學習》｜芭芭拉・歐克莉、泰倫斯・索諾斯基、阿利斯泰爾・麥康維</strong>：以兒童與青少年為讀者，介紹專注與發散思考、記憶組塊、拖延及練習方式。父母可以和孩子一起讀，不必先具備心理學背景。<a href="https://www.books.com.tw/products/0010818129" target="_blank" rel="noreferrer">書籍資料</a></p>
+<p id="P50" data-paragraph-id="P50" class="latest-change" data-latest-change="true"><strong>《大腦喜歡這樣學》｜芭芭拉・歐克莉</strong>：較適合父母先讀，用容易理解的方式說明大腦如何學習，以及為什麼練習、休息、回想與不同思考模式都重要。<a href="https://www.books.com.tw/products/0010764994" target="_blank" rel="noreferrer">書籍資料</a></p>
+<p id="P51" data-paragraph-id="P51" class="latest-change" data-latest-change="true"><strong>《超牢記憶法》（原書名 <em>Make It Stick</em>）｜Peter C. Brown、Henry L. Roediger III、Mark A. McDaniel</strong>：從認知心理學研究出發，說明為什麼主動提取、間隔與交錯練習通常比重讀和集中練習更可靠。這一本很適合想理解「研究根據」的父母。<a href="https://www.books.com.tw/products/E050008435" target="_blank" rel="noreferrer">繁體中文版資料</a></p>
+<p id="P52" data-paragraph-id="P52" class="latest-change" data-latest-change="true"><strong>《超速學習》｜史考特・楊</strong>：比較偏向成人的自主學習與實作計畫，強調先拆解要學的能力、直接練習、取得回饋並攻克弱點。它不是兒童教養手冊，但可以幫父母理解，學習一門技能其實可以被規劃與拆解。<a href="https://www.books.com.tw/products/0010855836" target="_blank" rel="noreferrer">書籍資料</a></p>
+<p id="P53" data-paragraph-id="P53" class="latest-change" data-latest-change="true">這些書不是標準答案，也不需要一次全部買齊。選一本最符合目前問題的書，找出一個可以在生活中測試的方法，就已經足夠開始。學習方法的目的，是幫孩子減少摸索與無效用功；如果最後變成父母要求孩子再讀四本書、再完成一套新的進度，它就又背離了「把時間還給孩子」的初衷。</p>
+<hr>
+<h2>延伸閱讀</h2>
+<ul><li><a href="https://doi.org/10.1177/1529100612453266" target="_blank" rel="noreferrer">Improving Students’ Learning With Effective Learning Techniques</a></li><li><a href="https://ies.ed.gov/ncee/wwc/PracticeGuide/1" target="_blank" rel="noreferrer">Organizing Instruction and Study to Improve Student Learning</a></li><li><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noreferrer">Generative AI without guardrails can harm learning</a></li><li><a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099548105192529324" target="_blank" rel="noreferrer">From Chalkboards to Chatbots</a></li></ul></article>
+  </main>
+  <script>
+    const article = document.getElementById('article');
+    const editButton = document.getElementById('edit-button');
+    const saveButton = document.getElementById('save-button');
+    const resetButton = document.getElementById('reset-button');
+    const undoButton = document.getElementById('undo-button');
+    const redoButton = document.getElementById('redo-button');
+    const smallerButton = document.getElementById('smaller-button');
+    const largerButton = document.getElementById('larger-button');
+    const themeButton = document.getElementById('theme-button');
+    const status = document.getElementById('edit-status');
+    const storageKey = "writing-council:04-初稿-v02";
+    const suggestedName = "04-初稿-v02-使用者修改.md";
+    const generatedHtml = article.innerHTML;
+    const latestChangeIds = new Set(
+      Array.from(article.querySelectorAll('[data-latest-change="true"]'))
+        .map(element => element.dataset.paragraphId)
+        .filter(Boolean)
+    );
+    let editing = false;
+
+    function applyLatestChangeMarkers() {
+      article.querySelectorAll('[data-paragraph-id]').forEach(element => {
+        const isLatestChange = latestChangeIds.has(element.dataset.paragraphId);
+        element.classList.toggle('latest-change', isLatestChange);
+        if (isLatestChange) {
+          element.dataset.latestChange = 'true';
+        } else {
+          delete element.dataset.latestChange;
+        }
+      });
+    }
+
+    const savedHtml = localStorage.getItem(storageKey);
+    if (savedHtml) {
+      article.innerHTML = savedHtml;
+      applyLatestChangeMarkers();
+      status.textContent = '已載入本機修改';
+    }
+
+    function setEditing(next) {
+      editing = next;
+      article.contentEditable = next ? 'true' : 'false';
+      editButton.textContent = next ? '完成編輯' : '開始編輯';
+      status.textContent = next ? '編輯中（自動暫存於此瀏覽器）' : '閱讀模式';
+      if (next) article.focus();
+    }
+
+    editButton.addEventListener('click', () => setEditing(!editing));
+    undoButton.addEventListener('click', () => document.execCommand('undo'));
+    redoButton.addEventListener('click', () => document.execCommand('redo'));
+
+    let readingSize = Number(localStorage.getItem(`${storageKey}:font-size`) || 1.08);
+    function applyReadingSize() {
+      document.documentElement.style.setProperty('--reading-size', `${readingSize}rem`);
+      localStorage.setItem(`${storageKey}:font-size`, String(readingSize));
+    }
+    smallerButton.addEventListener('click', () => { readingSize = Math.max(.9, readingSize - .06); applyReadingSize(); });
+    largerButton.addEventListener('click', () => { readingSize = Math.min(1.42, readingSize + .06); applyReadingSize(); });
+    applyReadingSize();
+
+    let theme = localStorage.getItem('writing-council:theme') || 'light';
+    function applyTheme() {
+      document.body.dataset.theme = theme;
+      themeButton.textContent = theme === 'light' ? '深色' : '淺色';
+      localStorage.setItem('writing-council:theme', theme);
+    }
+    themeButton.addEventListener('click', () => { theme = theme === 'light' ? 'dark' : 'light'; applyTheme(); });
+    applyTheme();
+    article.addEventListener('input', () => {
+      localStorage.setItem(storageKey, article.innerHTML);
+      status.textContent = '編輯中（已自動暫存）';
+    });
+
+    function inlineMarkdown(node) {
+      if (node.nodeType === Node.TEXT_NODE) return node.textContent;
+      if (node.nodeType !== Node.ELEMENT_NODE) return '';
+      const content = Array.from(node.childNodes).map(inlineMarkdown).join('');
+      if (node.tagName === 'STRONG' || node.tagName === 'B') return `**${content}**`;
+      if (node.tagName === 'EM' || node.tagName === 'I') return `*${content}*`;
+      if (node.tagName === 'CODE') return `\`${content}\``;
+      if (node.tagName === 'A') return `[${content}](${node.href})`;
+      if (node.tagName === 'BR') return '\n';
+      return content;
+    }
+
+    function elementMarkdown(element) {
+      const content = Array.from(element.childNodes).map(inlineMarkdown).join('').trim();
+      if (/^H[1-3]$/.test(element.tagName)) return `${'#'.repeat(Number(element.tagName[1]))} ${content}`;
+      if (element.tagName === 'BLOCKQUOTE') return `> ${content}`;
+      if (element.tagName === 'HR') return '---';
+      if (element.tagName === 'UL') return Array.from(element.children).map(li => `- ${Array.from(li.childNodes).map(inlineMarkdown).join('').trim()}`).join('\n');
+      if (element.tagName === 'P') {
+        const paragraphId = element.dataset.paragraphId;
+        return paragraphId ? `[${paragraphId}] ${content}` : content;
+      }
+      return content;
+    }
+
+    function exportMarkdown() {
+      return Array.from(article.children).map(elementMarkdown).filter(Boolean).join('\n\n') + '\n';
+    }
+
+    saveButton.addEventListener('click', async () => {
+      const markdown = exportMarkdown();
+      try {
+        if ('showSaveFilePicker' in window) {
+          const handle = await window.showSaveFilePicker({
+            suggestedName,
+            types: [{ description: 'Markdown 文件', accept: { 'text/markdown': ['.md'] } }]
+          });
+          const writable = await handle.createWritable();
+          await writable.write(markdown);
+          await writable.close();
+          status.textContent = '修改稿已儲存';
+          return;
+        }
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+      const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = suggestedName;
+      link.click();
+      URL.revokeObjectURL(url);
+      status.textContent = '修改稿已下載';
+    });
+
+    resetButton.addEventListener('click', () => {
+      if (!confirm('確定放棄這個瀏覽器裡尚未交回的修改嗎？')) return;
+      localStorage.removeItem(storageKey);
+      article.innerHTML = generatedHtml;
+      applyLatestChangeMarkers();
+      setEditing(false);
+      status.textContent = '已恢復產生時的內容';
+    });
+  </script>
+</body>
+</html>
