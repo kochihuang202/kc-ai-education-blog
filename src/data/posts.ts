@@ -69,6 +69,7 @@ import teachingKidsTradeoffsHtml from "../article-html/posts/teaching-kids-trade
 import threeYearsInLibraryFromDisappointmentToFunHtml from "../article-html/posts/three-years-in-library-from-disappointment-to-fun.html?raw";
 import tabletSelfLearningProvenPathHtml from "../article-html/posts/tablet-self-learning-proven-path.html?raw";
 import whyLearningMethodIsntMainstreamHtml from "../article-html/posts/why-learning-method-isnt-mainstream.html?raw";
+import weKnowHowToLearnIcapFrameworkHtml from "../article-html/posts/we-know-how-to-learn-icap-framework.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -862,7 +863,36 @@ const whyLearningMethodIsntMainstreamGraphics = Array.from({ length: 8 }, (_, in
   };
 });
 
+const weKnowHowToLearnIcapFrameworkGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/we-know-how-to-learn-icap-framework";
+
+const weKnowHowToLearnIcapFrameworkGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${weKnowHowToLearnIcapFrameworkGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `我們其實都知道怎麼學，只是從來沒有用它來檢視學習圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "我們其實都知道怎麼學，只是從來沒有用它來檢視學習",
+    slug: "we-know-how-to-learn-icap-framework",
+    date: "2026-08-10",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "我們平常是怎麼判斷一個孩子學得好不好？ 最直接的答案，大概就是看成績。 考 95 分，我們覺得他學得不錯；考 60 分，我們開始擔心是不是不夠認真、是不是理解不好、是不是題目做得太少。 可是最近接觸到 ICAP 這個學習框架之後，我突然覺得有一件事情...",
+    categories: ["parents", "core"],
+    coverImage: weKnowHowToLearnIcapFrameworkGraphics[0].src,
+    coverAlt: weKnowHowToLearnIcapFrameworkGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: weKnowHowToLearnIcapFrameworkGraphics
+    },
+    relatedPosts: ["why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun"],
+    body: weKnowHowToLearnIcapFrameworkHtml
+  },
+
   {
     title: "學習方法為什麼不是顯學？",
     slug: "why-learning-method-isnt-mainstream",
@@ -877,7 +907,7 @@ export const posts = [
       label: "<圖文解析>",
       images: whyLearningMethodIsntMainstreamGraphics
     },
-    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs"],
+    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "we-know-how-to-learn-icap-framework"],
     body: whyLearningMethodIsntMainstreamHtml
   },
 
@@ -895,7 +925,7 @@ export const posts = [
       label: "<圖文解析>",
       images: tabletSelfLearningProvenPathGraphics
     },
-    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "why-learning-method-isnt-mainstream"],
+    relatedPosts: ["three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "why-learning-method-isnt-mainstream", "we-know-how-to-learn-icap-framework"],
     body: tabletSelfLearningProvenPathHtml
   },
 
@@ -913,7 +943,7 @@ export const posts = [
       label: "<圖文解析>",
       images: threeYearsInLibraryFromDisappointmentToFunGraphics
     },
-    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path", "why-learning-method-isnt-mainstream"],
+    relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path", "why-learning-method-isnt-mainstream", "we-know-how-to-learn-icap-framework"],
     body: threeYearsInLibraryFromDisappointmentToFunHtml
   },
 
