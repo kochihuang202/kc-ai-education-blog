@@ -73,6 +73,7 @@ import weKnowHowToLearnIcapFrameworkHtml from "../article-html/posts/we-know-how
 import giveLearningTimeBackToKidsHtml from "../article-html/posts/give-learning-time-back-to-kids.html?raw";
 import valueOfWastingTimeHtml from "../article-html/posts/value-of-wasting-time.html?raw";
 import parentChildReadingPassingYourselfOnHtml from "../article-html/posts/parent-child-reading-passing-yourself-on.html?raw";
+import qiaohuIslandInTheBathroomHtml from "../article-html/posts/qiaohu-island-in-the-bathroom.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -910,7 +911,36 @@ const parentChildReadingPassingYourselfOnGraphics = Array.from({ length: 8 }, (_
   };
 });
 
+const qiaohuIslandInTheBathroomGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/qiaohu-island-in-the-bathroom";
+
+const qiaohuIslandInTheBathroomGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${qiaohuIslandInTheBathroomGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `廁所裡的巧虎島圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "廁所裡的巧虎島",
+    slug: "qiaohu-island-in-the-bathroom",
+    date: "2026-08-28",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "如果你發現孩子拿著手機進廁所，說要大便，卻自己打開YouTube，狂看可愛巧虎島—— 而且只要不去叫，基本上就不會出來。 每隔一陣子就會再來一次。同樣的劇本：廁所、手機、巧虎島、叫不動。 但我沒有生氣。 不是因為我脾氣好，是因為我在看的東西，跟「偷看...",
+    categories: ["parents", "core"],
+    coverImage: qiaohuIslandInTheBathroomGraphics[0].src,
+    coverAlt: qiaohuIslandInTheBathroomGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: qiaohuIslandInTheBathroomGraphics
+    },
+    relatedPosts: ["parent-child-reading-passing-yourself-on", "value-of-wasting-time", "give-learning-time-back-to-kids"],
+    body: qiaohuIslandInTheBathroomHtml
+  },
+
   {
     title: "把書讀厚——親子共讀不是教讀書，是把自己傳過去",
     slug: "parent-child-reading-passing-yourself-on",
@@ -925,7 +955,7 @@ export const posts = [
       label: "<圖文解析>",
       images: parentChildReadingPassingYourselfOnGraphics
     },
-    relatedPosts: ["value-of-wasting-time", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream"],
+    relatedPosts: ["value-of-wasting-time", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream", "qiaohu-island-in-the-bathroom"],
     body: parentChildReadingPassingYourselfOnHtml
   },
 
@@ -943,7 +973,7 @@ export const posts = [
       label: "<圖文解析>",
       images: valueOfWastingTimeGraphics
     },
-    relatedPosts: ["parent-child-reading-passing-yourself-on", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream"],
+    relatedPosts: ["parent-child-reading-passing-yourself-on", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream", "qiaohu-island-in-the-bathroom"],
     body: valueOfWastingTimeHtml
   },
 
@@ -961,7 +991,7 @@ export const posts = [
       label: "<圖文解析>",
       images: giveLearningTimeBackToKidsGraphics
     },
-    relatedPosts: ["we-know-how-to-learn-icap-framework", "why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "value-of-wasting-time", "parent-child-reading-passing-yourself-on"],
+    relatedPosts: ["we-know-how-to-learn-icap-framework", "why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "value-of-wasting-time", "parent-child-reading-passing-yourself-on", "qiaohu-island-in-the-bathroom"],
     body: giveLearningTimeBackToKidsHtml
   },
 
