@@ -71,6 +71,8 @@ import tabletSelfLearningProvenPathHtml from "../article-html/posts/tablet-self-
 import whyLearningMethodIsntMainstreamHtml from "../article-html/posts/why-learning-method-isnt-mainstream.html?raw";
 import weKnowHowToLearnIcapFrameworkHtml from "../article-html/posts/we-know-how-to-learn-icap-framework.html?raw";
 import giveLearningTimeBackToKidsHtml from "../article-html/posts/give-learning-time-back-to-kids.html?raw";
+import valueOfWastingTimeHtml from "../article-html/posts/value-of-wasting-time.html?raw";
+import parentChildReadingPassingYourselfOnHtml from "../article-html/posts/parent-child-reading-passing-yourself-on.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -886,7 +888,65 @@ const giveLearningTimeBackToKidsGraphics = Array.from({ length: 10 }, (_, index)
   };
 });
 
+const valueOfWastingTimeGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/value-of-wasting-time";
+
+const valueOfWastingTimeGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${valueOfWastingTimeGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `荒廢的價值圖文解析 ${page}/10`
+  };
+});
+
+const parentChildReadingPassingYourselfOnGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/parent-child-reading-passing-yourself-on";
+
+const parentChildReadingPassingYourselfOnGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${parentChildReadingPassingYourselfOnGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `把書讀厚——親子共讀不是教讀書，是把自己傳過去圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "把書讀厚——親子共讀不是教讀書，是把自己傳過去",
+    slug: "parent-child-reading-passing-yourself-on",
+    date: "2026-08-28",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "女兒最近開始會在圖書館看書了。 不是那種翻兩頁就跑掉的看，是真的坐下來，一本一本翻。前幾天她借了一本，184頁，字比國小的讀物還多。有人看到問她：哇全部都是字，你念得完嗎？ 她挺高興的。覺得自己被認可了。",
+    categories: ["parents", "core"],
+    coverImage: parentChildReadingPassingYourselfOnGraphics[0].src,
+    coverAlt: parentChildReadingPassingYourselfOnGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: parentChildReadingPassingYourselfOnGraphics
+    },
+    relatedPosts: ["value-of-wasting-time", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream"],
+    body: parentChildReadingPassingYourselfOnHtml
+  },
+
+  {
+    title: "荒廢的價值",
+    slug: "value-of-wasting-time",
+    date: "2026-08-28",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "這個暑假，我們家過得很「精彩」。 女兒小一前的最後一個暑假，兩個月。大人小孩輪著生病，女兒病完換太太，太太病完換我。我自己掛彩超過一個月，別說安排學習進度了，連管孩子的力氣都沒有。 女兒就在家裡晃。 晃過來，晃過去。沒有暑期課表，沒有每天固定的學習任...",
+    categories: ["parents", "core"],
+    coverImage: valueOfWastingTimeGraphics[0].src,
+    coverAlt: valueOfWastingTimeGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: valueOfWastingTimeGraphics
+    },
+    relatedPosts: ["parent-child-reading-passing-yourself-on", "give-learning-time-back-to-kids", "why-learning-method-isnt-mainstream"],
+    body: valueOfWastingTimeHtml
+  },
+
   {
     title: "改變不了學校，也能把時間還給孩子",
     slug: "give-learning-time-back-to-kids",
@@ -901,7 +961,7 @@ export const posts = [
       label: "<圖文解析>",
       images: giveLearningTimeBackToKidsGraphics
     },
-    relatedPosts: ["we-know-how-to-learn-icap-framework", "why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path"],
+    relatedPosts: ["we-know-how-to-learn-icap-framework", "why-learning-method-isnt-mainstream", "tablet-self-learning-proven-path", "value-of-wasting-time", "parent-child-reading-passing-yourself-on"],
     body: giveLearningTimeBackToKidsHtml
   },
 
@@ -937,7 +997,7 @@ export const posts = [
       label: "<圖文解析>",
       images: whyLearningMethodIsntMainstreamGraphics
     },
-    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "we-know-how-to-learn-icap-framework", "give-learning-time-back-to-kids"],
+    relatedPosts: ["tablet-self-learning-proven-path", "three-years-in-library-from-disappointment-to-fun", "teaching-kids-tradeoffs", "we-know-how-to-learn-icap-framework", "give-learning-time-back-to-kids", "value-of-wasting-time", "parent-child-reading-passing-yourself-on"],
     body: whyLearningMethodIsntMainstreamHtml
   },
 
