@@ -74,6 +74,7 @@ import giveLearningTimeBackToKidsHtml from "../article-html/posts/give-learning-
 import valueOfWastingTimeHtml from "../article-html/posts/value-of-wasting-time.html?raw";
 import parentChildReadingPassingYourselfOnHtml from "../article-html/posts/parent-child-reading-passing-yourself-on.html?raw";
 import qiaohuIslandInTheBathroomHtml from "../article-html/posts/qiaohu-island-in-the-bathroom.html?raw";
+import sameAiCommandVsLoopingHtml from "../article-html/posts/same-ai-command-vs-looping.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -922,7 +923,35 @@ const qiaohuIslandInTheBathroomGraphics = Array.from({ length: 8 }, (_, index) =
   };
 });
 
+const sameAiCommandVsLoopingGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/same-ai-command-vs-looping";
+
+const sameAiCommandVsLoopingGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${sameAiCommandVsLoopingGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `同一個AI，為什麼有人指揮若定，有人繞圈到死？圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "同一個AI，為什麼有人指揮若定，有人繞圈到死？",
+    slug: "same-ai-command-vs-looping",
+    date: "2026-09-05",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "面對同一個 AI，為什麼有人指揮若定、幾分鐘解決問題，有人卻跟 AI 在原地繞圈繞到死？真正的差別不在 Prompt 技巧，而在於你本身累積的「深度與邊界感」。",
+    categories: ["parents", "core"],
+    coverImage: sameAiCommandVsLoopingGraphics[0].src,
+    coverAlt: sameAiCommandVsLoopingGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: sameAiCommandVsLoopingGraphics
+    },
+    relatedPosts: ["vibe-coding-radar", "cognitive-friction-in-ai-era", "teaching-kids-tradeoffs"],
+    body: sameAiCommandVsLoopingHtml
+  },
   {
     title: "廁所裡的巧虎島",
     slug: "qiaohu-island-in-the-bathroom",
@@ -1066,7 +1095,6 @@ export const posts = [
     relatedPosts: ["teaching-kids-tradeoffs", "time-management-for-preliterate-kids", "the-moment-after-mastery", "tablet-self-learning-proven-path", "why-learning-method-isnt-mainstream", "we-know-how-to-learn-icap-framework"],
     body: threeYearsInLibraryFromDisappointmentToFunHtml
   },
-
   {
     title: "教孩子取捨",
     slug: "teaching-kids-tradeoffs",
