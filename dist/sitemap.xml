@@ -11,6 +11,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/city-walk-kids-building-capabilities/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://kc-ai-education-blog.ji3cp31p4.workers.dev/posts/same-ai-command-vs-looping/</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>

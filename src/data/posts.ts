@@ -75,6 +75,7 @@ import valueOfWastingTimeHtml from "../article-html/posts/value-of-wasting-time.
 import parentChildReadingPassingYourselfOnHtml from "../article-html/posts/parent-child-reading-passing-yourself-on.html?raw";
 import qiaohuIslandInTheBathroomHtml from "../article-html/posts/qiaohu-island-in-the-bathroom.html?raw";
 import sameAiCommandVsLoopingHtml from "../article-html/posts/same-ai-command-vs-looping.html?raw";
+import cityWalkKidsBuildingCapabilitiesHtml from "../article-html/posts/city-walk-kids-building-capabilities.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -934,7 +935,35 @@ const sameAiCommandVsLoopingGraphics = Array.from({ length: 10 }, (_, index) => 
   };
 });
 
+const cityWalkKidsBuildingCapabilitiesGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/city-walk-kids-building-capabilities";
+
+const cityWalkKidsBuildingCapabilitiesGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${cityWalkKidsBuildingCapabilitiesGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `城市健走——孩子用腳丈量出來的能力圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "城市健走——孩子用腳丈量出來的能力",
+    slug: "city-walk-kids-building-capabilities",
+    date: "2026-09-05",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "我們總在想下一次要帶孩子去哪裡，但也許偶爾可以換個問題：這一次，我們能不能不要只是把他送到目的地，而是讓他自己用腳把世界連起來？",
+    categories: ["parents", "core"],
+    coverImage: cityWalkKidsBuildingCapabilitiesGraphics[0].src,
+    coverAlt: cityWalkKidsBuildingCapabilitiesGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: cityWalkKidsBuildingCapabilitiesGraphics
+    },
+    relatedPosts: ["same-ai-command-vs-looping", "teaching-kids-tradeoffs", "three-years-in-library-from-disappointment-to-fun"],
+    body: cityWalkKidsBuildingCapabilitiesHtml
+  },
   {
     title: "同一個AI，為什麼有人指揮若定，有人繞圈到死？",
     slug: "same-ai-command-vs-looping",
