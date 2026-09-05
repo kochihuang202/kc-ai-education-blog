@@ -76,6 +76,7 @@ import parentChildReadingPassingYourselfOnHtml from "../article-html/posts/paren
 import qiaohuIslandInTheBathroomHtml from "../article-html/posts/qiaohu-island-in-the-bathroom.html?raw";
 import sameAiCommandVsLoopingHtml from "../article-html/posts/same-ai-command-vs-looping.html?raw";
 import cityWalkKidsBuildingCapabilitiesHtml from "../article-html/posts/city-walk-kids-building-capabilities.html?raw";
+import interestAndHabitsAreResultsNotStartsHtml from "../article-html/posts/interest-and-habits-are-results-not-starts.html?raw";
 import type { CategoryId } from "./categories";
 
 export interface Post {
@@ -946,7 +947,35 @@ const cityWalkKidsBuildingCapabilitiesGraphics = Array.from({ length: 10 }, (_, 
   };
 });
 
+const interestAndHabitsAreResultsNotStartsGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/interest-and-habits-are-results-not-starts";
+
+const interestAndHabitsAreResultsNotStartsGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${interestAndHabitsAreResultsNotStartsGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `興趣和習慣不是起點，是結果圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "興趣和習慣不是起點，是結果",
+    slug: "interest-and-habits-are-results-not-starts",
+    date: "2026-09-06",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "你在網路上搜尋培養學習興趣，會跑出幾百萬條結果。但這些建議背後藏著一個假定：孩子已經會學了。其實興趣和習慣不是起點，而是孩子會學了之後，自然冒出來的花與果實。",
+    categories: ["parents", "core"],
+    coverImage: interestAndHabitsAreResultsNotStartsGraphics[0].src,
+    coverAlt: interestAndHabitsAreResultsNotStartsGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: interestAndHabitsAreResultsNotStartsGraphics
+    },
+    relatedPosts: ["city-walk-kids-building-capabilities", "same-ai-command-vs-looping", "teaching-kids-tradeoffs"],
+    body: interestAndHabitsAreResultsNotStartsHtml
+  },
   {
     title: "城市健走——孩子用腳丈量出來的能力",
     slug: "city-walk-kids-building-capabilities",
