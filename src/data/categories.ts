@@ -53,6 +53,12 @@ export const categories = [
     summary: "當傳統紫微命盤遇上 AI：不求鐵口直斷，只求為孩子提取專屬的成長參數與教育破解路徑。",
     accent: "#7B1FA2"
   },
+  {
+    id: "self-learning-reflection",
+    label: "自學省思",
+    summary: "女兒自學路上的微小教養省思：從自由與界線、自律與心流，到把 AI 當成思維對手。",
+    accent: "#C0512F"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
