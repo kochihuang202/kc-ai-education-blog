@@ -47,9 +47,11 @@ python scripts/publish_helper.py --src "[來源資料夾絕對路徑]" --slug "[
 - `--src`：包含原始 HTML 及圖片的資料夾路徑。
 - `--slug`：文章網址代稱（如 `no-punishment-is-hard`）。
 - `--excerpt`：文章的大意摘要（用於首頁及 SEO 搜尋結果）。
-- `--start-line` 與 `--end-line`：原始 HTML 中，包含文章本文 `<section>...</section>` 區塊的起始與結束行數。
-  > [!IMPORTANT]
-  > **請務必先在文字編輯器中打開原始 HTML 檔案**，確認文章本文所在的 `<section>` 區塊起始與結束行數（例如：第 9 行到第 365 行），並將其填入參數中，切勿直接套用預設值，以免擷取到不完整或多餘的程式碼。
+- `--start-line` 與 `--end-line`：原始 HTML 中，包含文章外層容器（`<div style="max-width:600px...">` 或 `<section style="max-width:600px...">`）至結束標籤的起始與結束行數。
+  > [!CAUTION]
+  > **嚴禁擅自切除頂部與文末的專用簽名檔與寬度容器！**
+  > - **起始行數 (`--start-line`) 固定為第 9 行**：第 9 行包含專用的頂部簽名招呼語（「*嗨，大家好，我是 KC...*」）以及限制版面寬度居中的容器標籤（`max-width: 600px; margin: 0 auto;`），切勿跳到第 18 或 20 行，否則會導致簽名檔遺失且整篇排版拉寬跑版！
+  > - **結束行數 (`--end-line`)**：需包含文末的專用結尾簽名檔（「*我是 KC，離經叛道的爸媽...*」）及對應的結束閉合標籤 `</div>` 或 `</section>`（通常位於倒數第 2~3 行，在 `</body></html>` 之前）。
 
 **腳本將自動執行：**
 1. 提取指定行數的 HTML 並儲存至 `src/article-html/posts/[slug].html`。
