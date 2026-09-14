@@ -1002,22 +1002,22 @@ const readingFlowStateVersusProofOfLearningGraphics = Array.from({ length: 10 },
 const lettingKidsExperienceConsequencesWithoutCrueltyGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/letting-kids-experience-consequences-without-cruelty";
 
-const lettingKidsExperienceConsequencesWithoutCrueltyGraphics = Array.from({ length: 8 }, (_, index) => {
+const lettingKidsExperienceConsequencesWithoutCrueltyGraphics = Array.from({ length: 10 }, (_, index) => {
   const page = index + 1;
   return {
     src: `${lettingKidsExperienceConsequencesWithoutCrueltyGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
-    alt: `我差點讓孩子熬夜到崩潰，只為了讓她「記住教訓」圖文解析 ${page}/8`
+    alt: `我差點讓孩子熬夜到崩潰，只為了讓她「記住教訓」圖文解析 ${page}/10`
   };
 });
 
 const stopRemindingKidsBuildingRealSelfDisciplineGraphicBase =
   "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/stop-reminding-kids-building-real-self-discipline";
 
-const stopRemindingKidsBuildingRealSelfDisciplineGraphics = Array.from({ length: 8 }, (_, index) => {
+const stopRemindingKidsBuildingRealSelfDisciplineGraphics = Array.from({ length: 10 }, (_, index) => {
   const page = index + 1;
   return {
     src: `${stopRemindingKidsBuildingRealSelfDisciplineGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
-    alt: `我不再提醒孩子了，因為我終於發現：我一直在替她「自律」圖文解析 ${page}/8`
+    alt: `我不再提醒孩子了，因為我終於發現：我一直在替她「自律」圖文解析 ${page}/10`
   };
 });
 
@@ -1040,6 +1040,17 @@ const givingFreedomWithClearNonNegotiableBoundariesGraphics = Array.from({ lengt
   return {
     src: `${givingFreedomWithClearNonNegotiableBoundariesGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
     alt: `我給孩子很大的自由，直到有一天，「我不要」變成了她的萬用答案圖文解析 ${page}/8`
+  };
+});
+
+const whenKidsSayBoringCutEasyContentGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/when-kids-say-boring-cut-easy-content";
+
+const whenKidsSayBoringCutEasyContentGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${whenKidsSayBoringCutEasyContentGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `孩子一直喊「好無聊」，我反而把有趣的教材砍掉了圖文解析 ${page}/8`
   };
 });
 
@@ -1120,6 +1131,12 @@ export const posts = [
     excerpt:
       "孩子學英文一直喊好無聊，我做了一個奇怪的決定：把她最喜歡的趣味卡通佩佩豬砍掉，留下了最難最不喜歡但最有思考階梯的內容。結果她適應後展現了驚人理解力。無聊有時不是內容壞了，而是缺乏真正的挑戰。",
     categories: ["parents", "core"],
+    coverImage: whenKidsSayBoringCutEasyContentGraphics[0].src,
+    coverAlt: whenKidsSayBoringCutEasyContentGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: whenKidsSayBoringCutEasyContentGraphics
+    },
     relatedPosts: [],
     body: whenKidsSayBoringCutEasyContentHtml
   },
