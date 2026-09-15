@@ -95,7 +95,7 @@ export const seriesList: SeriesConfig[] = [
   },
   {
     id: "self-learning-reflection",
-    name: "自學省思（共 7 篇）",
+    name: "自學省思（共 8 篇）",
     accent: "#C0512F",
     steps: [
       { slug: "giving-freedom-with-clear-non-negotiable-boundaries", title: "第1篇 ｜ 我給孩子很大的自由，直到有一天，「我不要」變成了她的萬用答案", label: "1" },
@@ -104,7 +104,8 @@ export const seriesList: SeriesConfig[] = [
       { slug: "reading-flow-state-versus-proof-of-learning", title: "第4篇 ｜ 孩子明明讀到停不下來，我卻差點因為一張「閱讀紀錄」打斷她", label: "4" },
       { slug: "sighing-shaking-head-emotional-separation-for-kids", title: "第5篇 ｜ 孩子一被提醒就嘆氣、甩頭、走人，我以前只看見「沒禮貌」", label: "5" },
       { slug: "letting-kids-experience-consequences-without-cruelty", title: "第6篇 ｜ 我差點讓孩子熬夜到崩潰，只為了讓她「記住教訓」", label: "6" },
-      { slug: "using-ai-thinking-partner-not-alone", title: "第7篇 ｜ 我開始用 AI 之後，最大的改變不是少想，而是不再只跟自己想", label: "7" }
+      { slug: "using-ai-thinking-partner-not-alone", title: "第7篇 ｜ 我開始用 AI 之後，最大的改變不是少想，而是不再只跟自己想", label: "7" },
+      { slug: "dont-translate-fear-into-inability", title: "第8篇 ｜ 先不要急著把「我害怕」，翻譯成「我做不到」", label: "8" }
     ]
   },
 ];

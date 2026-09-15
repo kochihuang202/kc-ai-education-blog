@@ -1071,17 +1071,21 @@ export const posts = [
     title: "先不要急著把「我害怕」，翻譯成「我做不到」",
     slug: "dont-translate-fear-into-inability",
     date: "2026-09-15",
-    kicker: "KC 育兒手記",
+    kicker: "自學省思 · 第8篇",
     excerpt:
       "我想趁孩子還小，讓她累積一種面對未知的先驗：害怕不是能力的判決，而是開始思考的提醒。",
-    categories: ["parents", "core"],
+    categories: ["self-learning-reflection", "parents", "core"],
     coverImage: dontTranslateFearIntoInabilityGraphics[0].src,
     coverAlt: dontTranslateFearIntoInabilityGraphics[0].alt,
     gallery: {
       label: "<圖文解析>",
       images: dontTranslateFearIntoInabilityGraphics
     },
-    relatedPosts: [],
+    relatedPosts: [
+      "using-ai-thinking-partner-not-alone",
+      "letting-kids-experience-consequences-without-cruelty",
+      "giving-freedom-with-clear-non-negotiable-boundaries"
+    ],
     body: dontTranslateFearIntoInabilityHtml
   },
   {
@@ -1115,7 +1119,7 @@ export const posts = [
       label: "<圖文解析>",
       images: usingAiThinkingPartnerNotAloneGraphics
     },
-    relatedPosts: ["letting-kids-experience-consequences-without-cruelty", "giving-freedom-with-clear-non-negotiable-boundaries", "when-kids-say-boring-cut-easy-content"],
+    relatedPosts: ["dont-translate-fear-into-inability", "letting-kids-experience-consequences-without-cruelty", "giving-freedom-with-clear-non-negotiable-boundaries"],
     body: usingAiThinkingPartnerNotAloneHtml
   },
   {
