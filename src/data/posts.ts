@@ -1,3 +1,4 @@
+import dontTranslateFearIntoInabilityHtml from "../article-html/posts/dont-translate-fear-into-inability.html?raw";
 import fearfulFaceInProtectionEducationHtml from "../article-html/posts/fearful-face-in-protection-education.html?raw";
 import usingAiThinkingPartnerNotAloneHtml from "../article-html/posts/using-ai-thinking-partner-not-alone.html?raw";
 import readingFlowStateVersusProofOfLearningHtml from "../article-html/posts/reading-flow-state-versus-proof-of-learning.html?raw";
@@ -1054,7 +1055,35 @@ const whenKidsSayBoringCutEasyContentGraphics = Array.from({ length: 8 }, (_, in
   };
 });
 
+const dontTranslateFearIntoInabilityGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/dont-translate-fear-into-inability";
+
+const dontTranslateFearIntoInabilityGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${dontTranslateFearIntoInabilityGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `先不要急著把「我害怕」，翻譯成「我做不到」圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "先不要急著把「我害怕」，翻譯成「我做不到」",
+    slug: "dont-translate-fear-into-inability",
+    date: "2026-09-15",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "我想趁孩子還小，讓她累積一種面對未知的先驗：害怕不是能力的判決，而是開始思考的提醒。",
+    categories: ["parents", "core"],
+    coverImage: dontTranslateFearIntoInabilityGraphics[0].src,
+    coverAlt: dontTranslateFearIntoInabilityGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: dontTranslateFearIntoInabilityGraphics
+    },
+    relatedPosts: [],
+    body: dontTranslateFearIntoInabilityHtml
+  },
   {
     title: "最傷孩子的，可能不是你沒教他保護自己，而是你教保護時那張恐懼的臉",
     slug: "fearful-face-in-protection-education",
