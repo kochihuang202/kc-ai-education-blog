@@ -108,4 +108,21 @@ export const seriesList: SeriesConfig[] = [
       { slug: "dont-translate-fear-into-inability", title: "第8篇 ｜ 先不要急著把「我害怕」，翻譯成「我做不到」", label: "8" }
     ]
   },
+  {
+    id: "intrinsic-motivation",
+    name: "內在動機（共 10 篇）",
+    accent: "#D96B27",
+    steps: [
+      { slug: "i-thought-i-understood-intrinsic-motivation", title: "第1篇 ｜ 我一直以為自己懂「內在動機」", label: "1" },
+      { slug: "if-all-desire-is-intrinsic-motivation-always-better", title: "第2篇 ｜ 如果都是慾望，內在動機就一定比較好嗎？", label: "2" },
+      { slug: "what-we-truly-want-is-not-just-intrinsic-motivation", title: "第3篇 ｜ 我們真正想要的，也許不只是「內在動機」", label: "3" },
+      { slug: "learning-only-interests-leads-to-fewer-choices", title: "第4篇 ｜ 只學有興趣的，最後不是更自由，而是更沒得選", label: "4" },
+      { slug: "when-kids-lack-interest-can-we-only-wait", title: "第5篇 ｜ 孩子沒興趣，我們真的只能等嗎？", label: "5" },
+      { slug: "do-kids-need-constant-success-for-competence", title: "第6篇 ｜ 孩子需要能力感，所以要讓他一直成功嗎？", label: "6" },
+      { slug: "is-autonomy-just-letting-kids-choose", title: "第7篇 ｜ 自主，就是讓孩子自己選嗎？", label: "7" },
+      { slug: "learning-never-happens-only-in-the-brain", title: "第8篇 ｜ 學習，從來不只發生在孩子腦袋裡", label: "8" },
+      { slug: "from-you-want-me-to-do-to-i-find-it-worthwhile", title: "第9篇 ｜ 從「你要我做」到「我自己也認為值得」，中間到底發生了什麼？", label: "9" },
+      { slug: "is-extrinsic-motivation-really-inferior", title: "第10篇 ｜ 外在動機，真的比較差嗎？", label: "10" }
+    ]
+  },
 ];

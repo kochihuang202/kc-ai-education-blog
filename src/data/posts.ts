@@ -1,3 +1,13 @@
+import iThoughtIUnderstoodIntrinsicMotivationHtml from "../article-html/posts/i-thought-i-understood-intrinsic-motivation.html?raw";
+import ifAllDesireIsIntrinsicMotivationAlwaysBetterHtml from "../article-html/posts/if-all-desire-is-intrinsic-motivation-always-better.html?raw";
+import whatWeTrulyWantIsNotJustIntrinsicMotivationHtml from "../article-html/posts/what-we-truly-want-is-not-just-intrinsic-motivation.html?raw";
+import learningOnlyInterestsLeadsToFewerChoicesHtml from "../article-html/posts/learning-only-interests-leads-to-fewer-choices.html?raw";
+import whenKidsLackInterestCanWeOnlyWaitHtml from "../article-html/posts/when-kids-lack-interest-can-we-only-wait.html?raw";
+import doKidsNeedConstantSuccessForCompetenceHtml from "../article-html/posts/do-kids-need-constant-success-for-competence.html?raw";
+import isAutonomyJustLettingKidsChooseHtml from "../article-html/posts/is-autonomy-just-letting-kids-choose.html?raw";
+import learningNeverHappensOnlyInTheBrainHtml from "../article-html/posts/learning-never-happens-only-in-the-brain.html?raw";
+import fromYouWantMeToDoToIFindItWorthwhileHtml from "../article-html/posts/from-you-want-me-to-do-to-i-find-it-worthwhile.html?raw";
+import isExtrinsicMotivationReallyInferiorHtml from "../article-html/posts/is-extrinsic-motivation-really-inferior.html?raw";
 import dontTranslateFearIntoInabilityHtml from "../article-html/posts/dont-translate-fear-into-inability.html?raw";
 import fearfulFaceInProtectionEducationHtml from "../article-html/posts/fearful-face-in-protection-education.html?raw";
 import usingAiThinkingPartnerNotAloneHtml from "../article-html/posts/using-ai-thinking-partner-not-alone.html?raw";
@@ -1066,7 +1076,288 @@ const dontTranslateFearIntoInabilityGraphics = Array.from({ length: 10 }, (_, in
   };
 });
 
+const iThoughtIUnderstoodIntrinsicMotivationGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/i-thought-i-understood-intrinsic-motivation";
+
+const iThoughtIUnderstoodIntrinsicMotivationGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${iThoughtIUnderstoodIntrinsicMotivationGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `我一直以為自己懂「內在動機」圖文解析 ${page}/10`
+  };
+});
+
+const ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/if-all-desire-is-intrinsic-motivation-always-better";
+
+const ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `如果都是慾望，內在動機就一定比較好嗎？圖文解析 ${page}/10`
+  };
+});
+
+const whatWeTrulyWantIsNotJustIntrinsicMotivationGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/what-we-truly-want-is-not-just-intrinsic-motivation";
+
+const whatWeTrulyWantIsNotJustIntrinsicMotivationGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${whatWeTrulyWantIsNotJustIntrinsicMotivationGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `我們真正想要的，也許不只是「內在動機」圖文解析 ${page}/10`
+  };
+});
+
+const learningOnlyInterestsLeadsToFewerChoicesGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/learning-only-interests-leads-to-fewer-choices";
+
+const learningOnlyInterestsLeadsToFewerChoicesGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${learningOnlyInterestsLeadsToFewerChoicesGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `只學有興趣的，最後不是更自由，而是更沒得選圖文解析 ${page}/10`
+  };
+});
+
+const whenKidsLackInterestCanWeOnlyWaitGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/when-kids-lack-interest-can-we-only-wait";
+
+const whenKidsLackInterestCanWeOnlyWaitGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${whenKidsLackInterestCanWeOnlyWaitGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `孩子沒興趣，我們真的只能等嗎？圖文解析 ${page}/10`
+  };
+});
+
+const doKidsNeedConstantSuccessForCompetenceGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/do-kids-need-constant-success-for-competence";
+
+const doKidsNeedConstantSuccessForCompetenceGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${doKidsNeedConstantSuccessForCompetenceGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `孩子需要能力感，所以要讓他一直成功嗎？圖文解析 ${page}/10`
+  };
+});
+
+const isAutonomyJustLettingKidsChooseGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/is-autonomy-just-letting-kids-choose";
+
+const isAutonomyJustLettingKidsChooseGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${isAutonomyJustLettingKidsChooseGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `自主，就是讓孩子自己選嗎？圖文解析 ${page}/10`
+  };
+});
+
+const learningNeverHappensOnlyInTheBrainGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/learning-never-happens-only-in-the-brain";
+
+const learningNeverHappensOnlyInTheBrainGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${learningNeverHappensOnlyInTheBrainGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `學習，從來不只發生在孩子腦袋裡圖文解析 ${page}/10`
+  };
+});
+
+const fromYouWantMeToDoToIFindItWorthwhileGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/from-you-want-me-to-do-to-i-find-it-worthwhile";
+
+const fromYouWantMeToDoToIFindItWorthwhileGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${fromYouWantMeToDoToIFindItWorthwhileGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `從「你要我做」到「我自己也認為值得」，中間到底發生了什麼？圖文解析 ${page}/10`
+  };
+});
+
+const isExtrinsicMotivationReallyInferiorGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/is-extrinsic-motivation-really-inferior";
+
+const isExtrinsicMotivationReallyInferiorGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${isExtrinsicMotivationReallyInferiorGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `外在動機，真的比較差嗎？圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "我一直以為自己懂「內在動機」",
+    slug: "i-thought-i-understood-intrinsic-motivation",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第1篇",
+    excerpt:
+      "我一直以為自己懂「內在動機」，直到我開始追問：你說的「內在」，到底是哪一種？孩子不用催會自己去做，但如果推著他的是恐懼、羞恥、責任或好奇呢？",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: iThoughtIUnderstoodIntrinsicMotivationGraphics[0].src,
+    coverAlt: iThoughtIUnderstoodIntrinsicMotivationGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: iThoughtIUnderstoodIntrinsicMotivationGraphics
+    },
+    relatedPosts: ["if-all-desire-is-intrinsic-motivation-always-better", "what-we-truly-want-is-not-just-intrinsic-motivation", "is-extrinsic-motivation-really-inferior"],
+    body: iThoughtIUnderstoodIntrinsicMotivationHtml
+  },
+  {
+    title: "如果都是慾望，內在動機就一定比較好嗎？",
+    slug: "if-all-desire-is-intrinsic-motivation-always-better",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第2篇",
+    excerpt:
+      "想吃糖是慾望，想知道答案也是慾望。當我真的一路追下去，我開始懷疑：我們一直想替孩子培養的「內在動機」，真的天然就比較值得追求嗎？",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphics[0].src,
+    coverAlt: ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: ifAllDesireIsIntrinsicMotivationAlwaysBetterGraphics
+    },
+    relatedPosts: ["i-thought-i-understood-intrinsic-motivation", "what-we-truly-want-is-not-just-intrinsic-motivation", "learning-only-interests-leads-to-fewer-choices"],
+    body: ifAllDesireIsIntrinsicMotivationAlwaysBetterHtml
+  },
+  {
+    title: "我們真正想要的，也許不只是「內在動機」",
+    slug: "what-we-truly-want-is-not-just-intrinsic-motivation",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第3篇",
+    excerpt:
+      "父母研究動機，說到底不是想學心理學。我們只是希望有一天孩子不需要一直被催、被盯、被推，也願意自己往前走。但平常說的內在動機混了太多東西。",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: whatWeTrulyWantIsNotJustIntrinsicMotivationGraphics[0].src,
+    coverAlt: whatWeTrulyWantIsNotJustIntrinsicMotivationGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: whatWeTrulyWantIsNotJustIntrinsicMotivationGraphics
+    },
+    relatedPosts: ["if-all-desire-is-intrinsic-motivation-always-better", "learning-only-interests-leads-to-fewer-choices", "when-kids-lack-interest-can-we-only-wait"],
+    body: whatWeTrulyWantIsNotJustIntrinsicMotivationHtml
+  },
+  {
+    title: "只學有興趣的，最後不是更自由，而是更沒得選",
+    slug: "learning-only-interests-leads-to-fewer-choices",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第4篇",
+    excerpt:
+      "研究了 SDT 之後，我反而開始重新檢查我們天天掛在嘴上的「興趣」。如果「有沒有興趣」變成學不學的最高標準，我們保護的究竟是孩子，還是他當下的感受？",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: learningOnlyInterestsLeadsToFewerChoicesGraphics[0].src,
+    coverAlt: learningOnlyInterestsLeadsToFewerChoicesGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: learningOnlyInterestsLeadsToFewerChoicesGraphics
+    },
+    relatedPosts: ["what-we-truly-want-is-not-just-intrinsic-motivation", "when-kids-lack-interest-can-we-only-wait", "do-kids-need-constant-success-for-competence"],
+    body: learningOnlyInterestsLeadsToFewerChoicesHtml
+  },
+  {
+    title: "孩子沒興趣，我們真的只能等嗎？",
+    slug: "when-kids-lack-interest-can-we-only-wait",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第5篇",
+    excerpt:
+      "我們不能命令孩子愛上數學、閱讀或英文。但這不代表大人只能站在旁邊等。研究 SDT 之後，我開始轉向思考：什麼環境支持內在動機，又是什麼環境會磨掉它？",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: whenKidsLackInterestCanWeOnlyWaitGraphics[0].src,
+    coverAlt: whenKidsLackInterestCanWeOnlyWaitGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: whenKidsLackInterestCanWeOnlyWaitGraphics
+    },
+    relatedPosts: ["learning-only-interests-leads-to-fewer-choices", "do-kids-need-constant-success-for-competence", "is-autonomy-just-letting-kids-choose"],
+    body: whenKidsLackInterestCanWeOnlyWaitHtml
+  },
+  {
+    title: "孩子需要能力感，所以要讓他一直成功嗎？",
+    slug: "do-kids-need-constant-success-for-competence",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第6篇",
+    excerpt:
+      "我原本以為能力感就是多讓孩子成功、少讓他挫折。直到我開始追問：如果永遠只做已經會的事，真的會更有能力感嗎？",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: doKidsNeedConstantSuccessForCompetenceGraphics[0].src,
+    coverAlt: doKidsNeedConstantSuccessForCompetenceGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: doKidsNeedConstantSuccessForCompetenceGraphics
+    },
+    relatedPosts: ["when-kids-lack-interest-can-we-only-wait", "is-autonomy-just-letting-kids-choose", "learning-never-happens-only-in-the-brain"],
+    body: doKidsNeedConstantSuccessForCompetenceHtml
+  },
+  {
+    title: "自主，就是讓孩子自己選嗎？",
+    slug: "is-autonomy-just-letting-kids-choose",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第7篇",
+    excerpt:
+      "做得到和願意做，是兩件不同的事。一個人明明知道「我做得到」，卻還是可能說「可是我不想做」。我從這裡開始理解 SDT 另一個核心——自主。",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: isAutonomyJustLettingKidsChooseGraphics[0].src,
+    coverAlt: isAutonomyJustLettingKidsChooseGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: isAutonomyJustLettingKidsChooseGraphics
+    },
+    relatedPosts: ["do-kids-need-constant-success-for-competence", "learning-never-happens-only-in-the-brain", "from-you-want-me-to-do-to-i-find-it-worthwhile"],
+    body: isAutonomyJustLettingKidsChooseHtml
+  },
+  {
+    title: "學習，從來不只發生在孩子腦袋裡",
+    slug: "learning-never-happens-only-in-the-brain",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第8篇",
+    excerpt:
+      "同一個孩子遇到不同老師，狀態可以差很多。你愈想影響孩子，愈不能忽略你們之間發生了什麼；關係讓話能進得去，學習從來不只發生在孩子腦袋裡。",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: learningNeverHappensOnlyInTheBrainGraphics[0].src,
+    coverAlt: learningNeverHappensOnlyInTheBrainGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: learningNeverHappensOnlyInTheBrainGraphics
+    },
+    relatedPosts: ["is-autonomy-just-letting-kids-choose", "from-you-want-me-to-do-to-i-find-it-worthwhile", "is-extrinsic-motivation-really-inferior"],
+    body: learningNeverHappensOnlyInTheBrainHtml
+  },
+  {
+    title: "從「你要我做」到「我自己也認為值得」，中間到底發生了什麼？",
+    slug: "from-you-want-me-to-do-to-i-find-it-worthwhile",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第9篇",
+    excerpt:
+      "我們真正想要的，也許不是孩子最後被歸類成「內在動機」，而是他有一天能自己願意學。這正是自我決定理論中最關鍵的概念：內化（internalization）。",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: fromYouWantMeToDoToIFindItWorthwhileGraphics[0].src,
+    coverAlt: fromYouWantMeToDoToIFindItWorthwhileGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: fromYouWantMeToDoToIFindItWorthwhileGraphics
+    },
+    relatedPosts: ["learning-never-happens-only-in-the-brain", "is-extrinsic-motivation-really-inferior", "i-thought-i-understood-intrinsic-motivation"],
+    body: fromYouWantMeToDoToIFindItWorthwhileHtml
+  },
+  {
+    title: "外在動機，真的比較差嗎？",
+    slug: "is-extrinsic-motivation-really-inferior",
+    date: "2026-10-10",
+    kicker: "內在動機 · 第10篇",
+    excerpt:
+      "當學習需要經歷枯燥與長期累積，父母該怎麼要求，才能讓孩子逐漸形成自己的學習理由？要求不等於每次都要吵到贏，也不要把關係搞壞。",
+    categories: ["intrinsic-motivation", "parents", "core"],
+    coverImage: isExtrinsicMotivationReallyInferiorGraphics[0].src,
+    coverAlt: isExtrinsicMotivationReallyInferiorGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: isExtrinsicMotivationReallyInferiorGraphics
+    },
+    relatedPosts: ["from-you-want-me-to-do-to-i-find-it-worthwhile", "i-thought-i-understood-intrinsic-motivation", "if-all-desire-is-intrinsic-motivation-always-better"],
+    body: isExtrinsicMotivationReallyInferiorHtml
+  },
+
   {
     title: "先不要急著把「我害怕」，翻譯成「我做不到」",
     slug: "dont-translate-fear-into-inability",

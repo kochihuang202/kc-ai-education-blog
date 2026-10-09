@@ -59,6 +59,12 @@ export const categories = [
     summary: "女兒自學路上的微小教養省思：從自由與界線、自律與心流，到把 AI 當成思維對手。",
     accent: "#C0512F"
   },
+  {
+    id: "intrinsic-motivation",
+    label: "內在動機",
+    summary: "十篇文章拆解自我決定理論（SDT）：從慾望、興趣、能力感、自主到內化，釐清孩子真正願意學的底層動力。",
+    accent: "#D96B27"
+  },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
