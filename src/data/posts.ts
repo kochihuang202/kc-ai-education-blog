@@ -1,3 +1,4 @@
+import reducingFreeChoicesBuildsSelfDriveHtml from "../article-html/posts/reducing-free-choices-builds-self-drive.html?raw";
 import separateEmpathyFromRulesHtml from "../article-html/posts/separate-empathy-from-rules.html?raw";
 import iThoughtIUnderstoodIntrinsicMotivationHtml from "../article-html/posts/i-thought-i-understood-intrinsic-motivation.html?raw";
 import ifAllDesireIsIntrinsicMotivationAlwaysBetterHtml from "../article-html/posts/if-all-desire-is-intrinsic-motivation-always-better.html?raw";
@@ -1198,7 +1199,35 @@ const separateEmpathyFromRulesGraphics = Array.from({ length: 8 }, (_, index) =>
   };
 });
 
+const reducingFreeChoicesBuildsSelfDriveGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/reducing-free-choices-builds-self-drive";
+
+const reducingFreeChoicesBuildsSelfDriveGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${reducingFreeChoicesBuildsSelfDriveGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `減少自由選項，反而養出自驅力圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "減少自由選項，反而養出自驅力",
+    slug: "reducing-free-choices-builds-self-drive",
+    date: "2026-10-18",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "當孩子抗拒時，我曾以為給她自由、放慢腳步能等她自己好起來，結果她只學會放大「我不喜歡」。真正能幫孩子長出自驅力的，不是無底限的自由，而是收攏選項、守住底盤。",
+    categories: ["parents", "core"],
+    coverImage: reducingFreeChoicesBuildsSelfDriveGraphics[0].src,
+    coverAlt: reducingFreeChoicesBuildsSelfDriveGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: reducingFreeChoicesBuildsSelfDriveGraphics
+    },
+    relatedPosts: ["separate-empathy-from-rules", "giving-freedom-with-clear-non-negotiable-boundaries", "stop-reminding-kids-building-real-self-discipline"],
+    body: reducingFreeChoicesBuildsSelfDriveHtml
+  },
   {
     title: "同理心與規則要分開：理解情緒，不等於免除代價",
     slug: "separate-empathy-from-rules",
