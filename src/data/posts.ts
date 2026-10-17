@@ -1,3 +1,4 @@
+import separateEmpathyFromRulesHtml from "../article-html/posts/separate-empathy-from-rules.html?raw";
 import iThoughtIUnderstoodIntrinsicMotivationHtml from "../article-html/posts/i-thought-i-understood-intrinsic-motivation.html?raw";
 import ifAllDesireIsIntrinsicMotivationAlwaysBetterHtml from "../article-html/posts/if-all-desire-is-intrinsic-motivation-always-better.html?raw";
 import whatWeTrulyWantIsNotJustIntrinsicMotivationHtml from "../article-html/posts/what-we-truly-want-is-not-just-intrinsic-motivation.html?raw";
@@ -1186,7 +1187,35 @@ const isExtrinsicMotivationReallyInferiorGraphics = Array.from({ length: 10 }, (
   };
 });
 
+const separateEmpathyFromRulesGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/separate-empathy-from-rules";
+
+const separateEmpathyFromRulesGraphics = Array.from({ length: 8 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${separateEmpathyFromRulesGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `同理心與規則要分開：理解情緒，不等於免除代價圖文解析 ${page}/8`
+  };
+});
+
 export const posts = [
+  {
+    title: "同理心與規則要分開：理解情緒，不等於免除代價",
+    slug: "separate-empathy-from-rules",
+    date: "2026-10-18",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "孩子沒睡飽崩潰把挫折算到大人頭上，我可以同理他的疲累與情緒，但我不能免除踩線的代價。同理心是理解感受，規則是守住界線；代價和愛，可以同時存在。",
+    categories: ["parents", "core"],
+    coverImage: separateEmpathyFromRulesGraphics[0].src,
+    coverAlt: separateEmpathyFromRulesGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: separateEmpathyFromRulesGraphics
+    },
+    relatedPosts: ["dont-translate-fear-into-inability", "letting-kids-experience-consequences-without-cruelty", "teach-kids-emotional-separation"],
+    body: separateEmpathyFromRulesHtml
+  },
   {
     title: "我一直以為自己懂「內在動機」",
     slug: "i-thought-i-understood-intrinsic-motivation",
