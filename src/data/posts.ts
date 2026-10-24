@@ -1,3 +1,4 @@
+import thatReluctantSighIsGoneHtml from "../article-html/posts/that-reluctant-sigh-is-gone.html?raw";
 import reducingFreeChoicesBuildsSelfDriveHtml from "../article-html/posts/reducing-free-choices-builds-self-drive.html?raw";
 import separateEmpathyFromRulesHtml from "../article-html/posts/separate-empathy-from-rules.html?raw";
 import iThoughtIUnderstoodIntrinsicMotivationHtml from "../article-html/posts/i-thought-i-understood-intrinsic-motivation.html?raw";
@@ -1210,7 +1211,35 @@ const reducingFreeChoicesBuildsSelfDriveGraphics = Array.from({ length: 10 }, (_
   };
 });
 
+const thatReluctantSighIsGoneGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/that-reluctant-sigh-is-gone";
+
+const thatReluctantSighIsGoneGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${thatReluctantSighIsGoneGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `那一聲「嗯」不見了圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "那一聲「嗯」不見了",
+    slug: "that-reluctant-sigh-is-gone",
+    date: "2026-10-24",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "以前提醒女兒看巧虎的界線，她總會從喉嚨擠出不情願的「嗯」，一副絕望臉。今天她把話聽完了，那一聲「嗯」不見了。孩子擺臉往往不是脾氣壞，而是在試探底線；當大人把界線收攏堅定，她不再試探，拉扯也就停了。",
+    categories: ["parents", "core"],
+    coverImage: thatReluctantSighIsGoneGraphics[0].src,
+    coverAlt: thatReluctantSighIsGoneGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: thatReluctantSighIsGoneGraphics
+    },
+    relatedPosts: ["reducing-free-choices-builds-self-drive", "separate-empathy-from-rules", "giving-freedom-with-clear-non-negotiable-boundaries"],
+    body: thatReluctantSighIsGoneHtml
+  },
   {
     title: "減少自由選項，反而養出自驅力",
     slug: "reducing-free-choices-builds-self-drive",
