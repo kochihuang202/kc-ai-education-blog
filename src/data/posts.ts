@@ -1,3 +1,4 @@
+import howMuchParentalEffortImpactsChildLearningHtml from "../article-html/posts/how-much-parental-effort-impacts-child-learning.html?raw";
 import thatReluctantSighIsGoneHtml from "../article-html/posts/that-reluctant-sigh-is-gone.html?raw";
 import reducingFreeChoicesBuildsSelfDriveHtml from "../article-html/posts/reducing-free-choices-builds-self-drive.html?raw";
 import separateEmpathyFromRulesHtml from "../article-html/posts/separate-empathy-from-rules.html?raw";
@@ -1222,7 +1223,35 @@ const thatReluctantSighIsGoneGraphics = Array.from({ length: 10 }, (_, index) =>
   };
 });
 
+const howMuchParentalEffortImpactsChildLearningGraphicBase =
+  "https://pub-0eb2a942d02b407091b3e88d3d56fd63.r2.dev/posts/how-much-parental-effort-impacts-child-learning";
+
+const howMuchParentalEffortImpactsChildLearningGraphics = Array.from({ length: 10 }, (_, index) => {
+  const page = index + 1;
+  return {
+    src: `${howMuchParentalEffortImpactsChildLearningGraphicBase}/graphic-${String(page).padStart(2, "0")}.webp`,
+    alt: `父母的努力，對孩子的學習表現究竟有多大影響？圖文解析 ${page}/10`
+  };
+});
+
 export const posts = [
+  {
+    title: "父母的努力，對孩子的學習表現究竟有多大影響？",
+    slug: "how-much-parental-effort-impacts-child-learning",
+    date: "2026-10-24",
+    kicker: "KC 育兒手記",
+    excerpt:
+      "如果父母的努力真有決定性影響，為什麼同一個家庭、同套教養的孩子表現天差地遠？小女兒天生專注拼圖，大女兒全靠大人當年嚴格要求。我們以為的教育成果，到底有多少只是天賦？",
+    categories: ["parents", "core"],
+    coverImage: howMuchParentalEffortImpactsChildLearningGraphics[0].src,
+    coverAlt: howMuchParentalEffortImpactsChildLearningGraphics[0].alt,
+    gallery: {
+      label: "<圖文解析>",
+      images: howMuchParentalEffortImpactsChildLearningGraphics
+    },
+    relatedPosts: ["ziwei-ai-parenting-p5", "that-reluctant-sigh-is-gone", "reducing-free-choices-builds-self-drive"],
+    body: howMuchParentalEffortImpactsChildLearningHtml
+  },
   {
     title: "那一聲「嗯」不見了",
     slug: "that-reluctant-sigh-is-gone",
